@@ -1,0 +1,739 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="August 2023" href="aug.html" /><link rel="prev" title="June 2023" href="june.html" />
+
+    <!-- Generated with Sphinx 7.1.2 and Furo 2023.07.26 -->
+        <title>July 2023 - Jason&#39;s research log</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Jason's research log</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Jason's research log</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Cheat Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="may.html">May 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="june.html">June 2023</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">July 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aug.html">August 2023</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="july-2023">
+<h1>July 2023<a class="headerlink" href="#july-2023" title="Permalink to this heading">#</a></h1>
+<section id="sat">
+<h2>1 Sat<a class="headerlink" href="#sat" title="Permalink to this heading">#</a></h2>
+<section id="hpol-loop">
+<h3>HPol Loop<a class="headerlink" href="#hpol-loop" title="Permalink to this heading">#</a></h3>
+<ol class="loweralpha simple">
+<li><p>Started working on <code class="docutils literal notranslate"><span class="pre">HPol</span></code> Loop locally, will push regularly to
+<a class="reference external" href="https://github.com/osu-particle-astrophysics/GENETIS_HPol">Github</a></p></li>
+</ol>
+</section>
+</section>
+<section id="sun">
+<h2>2 Sun<a class="headerlink" href="#sun" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>HPol Loop<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ol class="loweralpha">
+<li><p>Working on <code class="docutils literal notranslate"><span class="pre">HPol</span></code> Loop <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">A</span></code>.</p></li>
+<li><p><strong>TODO:</strong> learn about git <code class="docutils literal notranslate"><span class="pre">submodule</span></code> (for <code class="docutils literal notranslate"><span class="pre">Shared-Code/GA</span></code>)</p></li>
+<li><p>Github file name change <a class="footnote-reference brackets" href="#f1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> :</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>mv<span class="w"> </span>-f<span class="w"> </span>yOuRfIlEnAmE<span class="w"> </span>yourfilename
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="tue">
+<h2>4 Tue<a class="headerlink" href="#tue" title="Permalink to this heading">#</a></h2>
+<section id="hpol-work">
+<h3>HPol Work<a class="headerlink" href="#hpol-work" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">GA</span></code></p>
+<ol class="loweralpha simple">
+<li><p>Back to going through the GA C++ files.</p></li>
+<li><p>There has to be a way to improve <code class="docutils literal notranslate"><span class="pre">DataRead()</span></code>. The file currently has an
+<code class="docutils literal notranslate"><span class="pre">if</span></code> check inside a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop; probably not the msot efficient way to
+do this.</p></li>
+</ol>
+</section>
+</section>
+<section id="thu">
+<h2>6 Thu<a class="headerlink" href="#thu" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>HPol Work<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p><strong>GA:</strong> <code class="docutils literal notranslate"><span class="pre">DataRead.h</span></code></p>
+<ol class="loweralpha">
+<li><p>Finished modifying DataRad.cpp and pushed to <a class="reference external" href="https://github.com/osu-particle-astrophysics/Shared-Code">Github shared-code</a> (<code class="docutils literal notranslate"><span class="pre">HPol</span>
+<span class="pre">branch</span></code>)</p></li>
+<li><p>The part that reads <code class="docutils literal notranslate"><span class="pre">fitnessScores.csv</span></code> inside <code class="docutils literal notranslate"><span class="pre">DataRead.cpp</span></code> only reads
+the first column.</p>
+<p><strong>TODO:</strong> figure out what the second column of <code class="docutils literal notranslate"><span class="pre">fitnessScores.csv</span></code> is
+(in PAEA there are three columns actually)</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="id4">
+<h2>8 Sat<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h3>HPol Work<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<p><strong>GA:</strong> <code class="docutils literal notranslate"><span class="pre">Sort.h</span></code></p>
+<ol class="loweralpha simple">
+<li><p>Started modifying <code class="docutils literal notranslate"><span class="pre">Sort.h</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="id6">
+<h2>9 Sun<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>HPol Work<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p><strong>GA:</strong> <code class="docutils literal notranslate"><span class="pre">Sort.h</span></code></p>
+<ol class="loweralpha">
+<li><p><code class="docutils literal notranslate"><span class="pre">original_location</span></code> and <code class="docutils literal notranslate"><span class="pre">t</span></code> are probably not needed at all?</p>
+<p><strong>TODO:</strong> Check again and get rid to these.</p>
+</li>
+</ol>
+<ol class="loweralpha simple" id="b" start="2">
+<li><p>Actually I’m not sure where we obtain <code class="docutils literal notranslate"><span class="pre">parent_location</span></code>. It doesn’t
+seem like <code class="docutils literal notranslate"><span class="pre">DataRead.h</span></code> provides this <code class="docutils literal notranslate"><span class="pre">vector</span></code>, and the whole
+<code class="docutils literal notranslate"><span class="pre">original_location</span></code>-stuff just seems weird. Is this part of the program
+incomplete?</p></li>
+</ol>
+</section>
+</section>
+<section id="mon">
+<h2>10 Mon<a class="headerlink" href="#mon" title="Permalink to this heading">#</a></h2>
+<section id="id8">
+<h3>HPol Work<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p><strong>GA:</strong> <code class="docutils literal notranslate"><span class="pre">Sort.h</span></code></p>
+<ol class="loweralpha simple">
+<li><p>Finished editing <code class="docutils literal notranslate"><span class="pre">Sort.h</span></code> and pushed to Github Shared-Code repo <code class="docutils literal notranslate"><span class="pre">HPol</span></code>
+branch.</p></li>
+<li><p>Will discuss the <a class="reference internal" href="#b"><span class="std std-ref">issue</span></a> mentioned above during the meeting today.</p></li>
+</ol>
+</section>
+<section id="collaboration-meeting">
+<h3>Collaboration Meeting<a class="headerlink" href="#collaboration-meeting" title="Permalink to this heading">#</a></h3>
+<ol class="loweralpha">
+<li><p>From Ezio, regarding creating a remote <code class="docutils literal notranslate"><span class="pre">hpol</span></code> branch and allowing others
+to review the changes:</p>
+<blockquote>
+<div><p>you can push your local branch with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">&lt;your-branch&gt;</span></code>
+and it will show you a link to create the PR on GitHub. Once you’ve
+created the PR you can keep adding commits to the branch and push them
+and it will update the PR.</p>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="id9">
+<h2>11 Tue<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<section id="git">
+<h3>Git<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h3>
+<ol class="loweralpha simple">
+<li><p>A <a class="reference external" href="https://www.youtube.com/watch?v=RwvTrSm7zEY">good video</a> explaining how
+to squash git commits using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">&lt;#&gt;</span></code>.</p></li>
+</ol>
+</section>
+<section id="id10">
+<h3>HPol Work<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<p><strong>GA:</strong> <code class="docutils literal notranslate"><span class="pre">Sort.h</span></code></p>
+<ol class="loweralpha">
+<li><p><span class="sphinxnotes-strike" style="text-decoration: line-through;">Will test today if this still produces the desired result since I
+removed the vector original_location and int t yesterday.</span></p>
+<p>Edit: tested the above; script works just fine.</p>
+</li>
+<li><p>Following Ezio’s advice, stopped making extraneous changes on <code class="docutils literal notranslate"><span class="pre">HPol</span></code>
+branch. Will make a patch branch to pake at and destroy and leave <code class="docutils literal notranslate"><span class="pre">HPol</span></code>
+alone until <code class="docutils literal notranslate"><span class="pre">XF</span></code> work is more or less done.</p></li>
+</ol>
+</section>
+<section id="cleanup-work">
+<h3>Cleanup Work<a class="headerlink" href="#cleanup-work" title="Permalink to this heading">#</a></h3>
+<ol class="loweralpha">
+<li><p>Started a new branch <code class="docutils literal notranslate"><span class="pre">clean</span></code> (local) based on <code class="docutils literal notranslate"><span class="pre">hpol</span></code> (base commit is
+<code class="docutils literal notranslate"><span class="pre">HPol</span> <span class="pre">Pause</span> <span class="pre">(5fd61c6)</span></code>). I will use this branch for my own understanding,
+possibly cleaning up the scripts as I go over them.</p></li>
+<li><p>From Ezio, regarding the workflow of GENETIS (in a <a class="reference external" href="https://github.com/osu-particle-astrophysics/Shared-Code/pull/24">close pull-request</a>).</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>create a local branch with some commits.</p></li>
+<li><p>push the branch onto Github (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">you-branch</span></code>) and
+created a PR (it gives you a link to create it after the <code class="docutils literal notranslate"><span class="pre">push</span></code>)</p></li>
+<li><p>wait for reviews and comments.</p></li>
+<li><p>add more commits to he local branch to address the reviews/comments.</p></li>
+<li><p>push them to Github (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">your-branch</span></code>, without
+forcing/squashing/rebasing) – the PR will update automatically to
+include the new commit</p></li>
+<li><p>repeat step 3-5 until the PR is approved</p></li>
+<li><p>click on the <code class="docutils literal notranslate"><span class="pre">squash</span> <span class="pre">merge</span></code> button on Github to merge the PR on
+main.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</section>
+</section>
+<section id="wed">
+<h2>12 Wed<a class="headerlink" href="#wed" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h3>HPol Work<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Looking into the various <code class="docutils literal notranslate"><span class="pre">Part_B1</span></code> scripts and the corresponding batch
+job.</p></li>
+</ol>
+</section>
+</section>
+<section id="id12">
+<h2>13 Thu<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<section id="id13">
+<h3>HPol Work<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Finished cleaning up <code class="docutils literal notranslate"><span class="pre">Part_B1</span></code>.</p></li>
+<li><p>Setting up <code class="docutils literal notranslate"><span class="pre">HPol</span></code> skeleon for <code class="docutils literal notranslate"><span class="pre">Part_B1</span></code></p></li>
+<li><p>Fixed <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">A</span></code> GA call error (when <code class="docutils literal notranslate"><span class="pre">design</span></code> is bicone).</p></li>
+<li><p>Now using <code class="docutils literal notranslate"><span class="pre">submodules</span></code> for <code class="docutils literal notranslate"><span class="pre">Shared-Code</span></code> (more info in <code class="docutils literal notranslate"><span class="pre">README.md</span></code>)</p></li>
+<li><p>Started looking into <code class="docutils literal notranslate"><span class="pre">Part_B2</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="fri">
+<h2>14 Fri<a class="headerlink" href="#fri" title="Permalink to this heading">#</a></h2>
+<section id="id14">
+<h3>HPol Work<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Need to determine if we want to keep <code class="docutils literal notranslate"><span class="pre">Part_B_GPU_job2_asym.sh</span></code>. To do
+this I have to figure out the part where it differs from <code class="docutils literal notranslate"><span class="pre">Part_B_GPU_job2</span>
+<span class="pre">_asym_array.sh</span></code>.</p></li>
+<li><p>Perhaps for now I’ll just keep it in an <code class="docutils literal notranslate"><span class="pre">archived</span></code> folder.</p></li>
+</ol>
+</section>
+</section>
+<section id="id15">
+<h2>15 Sat<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h3>HPol Work<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong>
+a.  Finished most of <code class="docutils literal notranslate"><span class="pre">Part_B2</span></code> third pass yesterday.
+b.  Will start looking into <code class="docutils literal notranslate"><span class="pre">Part</span> <span class="pre">C</span></code> today.
+c.  Will also checkout <code class="docutils literal notranslate"><span class="pre">ssPermissionCheck.sh</span></code> to see if I can get rid of it.</p>
+</section>
+<section id="bash">
+<h3>Bash<a class="headerlink" href="#bash" title="Permalink to this heading">#</a></h3>
+<ol class="loweralpha">
+<li><p><code class="docutils literal notranslate"><span class="pre">read</span></code> option <code class="docutils literal notranslate"><span class="pre">-r</span></code> allows for ignoring backslash. For example:</p>
+<div class="highlight-Bash notranslate"><div class="highlight"><pre><span></span>~$<span class="w"> </span><span class="nb">read</span>
+&gt;<span class="w"> </span>Hello<span class="w"> </span><span class="se">\</span>
+&gt;<span class="w"> </span>World<span class="se">\</span>
+&gt;<span class="w"> </span>!
+~$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$REPLY</span>
+</pre></div>
+</div>
+<p>returns <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World!</span></code> but <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">-r</span> <span class="pre">&lt;&lt;&lt;</span> <span class="pre">&quot;Hello\world!&quot;;</span> <span class="pre">echo</span> <span class="pre">$REPLY</span></code>
+returns <code class="docutils literal notranslate"><span class="pre">Hello\world!</span></code></p>
+</li>
+</ol>
+</section>
+</section>
+<section id="id17">
+<h2>17 Mon<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h2>
+<section id="id18">
+<h3>HPol Work<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple" id="a">
+<li><p>Working on resolving the
+<a class="reference external" href="https://github.com/osu-particle-astrophysics/GENETIS_HPol/pull/1">comments</a>
+(pull request <code class="docutils literal notranslate"><span class="pre">#1</span></code> of <code class="docutils literal notranslate"><span class="pre">GENETIS-HPol</span></code>) from Ezio.</p></li>
+</ol>
+</section>
+</section>
+<section id="id19">
+<h2>18 Tue<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<section id="id20">
+<h3>HPol Work<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Working on resolving the <a class="reference internal" href="#a"><span class="std std-ref">comments</span></a></p></li>
+<li><p>Created PR <code class="docutils literal notranslate"><span class="pre">#3</span></code> (branch <code class="docutils literal notranslate"><span class="pre">c</span></code>) based on PR <code class="docutils literal notranslate"><span class="pre">#1</span></code>.</p></li>
+<li><p><strong>TODO:</strong> get Ezio’s messages from Slack here since Slack hides them after
+90 days.</p></li>
+</ol>
+</section>
+</section>
+<section id="id21">
+<h2>19 Wed<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h2>
+<section id="id22">
+<h3>HPol Work<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple" id="id23">
+<li><p>Working on resolving <a class="reference external" href="https://github.com/osu-particle-astrophysics/GENETIS_HPol/pull/3">Ezio’s comments</a> in PR
+<code class="docutils literal notranslate"><span class="pre">#3</span></code>.</p></li>
+<li><p>PR <code class="docutils literal notranslate"><span class="pre">#2</span></code> ready to merge; waiting for <code class="docutils literal notranslate"><span class="pre">#3</span></code> to finish.</p></li>
+</ol>
+</section>
+</section>
+<section id="id24">
+<h2>20 Thu<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h2>
+<section id="id25">
+<h3>HPol Work<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Working on <code class="docutils literal notranslate"><span class="pre">part_c_vpol.py</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="id26">
+<h2>21 Fri<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h2>
+<section id="id27">
+<h3>HPol Work<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Working on <code class="docutils literal notranslate"><span class="pre">part_c_vpol.py</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="id28">
+<h2>22 Sat<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h2>
+<section id="id29">
+<h3>HPol Work<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Testing <code class="docutils literal notranslate"><span class="pre">part_c_vpol.py</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="id30">
+<h2>23 Sun<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h2>
+<section id="id31">
+<h3>HPol Work<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Working on resovling the <a class="reference internal" href="#id23"><span class="std std-ref">comments</span></a>
+in PR <code class="docutils literal notranslate"><span class="pre">#3</span></code> (on <code class="docutils literal notranslate"><span class="pre">part_c_vpol.py</span></code> and <code class="docutils literal notranslate"><span class="pre">sspermissioncheck.py</span></code>).</p></li>
+</ol>
+</section>
+</section>
+<section id="id32">
+<h2>24 Mon<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h2>
+<section id="id33">
+<h3>Bash<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h3>
+<ol class="loweralpha simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> statement tags (eg. <code class="docutils literal notranslate"><span class="pre">-a</span></code> returns true if the files exists)
+<a class="reference external" href="https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html">table here</a>.</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=p0KKBmfiVl0">Luke Smith</a> on using Bash
+logicall operators (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code>, etc.) to remove <code class="docutils literal notranslate"><span class="pre">if</span></code> statements inside
+shell scripts.</p></li>
+</ol>
+</section>
+</section>
+<section id="id34">
+<h2>25 Tue<a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h2>
+<section id="id35">
+<h3>HPol Work<a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Working on resolving the <a class="reference internal" href="#id23"><span class="std std-ref">comments</span></a>
+in PR <code class="docutils literal notranslate"><span class="pre">#3</span></code> (on <code class="docutils literal notranslate"><span class="pre">part_c_vpol.py</span></code>).</p></li>
+</ol>
+</section>
+</section>
+<section id="id36">
+<h2>26 Wed<a class="headerlink" href="#id36" title="Permalink to this heading">#</a></h2>
+<section id="id37">
+<h3>HPol Work<a class="headerlink" href="#id37" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Rewriting <code class="docutils literal notranslate"><span class="pre">Part_B_VPol_job1.sh</span></code> into a Python script.</p></li>
+</ol>
+</section>
+</section>
+<section id="id38">
+<h2>27 Thu<a class="headerlink" href="#id38" title="Permalink to this heading">#</a></h2>
+<section id="id39">
+<h3>HPol Work<a class="headerlink" href="#id39" title="Permalink to this heading">#</a></h3>
+<p><strong>Loop:</strong></p>
+<ol class="loweralpha simple">
+<li><p>Mostly done with rewriting <code class="docutils literal notranslate"><span class="pre">Part_B_VPol_job1.sh</span></code> into a Python script.</p></li>
+</ol>
+</section>
+</section>
+<section id="id40">
+<h2>28 Fri<a class="headerlink" href="#id40" title="Permalink to this heading">#</a></h2>
+<p><em>No log today because I got sloppy and didn’t take notes</em></p>
+</section>
+<section id="id41">
+<h2>29 Sat<a class="headerlink" href="#id41" title="Permalink to this heading">#</a></h2>
+<p><em>No log today because I got sloppy and didn’t take notes</em></p>
+</section>
+<section id="id42">
+<h2>30 Sun<a class="headerlink" href="#id42" title="Permalink to this heading">#</a></h2>
+<p><em>No log today because I got sloppy and didn’t take notes</em></p>
+</section>
+<section id="id43">
+<h2>31 Mon<a class="headerlink" href="#id43" title="Permalink to this heading">#</a></h2>
+<p><em>No log today because I got sloppy and didn’t take notes</em></p>
+<p class="rubric">Reference</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Amery, Mark. <a class="reference external" href="https://stackoverflow.com/questions/17683458/how-do-i-commit-case-sensitive-%20only-filename-changes-in-git">How do I commit case-sensitive only filename chnages
+in Git</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="aug.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">August 2023</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="june.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">June 2023</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Jason Yao
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">July 2023</a><ul>
+<li><a class="reference internal" href="#sat">1 Sat</a><ul>
+<li><a class="reference internal" href="#hpol-loop">HPol Loop</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sun">2 Sun</a><ul>
+<li><a class="reference internal" href="#id1">HPol Loop</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tue">4 Tue</a><ul>
+<li><a class="reference internal" href="#hpol-work">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#thu">6 Thu</a><ul>
+<li><a class="reference internal" href="#id3">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">8 Sat</a><ul>
+<li><a class="reference internal" href="#id5">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id6">9 Sun</a><ul>
+<li><a class="reference internal" href="#id7">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mon">10 Mon</a><ul>
+<li><a class="reference internal" href="#id8">HPol Work</a></li>
+<li><a class="reference internal" href="#collaboration-meeting">Collaboration Meeting</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">11 Tue</a><ul>
+<li><a class="reference internal" href="#git">Git</a></li>
+<li><a class="reference internal" href="#id10">HPol Work</a></li>
+<li><a class="reference internal" href="#cleanup-work">Cleanup Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wed">12 Wed</a><ul>
+<li><a class="reference internal" href="#id11">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12">13 Thu</a><ul>
+<li><a class="reference internal" href="#id13">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fri">14 Fri</a><ul>
+<li><a class="reference internal" href="#id14">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">15 Sat</a><ul>
+<li><a class="reference internal" href="#id16">HPol Work</a></li>
+<li><a class="reference internal" href="#bash">Bash</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id17">17 Mon</a><ul>
+<li><a class="reference internal" href="#id18">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id19">18 Tue</a><ul>
+<li><a class="reference internal" href="#id20">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id21">19 Wed</a><ul>
+<li><a class="reference internal" href="#id22">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id24">20 Thu</a><ul>
+<li><a class="reference internal" href="#id25">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id26">21 Fri</a><ul>
+<li><a class="reference internal" href="#id27">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id28">22 Sat</a><ul>
+<li><a class="reference internal" href="#id29">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id30">23 Sun</a><ul>
+<li><a class="reference internal" href="#id31">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id32">24 Mon</a><ul>
+<li><a class="reference internal" href="#id33">Bash</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id34">25 Tue</a><ul>
+<li><a class="reference internal" href="#id35">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id36">26 Wed</a><ul>
+<li><a class="reference internal" href="#id37">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id38">27 Thu</a><ul>
+<li><a class="reference internal" href="#id39">HPol Work</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id40">28 Fri</a></li>
+<li><a class="reference internal" href="#id41">29 Sat</a></li>
+<li><a class="reference internal" href="#id42">30 Sun</a></li>
+<li><a class="reference internal" href="#id43">31 Mon</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
+</html>
