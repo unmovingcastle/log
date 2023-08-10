@@ -9,7 +9,7 @@ Sphinx
 a.  Reading Sphinx `tutorial <https://www.sphinx-doc.org/en/master/>`_.
 
 
-..  _230804:
+..  _fri230804:
 
 Fri, 4th
 --------
