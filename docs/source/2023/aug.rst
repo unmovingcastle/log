@@ -9,6 +9,7 @@ Sphinx
 a.  Reading Sphinx `tutorial <https://www.sphinx-doc.org/en/master/>`_.
 
 
+..  _230804:
 
 Fri, 4th
 --------
@@ -45,3 +46,18 @@ a.  Started GENETIS documentation (based on Julie's dissertation)
 Sphinx
 ^^^^^^
 a.  Working on GENETIS documentation
+
+
+
+10 Thu
+------
+Sphinx
+^^^^^^
+a.  GENETIS documentation: ``User's Guide/PAEA/Scripts of the loop``.
+
+..  todo::
+
+    *   Setup Vercel for genetis doc and send to D'Elle
+    *   Finish watching XF video
+    *   Start looking into XF PEC script
+    *   Ezio's comment (``GENETIS_HPol`` PR's)
