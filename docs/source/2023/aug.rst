@@ -61,3 +61,31 @@ a.  GENETIS documentation: ``User's Guide/PAEA/Scripts of the loop``.
     *   Finish watching XF video
     *   Start looking into XF PEC script
     *   Ezio's comment (``GENETIS_HPol`` PR's)
+
+
+
+11 Fri
+------
+
+Meeting
+^^^^^^^
+a.  Alan: 
+    
+    *   OSC down on Tuesday; ``icAraCoincidence`` at low energies canceled so
+        had to resubmit.
+    *   Reviewed functions in AraSim and studying ``birefringence.cc``.
+
+b.  Alex:
+
+    *   PUEO antenna: epsilon wteaks to the base model to reduce impedence to
+        close to 50 ohms purely as resistance to match to the cables. 
+        Stuck with the best example being no resistance and reactance close to
+        50 ohms.
+    *   Alex reviewed Dylan's PR for speeding up PUEO loop, trying to apply the
+        same technique to the XF part of the loop.
+
+c.  Jason:
+
+    *   GENETIS Documentation.
+    *   Learning XF.
+    *   ``GENETIS_HPol`` branch ``d`` PR: resolving Ezio's comments.
