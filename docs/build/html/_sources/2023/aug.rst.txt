@@ -89,3 +89,12 @@ c.  Jason:
     *   GENETIS Documentation.
     *   Learning XF.
     *   ``GENETIS_HPol`` branch ``d`` PR: resolving Ezio's comments.
+
+
+
+13 Sun
+------
+Sphinx
+^^^^^^
+a.  Restructured GENETIS documentation: 4 categories of documentation
+    according to `diataxis <https://diataxis.fr/>`_.
