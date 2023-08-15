@@ -98,3 +98,12 @@ Sphinx
 ^^^^^^
 a.  Restructured GENETIS documentation: 4 categories of documentation
     according to `diataxis <https://diataxis.fr/>`_.
+
+
+
+14 Tue
+------
+Sphinx
+^^^^^^
+a.  Working on GENETIS documentation ``User's Guide/PAEA Introduciotn/Reference:
+    PAEA Loop/ Part (A): genetic algorithm and its data``
