@@ -101,9 +101,19 @@ a.  Restructured GENETIS documentation: 4 categories of documentation
 
 
 
-14 Tue
+15 Tue
 ------
 Sphinx
 ^^^^^^
 a.  Working on GENETIS documentation ``User's Guide/PAEA Introduciotn/Reference:
     PAEA Loop/ Part (A): genetic algorithm and its data``
+
+
+
+16 Wed
+------
+XFdtd
+^^^^^
+a.  Reading the User's Guide Chapter 2; making the bow tie antenna.
+
+
