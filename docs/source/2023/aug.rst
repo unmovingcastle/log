@@ -117,3 +117,12 @@ XFdtd
 a.  Reading the User's Guide Chapter 2; making the bow tie antenna.
 
 
+
+17 Thu
+------
+*TA training all day*
+
+18 Fri
+------
+*TA training all day*
+
