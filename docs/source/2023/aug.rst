@@ -126,3 +126,11 @@ a.  Reading the User's Guide Chapter 2; making the bow tie antenna.
 ------
 *TA training all day*
 
+
+21 Mon
+------
+Today's Meeting
+^^^^^^^^^^^^^^^
+1.  Make a test loop and document testing procedure.
+2.  Get documentation ready to present to Ezio by Wedensday;
+    Message Dylan and Bryan on Slack.
