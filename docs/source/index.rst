@@ -13,9 +13,8 @@ Year 2023
 
 .. toctree::
    :maxdepth: 1
+   :glob:
 
    usage
-   2023/may
-   2023/june
-   2023/july
-   2023/aug
+   2023/*
+   paper/index
