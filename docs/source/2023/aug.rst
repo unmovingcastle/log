@@ -134,3 +134,34 @@ Today's Meeting
 1.  Make a test loop and document testing procedure.
 2.  Get documentation ready to present to Ezio by Wedensday;
     Message Dylan and Bryan on Slack.
+
+23 Wed
+------
+Sphinx
+^^^^^^
+Working on getting the documentation ready for Ezio to go over.
+
+..  note::
+
+    still not quite finished though.
+
+
+25 Fri
+------
+TODO List:
+
+*   Get the documentation ready for ``HPol`` repo
+*   Standardize testing procedure and make a tutorial
+*   Updte ``HPol`` (Ezio's comment in 
+    `PR 6 <https://github.com/osu-particle-astrophysics/GENETIS_HPol/pull/6>`_).
+
+.. note::
+
+    #.  Merge PR #8 and #6, 
+    #.  Get ``HPol`` ready up until ``part d``
+    #.  Move ``GENETIS_doc`` into ``HPol``.  **Use autodoc** to document
+        scripts (``part A`` to ``part f`` documentation should be automatically
+        generated to keep them up-to-date alwasy)
+
+*   Ezio: Docker
+*   Learn XF
