@@ -2,7 +2,10 @@ readings
 ========
 These are readings notes.
 
-..  toctree::
+Table of Contents
+-----------------
+
+..  toctree:: 
     :maxdepth: 1
 
-    pueo_summary
+    pueo/pueo_summary
