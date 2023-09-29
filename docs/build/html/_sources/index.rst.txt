@@ -15,6 +15,6 @@ Year 2023
    :maxdepth: 1
    :glob:
 
-   usage
-   2023/*
    paper/index
+   2023/*
+   usage

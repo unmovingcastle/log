@@ -1,4 +1,4 @@
-readings
+Readings
 ========
 These are readings notes.
 

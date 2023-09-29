@@ -40,3 +40,13 @@ Cosmogenic Neutrinos
 
     Depth of Shower Maximum
         what
+    
+    FSRQ
+        what
+
+*   "fluctuate to have no prototypes within the GZK horizon, a plausible scenario for source classes with
+    few objects and/or strongly positive source evolution."
+
+UHE Astrophysical Neutrinos
+-----------------------------
+
