@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: My research log
-author: 
+author: Jason Yao
 # logo: logo.png
 
 # Force re-execution of notebooks on each build.
@@ -28,9 +28,9 @@ execute:
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-html:
-  use_issues_button: true
-  use_repository_button: true
+#html:
+#   use_issues_button: true
+#   use_repository_button: true
 
 
 sphinx:
