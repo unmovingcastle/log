@@ -26,8 +26,6 @@ Steradian
 > sources reach extreme maximum acceleration energies, and/or are
 > more populous at large redshifts."
 
-% a comment
-hello 
 
 ---
 
