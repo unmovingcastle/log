@@ -2,7 +2,13 @@
 
 ```{glossary}
 Air shower
-    add me
+    Consider the case where a $\tau$-neutrino gives birth to a $\tau$-lepton in ice, which
+    travels for a distance and then decays in air. Charges will be produced in air,
+    and because of the magnetic field of the Earth, *geomagnetic emission* takes
+    place, and radio signal can be detected by the payload.
+
+    This term also refers to in-air showers caused by cosmic rays, which produce
+    radio waves that are horizonally polarized.
 ```
 
 ##  Cosmogenic Neutrinos
@@ -12,7 +18,7 @@ Photodisintegration
     ADD ME ADD ME ADD ME
 
 Chemical composition at Earth
-    ADD ME
+    Chemical composition [of cosmic rays detected] at Earth.
 
 Steradian
     The [dimensionless] unit of solid angle in SI units,
@@ -31,7 +37,7 @@ Steradian
 
 ```{glossary}
 Uniform source class
-    ADD ME ADD ME ADD ME ADD ME
+    This refers to the assumption that cosmic ray sources are more or less homogeneous in space and in time.
 ```
 
 
