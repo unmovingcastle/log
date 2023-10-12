@@ -4,5 +4,5 @@
 
 * Not sure what Figure 5 is suppose to do.
 
-* Also not sure why HPol signla is small.
+* Also not sure why HPol signal is small.
 
