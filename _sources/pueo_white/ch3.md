@@ -19,4 +19,6 @@ Shower
 > exceeded."
 
 
+## Radio Detection Platforms
 
+> "...larger aperature generally comes at the price of a higher threshold..."
