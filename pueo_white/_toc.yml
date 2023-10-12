@@ -9,3 +9,4 @@ parts:
   - file: pueo_white/ch1
   - file: pueo_white/ch2
   - file: pueo_white/ch3
+  - file: pueo_white/ch4

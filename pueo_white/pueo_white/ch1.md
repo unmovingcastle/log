@@ -1,5 +1,13 @@
 #   Introduction
 
+```{admonition} questions to answer before next meeting
+:class: dropdown
+1. In the context of the field, what has been done before?
+2. In the context of the field, what is PUEO?
+3. Why do we care?
+```
+
+
 ```{glossary}
 Beam-forming trigger
     Also known as *phased-array* trigger. The basic idea is that the waveforms

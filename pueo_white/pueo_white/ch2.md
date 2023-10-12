@@ -41,5 +41,3 @@ Uniform source class
 ```
 
 
-
-hello world
