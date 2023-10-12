@@ -6,11 +6,25 @@
 Shower
     In particle physics, a shower is a *cascade* of secondary particles produced
     as the result of a high-energy particle interacting with dense matter (Wikipedia).
+
+Electromagnetic shower
+    Denoted by $X$.
+
+    > An EM shower begins when a high-energy electron, positron or photon enters a material. At high energies,
+    > in which the photoelectric effect and Compton scattering are insignificant, photons interact with matter
+    > primarily via pair production -- that is, they convert into an electron-positron pair, interacting with
+    > an atomic nucleus or electron in order to conserve momentum. High-energy electrons and positrons primarily
+    > emit photons, a process called *bremsstrahlung*...Pair production and bremsstrahlung continue, leading to
+    > a *cascade* of particles of decreasing energy until phtotons fall below the pair production threshold.
+
+    See the [Wikipedia page on EM showers](https://en.wikipedia.org/wiki/Particle_shower#Electromagnetic_showers)
+
+Hadronic shower
+    Hadronic showers are produced by hadrons (i.e. nucleons and other particles made of quarks), 
+    and proceed mostly via the strong nuclear force.
 ```
 
----
 
-* What is the difference between EM showers and hadronic showers?
 
 ## Geomagnetic Emission form Air Showers
 
@@ -18,7 +32,13 @@ Shower
 > the narrow emission cone, the overall aperture is less [?] once the Askaryan channel threshold is
 > exceeded."
 
+```{admonition} todo
+Add the figure here
+```
+
 
 ## Radio Detection Platforms
 
 > "...larger aperature generally comes at the price of a higher threshold..."
+
+ie. "Threshold" below which we cannot detect.
