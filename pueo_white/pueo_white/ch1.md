@@ -3,7 +3,16 @@
 ```{admonition} questions to answer before next meeting
 :class: dropdown
 1. In the context of the field, what has been done before?
+   
+   * Beam test
+   * ANITA 
+
 2. In the context of the field, what is PUEO?
+
+    A more powerful version of ANITA, with more antennas and a better trigger.
+
+    > "...imrpoves sensitivity by more than an order of magnitude at energies below 30 Eev."
+
 3. Why do we care?
 ```
 
