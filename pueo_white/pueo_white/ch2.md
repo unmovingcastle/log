@@ -13,12 +13,21 @@ Air shower
 
 ##  Cosmogenic Neutrinos
 
+> " ...chemical composition  at Earth is still uncertain."
+
+ie. We are not certain about the chemical composition of cosmic rays detected 
+at Earth. It could be mostly protons or heavier nucleus (eg. iron).
+
+> "...leading to significant uncertainties in predicted cosmogenic neutrino fluxes..."
+
+ie. If UHECR consists mostly of protons, then more neutrinos would be generated.
+
+---
+
+
 ```{glossary}
 Photodisintegration
     ADD ME ADD ME ADD ME
-
-Chemical composition at Earth
-    Chemical composition [of cosmic rays detected] at Earth.
 
 Steradian
     The [dimensionless] unit of solid angle in SI units,
@@ -37,7 +46,31 @@ Steradian
 
 ```{glossary}
 Uniform source class
-    This refers to the assumption that cosmic ray sources are more or less homogeneous in space and in time.
+    This refers to the assumption that cosmic ray sources are more or less homogeneous in 
+    space and in time.
+
+```
+## UHE Astrophysical Neutrinos
+
+```{glossary}
+GRB
+    Gamma-ray burst.
+
+FSRQ
+    Flat-spectrum radio quasars are objects with emission-line dominated spectra.
+
+Quasar
+    A quasar is an extremely luminous AGN. It is sometimes know as a *quasi-stellar object*,
+    or *QSO*. [Wikipedia](https://en.wikipedia.org/wiki/Quasar)
 ```
 
+---
+>   "Depending on the number of sources and their distances, the flux from astrophysical 
+    neutrinos may appear **diffuse** or may be resolvable with **stacking searches**."
+
+diffuse
+    meaning?
+
+stacking searches
+    meaning?
 

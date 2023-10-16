@@ -1,5 +1,6 @@
 .venv/
 *.vscode
 *DS_STORE
+tmux*
 pueo_white/_build
 
