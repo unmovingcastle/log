@@ -5,6 +5,11 @@
 1. In the context of the field, what has been done before?
    
    * Beam test
+    > A series of beam test experiments have demonstrated the Askaryan effect in various 
+    natural media...[Test T-486] probed the Askaryan effect in ice.
+
+    but why do the resulting showers have higher energy? (page 9)
+
    * ANITA 
 
 2. In the context of the field, what is PUEO?
