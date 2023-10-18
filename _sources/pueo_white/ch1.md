@@ -1,7 +1,7 @@
 #   Introduction
 
 ```{admonition} questions to answer before next meeting
-:class: dropdown
+<!-- :class: dropdown -->
 1. In the context of the field, what has been done before?
    
    * Beam test
@@ -14,6 +14,15 @@
     > "...imrpoves sensitivity by more than an order of magnitude at energies below 30 Eev."
 
 3. Why do we care?
+
+    > "neutrinos are unimpeded as they make their way across the universe,
+        carrying information about distant sources that is not accessible
+        otherwise"
+
+    In other words, studying neutrino is currently one of the few options we 
+    have to study distant objects in the universe.
+    In particular, PUEO is more capable of detecting transient astrophysical sources due to
+    its large instantaneous aperture (ch 2.2).
 ```
 
 
