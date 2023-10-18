@@ -1,7 +1,7 @@
 #   Introduction
 
 ```{admonition} questions to answer before next meeting
-<!-- :class: dropdown -->
+:class: dropdown
 1. In the context of the field, what has been done before?
    
    * Beam test
