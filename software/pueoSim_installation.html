@@ -1,0 +1,691 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Install pueoBuilder &#8212; My research log</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/pueoSim_installation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to Set up Github credentials on Linux/macOS" href="setting_up_github_ssh.html" />
+    <link rel="prev" title="Review of Results from ANITA" href="../pueo_white/ch4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">My research log</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pueo White Paper Reading Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pueo_white/ch1.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pueo_white/ch2.html">The PUEO Science Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pueo_white/ch3.html">The Radio Detection Technique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pueo_white/ch4.html">Review of Results from ANITA</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Install pueoBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setting_up_github_ssh.html">How to Set up Github credentials on Linux/macOS</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/unmovingcastle/log" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/unmovingcastle/log/edit/main/pueo_white/software/pueoSim_installation.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/unmovingcastle/log/issues/new?title=Issue%20on%20page%20%2Fsoftware/pueoSim_installation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/software/pueoSim_installation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Install pueoBuilder</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-on-osc">Installing on OSC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-mamba-conda">installing Mamba (Conda)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-pueo-environment">create PUEO environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-cmake">installing cmake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-pueobuilder-repository">clone the pueoBuilder repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pueosim-test-run">pueoSim test run</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-on-fedora-linux">Installing on Fedora Linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-on-macos">Installing on macOS</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="install-pueobuilder">
+<span id="id1"></span><h1>Install pueoBuilder<a class="headerlink" href="#install-pueobuilder" title="Permalink to this heading">#</a></h1>
+<p>This is the original <a class="reference download internal" download="" href="../_downloads/c6b500bf336086bc778b180b3e1ff195/pueo_installation_guide.pdf"><code class="xref download docutils literal notranslate"><span class="pre">guide</span></code></a> from Kaeli.</p>
+<section id="installing-on-osc">
+<span id="id2"></span><h2>Installing on OSC<a class="headerlink" href="#installing-on-osc" title="Permalink to this heading">#</a></h2>
+<section id="installing-mamba-conda">
+<h3>installing Mamba (Conda)<a class="headerlink" href="#installing-mamba-conda" title="Permalink to this heading">#</a></h3>
+<p>We use mamba instead of Conda because it is much faster.
+It is possible to install <a class="reference external" href="https://mamba.readthedocs.io/en/latest/%3E">Mamba</a> through
+an existing Anaconda (or Miniconda) installation, but this method is not recommended by Mamba.</p>
+<p>Instead, head over to the
+<a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">Mambaforge (aka Miniforge) distribution</a>
+and download Mamba installation script through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span><span class="s2">&quot;https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh&quot;</span>
+</pre></div>
+</div>
+<p>and run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>Miniforge3-Linux-x86_64.sh
+</pre></div>
+</div>
+<p>to install the Linux x86_64 (amd64) version of Mambaforge (read the license agreement,
+type <code class="docutils literal notranslate"><span class="pre">yes</span></code> and press <kbd class="kbd docutils literal notranslate">Enter</kbd>)</p>
+<p>Next, initialize Mamba through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>init<span class="w"> </span>bash
+</pre></div>
+</div>
+<p>or if you use zshell,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>init<span class="w"> </span>zsh
+</pre></div>
+</div>
+<p>This will set up your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> (<code class="docutils literal notranslate"><span class="pre">.zshrc</span></code>) file for mamba.</p>
+<p>Mamba might might ask you</p>
+<blockquote>
+<div><p>Do you wish the installer to initialize Miniforge3 by running conda init? [yes|no]</p>
+</div></blockquote>
+<p>and you should enter <code class="docutils literal notranslate"><span class="pre">yes</span></code>.
+You will need to exit the terminal and re-open for the change to take effect.
+Once done, you should see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> showing up on your terminal prompt, indicating the base
+environment is active.</p>
+<p>If not, try entering
+<code class="docutils literal notranslate"><span class="pre">bash</span></code>.</p>
+<p>You can confirm that you have an environment called “base” by entering the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>info<span class="w"> </span>--env
+</pre></div>
+</div>
+<p>You may delete the installation script through
+<code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">Miniforge3-Linux-x86_64.sh</span></code>.</p>
+<p>Next, you would want to install <code class="docutils literal notranslate"><span class="pre">conda-devenv</span></code> through
+<code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">install</span> <span class="pre">conda-devenv</span></code>. You can find the documentation for <code class="docutils literal notranslate"><span class="pre">conda-devenv</span></code>
+<a class="reference external" href="https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh">here</a></p>
+</section>
+<section id="create-pueo-environment">
+<h3>create PUEO environment<a class="headerlink" href="#create-pueo-environment" title="Permalink to this heading">#</a></h3>
+<p>Next, we will create an environment using <code class="docutils literal notranslate"><span class="pre">mamba</span></code>.
+Using <code class="docutils literal notranslate"><span class="pre">vim</span></code> or any editor, create a text file called <code class="docutils literal notranslate"><span class="pre">pueo.devenv.yml</span></code> containing the following:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pueo_env</span>
+<span class="nt">channels</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conda-forge</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">defaults</span>
+
+<span class="nt">dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fftw</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
+
+<span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PUEO_BUILD_DIR</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/users/PASxxxx/${USERNAME}/pueo/usr</span>
+<span class="w">  </span><span class="nt">PUEO_UTIL_INSTALL_DIR</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/users/PASxxxx/${USERNAME}/pueo/usr/install</span>
+<span class="w">  </span><span class="nt">NICEMC_SRC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/users/PASxxxx/${USERNAME}/pueo/usr/components/nicemc</span>
+<span class="w">  </span><span class="nt">NICEMC_BUILD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/users/PASxxxx/${USERNAME}/pueo/usr/build/components/nicemc</span>
+<span class="w">  </span><span class="nt">PUEOSIM_SRC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/users/PASxxxx/${USERNAME}/pueo/usr/components/pueoSim</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Change PASxxxx/${USERNAME} to where your home directory is located!</p>
+</div>
+<p>In the terminal, type <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code> to go back to your home directory, and create a <code class="docutils literal notranslate"><span class="pre">pueo</span></code> directory
+through <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">-p</span> <span class="pre">~/pueo</span></code>.</p>
+<p>Put the <code class="docutils literal notranslate"><span class="pre">pueo.devenv.yml</span></code> file inside your pueo folder and enter the folder: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/pueo</span></code>.</p>
+<p>Make sure that <code class="docutils literal notranslate"><span class="pre">(base)</span></code> is active. If not, run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">base</span></code>.
+Next, create a new environment called <code class="docutils literal notranslate"><span class="pre">pueo_env</span></code> through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba-devenv<span class="w"> </span>-f<span class="w"> </span>pueo.devenv.yml
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is important that you run <code class="docutils literal notranslate"><span class="pre">mamba-devenv</span></code> and not <code class="docutils literal notranslate"><span class="pre">conda-devenv</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">devenv</span></code>.
+Anything that is not <code class="docutils literal notranslate"><span class="pre">mamba-devenv</span></code> seems to be exceedingly slow on OSC</p>
+</div>
+<p>The above command creates a conda environment with required packages and environment variables
+(such as <code class="docutils literal notranslate"><span class="pre">${PUEO_BUILD_DIR}</span></code>). Activate this new environment through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w">  </span>activate<span class="w"> </span>peuo_env
+</pre></div>
+</div>
+<p>(or <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">pueo_env</span></code>)</p>
+</section>
+<section id="installing-cmake">
+<h3>installing cmake<a class="headerlink" href="#installing-cmake" title="Permalink to this heading">#</a></h3>
+<p>OSC has <a class="reference external" href="https://www.osc.edu/resources/available_software/software_list/cmake">cmake</a>
+already installed. To use cmake version 3.11.4, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module<span class="w"> </span>load<span class="w"> </span>cmake/3.11.4
+</pre></div>
+</div>
+<p>and check that the version is activated through <code class="docutils literal notranslate"><span class="pre">cmake</span> <span class="pre">--version</span></code>.</p>
+</section>
+<section id="clone-the-pueobuilder-repository">
+<h3>clone the pueoBuilder repository<a class="headerlink" href="#clone-the-pueobuilder-repository" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Refer to <a class="reference internal" href="setting_up_github_ssh.html"><span class="doc">How to Set up Github credentials on Linux/macOS</span></a> to set up your GitHub credentials.</p></li>
+<li><p>Make sure that the <code class="docutils literal notranslate"><span class="pre">pueo_env</span></code> environment is actived.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/pueo</span></code> and then clone the
+<a class="reference external" href="https://github.com/PUEOCollaboration/pueoBuilder">pueoBuilder repository</a>
+through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:PUEOCollaboration/pueoBuilder<span class="w"> </span>./usr
+</pre></div>
+</div>
+<p>This would put every file in the pueoBuilder repository inside a newly created
+folder called <code class="docutils literal notranslate"><span class="pre">~/pueo/usr/</span></code>.</p>
+</li>
+<li><p>Create a folder inside <code class="docutils literal notranslate"><span class="pre">~/pueo/usr/</span></code> called <code class="docutils literal notranslate"><span class="pre">install</span></code> through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>~/pueo/usr/install
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> into <code class="docutils literal notranslate"><span class="pre">usr</span></code> and enter the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./pueoBuilder.sh
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="pueosim-test-run">
+<h3>pueoSim test run<a class="headerlink" href="#pueosim-test-run" title="Permalink to this heading">#</a></h3>
+<p>Create a temporary folder in your home directory through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>~/temp
+</pre></div>
+</div>
+<p>and head over to to the pueoBuilder directory <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~/pueo/usr</span></code>. Start a test run through</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build/components/pueoSim/simulatePueo<span class="w"> </span>-i<span class="w"> </span>pueo.conf<span class="w"> </span>-o<span class="w"> </span>~/temp<span class="w"> </span>-r<span class="w"> </span><span class="m">420</span><span class="w"> </span>-n<span class="w"> </span><span class="m">50</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">i</span></code>/<code class="docutils literal notranslate"><span class="pre">o</span></code> stand for <code class="docutils literal notranslate"><span class="pre">i</span></code>nput/<code class="docutils literal notranslate"><span class="pre">o</span></code>utput files, <code class="docutils literal notranslate"><span class="pre">r</span></code> is the run number (just a name) and
+<code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of <code class="docutils literal notranslate"><span class="pre">n</span></code>eutrinots.</p>
+<p>Once the run is complete, you should see a bunch of root files in the temporary folder.</p>
+<p>Congratulations, you have completed pueoSim installation!</p>
+</section>
+</section>
+<section id="installing-on-fedora-linux">
+<h2>Installing on Fedora Linux<a class="headerlink" href="#installing-on-fedora-linux" title="Permalink to this heading">#</a></h2>
+<p>See <a class="reference internal" href="#installing-on-osc"><span class="std std-ref">Installing on OSC</span></a>.
+The steps are pretty much the same.</p>
+<p>Fedora most like already has CMake installed. If not, run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>cmake
+</pre></div>
+</div>
+<p>to install cmake. You need your password for this.</p>
+<p>Alternatively, refer to CMake section in the original document
+<a class="reference internal" href="#install-pueobuilder"><span class="std std-ref">Install pueoBuilder</span></a> to compile CMake.</p>
+</section>
+<section id="installing-on-macos">
+<h2>Installing on macOS<a class="headerlink" href="#installing-on-macos" title="Permalink to this heading">#</a></h2>
+<p>I haven’t figure out how to do this.
+Maybe it is easier to install Asahi Linux on Mac and then run through all the steps in
+<a class="reference internal" href="#installing-on-osc"><span class="std std-ref">Installing on OSC</span></a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./software"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../pueo_white/ch4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Review of Results from ANITA</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="setting_up_github_ssh.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How to Set up Github credentials on Linux/macOS</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-on-osc">Installing on OSC</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-mamba-conda">installing Mamba (Conda)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-pueo-environment">create PUEO environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-cmake">installing cmake</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-pueobuilder-repository">clone the pueoBuilder repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pueosim-test-run">pueoSim test run</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-on-fedora-linux">Installing on Fedora Linux</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-on-macos">Installing on macOS</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jason Yao
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
