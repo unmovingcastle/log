@@ -8,8 +8,9 @@ This is the original {download}`guide <pueo_installation_guide.pdf>` from Kaeli.
 
 ### installing Mamba (Conda)
 
-We use mamba instead of Conda because it is much faster.
-It is possible to install [Mamba](https://mamba.readthedocs.io/en/latest/>) through
+We use [Mamba](https://mamba.readthedocs.io/en/latest/mamba-installation.html)
+to manage packages and environments instead of Conda because it is much faster.
+It is possible to install Mamba through
 an existing Anaconda (or Miniconda) installation, but this method is not recommended by Mamba.
 
 Instead, head over to the 
