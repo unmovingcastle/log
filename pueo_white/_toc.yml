@@ -10,3 +10,7 @@ parts:
   - file: pueo_white/ch2
   - file: pueo_white/ch3
   - file: pueo_white/ch4
+- caption: Software
+  chapters:
+  - file: software/pueoSim_installation
+  - file: software/setting_up_github_ssh

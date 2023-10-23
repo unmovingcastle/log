@@ -1,10 +1,15 @@
 #   Introduction
 
 ```{admonition} questions to answer before next meeting
-<!-- :class: dropdown -->
+:class: dropdown
 1. In the context of the field, what has been done before?
    
    * Beam test
+    > A series of beam test experiments have demonstrated the Askaryan effect in various 
+    natural media...[Test T-486] probed the Askaryan effect in ice.
+
+    but why do the resulting showers have higher energy? (page 9)
+
    * ANITA 
 
 2. In the context of the field, what is PUEO?
@@ -21,6 +26,8 @@
 
     In other words, studying neutrino is currently one of the few options we 
     have to study distant objects in the universe.
+    In particular, PUEO is more capable of detecting transient astrophysical sources due to
+    its large instantaneous aperture (ch 2.2).
 ```
 
 
