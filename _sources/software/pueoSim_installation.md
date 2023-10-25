@@ -36,7 +36,7 @@ mamba init zsh
 ```
 This will set up your `.bashrc` (`.zshrc`) file for mamba.
 
-Mamba might might ask you
+Mamba might ask you
 > Do you wish the installer to initialize Miniforge3 by running conda init? [yes|no]
 
 and you should enter `yes`.
