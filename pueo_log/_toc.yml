@@ -11,6 +11,7 @@ parts:
   chapters:
   - file: software/pueoSim_installation
   - file: software/setting_up_github_ssh
+  - file: software/ssh_autopassword
 - caption: Pueo White Paper Reading Questions
   chapters:
   - file: pueo_white/ch1
