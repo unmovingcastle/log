@@ -11,7 +11,7 @@
     *   Make sure that each energy gets its own output file so the results are
         not overwritten.
         
-
+(10oct23_example_variables)=
 *   Make plots using the output `.root` files.
     *   These files contain neutrino properties such as
         +   Inelasticity: how likely it is a neutrino is to interact;
