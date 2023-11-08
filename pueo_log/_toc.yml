@@ -7,6 +7,7 @@ parts:
 - caption: Year 2023
   chapters:
   - file: 2023/oct
+  - file: 2023/nov
 - caption: Software
   chapters:
   - file: software/pueoSim_installation
