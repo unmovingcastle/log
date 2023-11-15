@@ -8,6 +8,7 @@ parts:
   chapters:
   - file: 2023/oct
   - file: 2023/nov
+  - file: 2023/question
 - caption: Software
   chapters:
   - file: software/pueoSim_installation
