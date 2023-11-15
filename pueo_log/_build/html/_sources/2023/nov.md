@@ -113,3 +113,19 @@
   ```
 
             
+## Meeting with Kaeli, Wednesday Nov. 15
+*   If ROOT with python continues to not work on OSC, maybe I could try uproot.
+    * uproot does not require matching to a specific ROOT version like pyROOT does,
+        but it also does not load libraries so it might be less intuitive to use.
+*   Make sure to call in on Thursdays 1 pm for the PUEO Simulation Call.
+
+*   This is less important at the moment, but for future reference the PUEO All Call is 
+    on Monday 4pm.
+
+### tasks
++ [ ] Get the pueo environment to work on OSC
+
+```{tip}
+when properly configured, one should have python and ROOT in the environment.
+ie. `~$ python` should work, and inside python, `>>> import ROOT` should work
+```
