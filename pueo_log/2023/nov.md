@@ -123,7 +123,7 @@
     on Monday 4pm.
 
 ### tasks
-+ [ ] Get the pueo environment to work on OSC
++ [x] Get the pueo environment to work on OSC
 
 ```{tip}
 when properly configured, one should have python and ROOT in the environment.
