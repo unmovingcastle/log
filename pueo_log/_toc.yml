@@ -13,6 +13,7 @@ parts:
   - file: software/pueoSim_installation
   - file: software/setting_up_github_ssh
   - file: software/ssh_autopassword
+  - file: software/learning_root/my_first_root_plot.md
 - caption: Pueo White Paper Reading Questions
   chapters:
   - file: pueo_white/ch1
