@@ -436,7 +436,7 @@ which is to be compared with the <a class="reference internal" href="#tbrowser-f
 
 <span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">flavor</span><span class="p">;</span><span class="w"> </span><span class="c1">// neutrino flavor</span>
 
-<span class="w">  </span><span class="c1">// set tree_ptr to point to a specific variable as stored inside the root file</span>
+<span class="w">  </span><span class="c1">// assigning the variable flavor above to the corresponding var. stored inside the root file</span>
 <span class="w">  </span><span class="c1">// in this case the variable&#39;s name is eventSummary.neutrino.flavor</span>
 <span class="w">  </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">SetBranchAddress</span><span class="p">(</span><span class="s">&quot;eventSummary.neutrino.flavor&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">flavor</span><span class="p">);</span>
 
@@ -456,6 +456,7 @@ which is to be compared with the <a class="reference internal" href="#tbrowser-f
 
 
 <span class="w">  </span>
+
 <span class="p">}</span>
 </pre></div>
 </div>
