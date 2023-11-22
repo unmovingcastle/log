@@ -50,7 +50,7 @@ void plotter() {
 
   int flavor; // neutrino flavor
 
-  // set tree_ptr to point to a specific variable as stored inside the root file
+  // assigning the variable flavor above to the corresponding var. stored inside the root file
   // in this case the variable's name is eventSummary.neutrino.flavor
   tree_ptr->SetBranchAddress("eventSummary.neutrino.flavor",&flavor);
 
@@ -70,5 +70,6 @@ void plotter() {
 
 
   
+
 }
 ```
