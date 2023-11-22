@@ -2,5 +2,5 @@
 *.vscode
 *DS_STORE
 tmux*
-pueo_white/_build
+pueo_log/_build
 
