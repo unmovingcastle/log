@@ -129,3 +129,43 @@
 when properly configured, one should have python and ROOT in the environment.
 ie. `~$ python` should work, and inside python, `>>> import ROOT` should work
 ```
+
+
+## Meeting with Kaeli, Wednesday Nov. 22
+*  Inelasticity is found under
+   `iceFinal_1_allTree.root/allTree/eventSummary.interaction.y`  
+   (ie. $y\equiv$ inelasticity).
+
+*   No need to worry about the other files (`iceFinal_1_passTree0.root` down
+    to `SimulatePueoHeadFile1_LF.root`) for now. Focus on
+    `IceFinal_1_allTree.root`.
+
+*   Ignore everything inside `eventSummary.interaction.position` when browsing 
+    through `TBrowser` because this is not populated correctly. What `TBrowser`
+    shows is a bunch of methods one can apply to vectors, which is not what we
+    want.
+
+*   Note that `position` is a vector. For the $i^{\rm th}$ neutrino,
+    `position[0]` is the $x$-coordinate, `[1]` for $y$, and `[2]` for $z$.
+    Same idea for `interaction.direction`.
+
+*  A useful way to search for a piece of text:
+    `grep -r desired_text`
+    (searching `r`ecursively)
+
+*   Note that inside the root files, weight might not be the total weight.
+    That is, we have a path weight (path of the neutrino through earth), 
+    a position weight (interaction location), and direction weight 
+    (direction of radio wave). To combine these, we use
+    ```{math}
+    {\rm Weight} = 
+    \frac{\rm path\;weight}
+         {{\rm position\;weight}*{\rm direction\;weight}}
+    ```
+
+
+### tasks
++ [ ] Contact OSC regarding python segmentation fault
++ [ ] Make the unweighted plots for flavor, inelasticity, and direction.
++ [ ] time permitting, add weights to the plots (google cern root weighted
+        histogram)
