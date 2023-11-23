@@ -413,7 +413,8 @@ document.write(`
 <p>Here is a script that plots the inelasticity histogram in the olden days:</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TFile.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TCanvas.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TTree&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TTree.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TH1F.h&gt;</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">inelasticity_plotter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">TFile</span><span class="w"> </span><span class="o">*</span><span class="n">file_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TFile</span><span class="p">(</span><span class="s">&quot;2023-11-09_nnt_100.0_energy_21/run1/IceFinal_1_allTree.root&quot;</span><span class="p">,</span><span class="s">&quot;read&quot;</span><span class="p">);</span>
@@ -440,7 +441,7 @@ document.write(`
 <section id="using-rdataframe">
 <h2>Using RDataFrame<a class="headerlink" href="#using-rdataframe" title="Permalink to this heading">#</a></h2>
 <p>Here is a three-liner using <code class="docutils literal notranslate"><span class="pre">ROOT::RDataFrame</span></code>.</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;RDataFrame.h&gt;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;RDataFrame.hxx&gt;</span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">ROOT</span><span class="p">;</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">inelasticity_plotter2</span><span class="p">(){</span>

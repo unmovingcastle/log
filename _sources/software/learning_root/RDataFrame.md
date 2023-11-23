@@ -12,7 +12,8 @@ Here is a script that plots the inelasticity histogram in the olden days:
 ```c++
 #include <TFile.h>
 #include <TCanvas.h>
-#include <TTree>
+#include <TTree.h>
+#include <TH1F.h>
 
 void inelasticity_plotter() {
   TFile *file_ptr = new TFile("2023-11-09_nnt_100.0_energy_21/run1/IceFinal_1_allTree.root","read");
@@ -41,7 +42,7 @@ void inelasticity_plotter() {
 Here is a three-liner using `ROOT::RDataFrame`.
 
 ```c++
-#include <RDataFrame.h>
+#include <RDataFrame.hxx>
 using namespace ROOT;
 
 void inelasticity_plotter2(){
