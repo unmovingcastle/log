@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>My First Root Plot &#8212; My research log</title>
+    <title>Learning RDataFrame &#8212; My research log</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'software/learning_root/my_first_root_plot';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/learning_root/RDataFrame';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Learning RDataFrame" href="RDataFrame.html" />
-    <link rel="prev" title="How to: Password-less ssh" href="../ssh_autopassword.html" />
+    <link rel="next" title="Introduction" href="../../pueo_white/ch1.html" />
+    <link rel="prev" title="My First Root Plot" href="my_first_root_plot.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,8 +170,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../pueoSim_installation.html">Install pueoBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setting_up_github_ssh.html">How to Set up Github credentials on Linux/macOS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ssh_autopassword.html">How to: Password-less ssh</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">My First Root Plot</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RDataFrame.html">Learning RDataFrame</a></li>
+<li class="toctree-l1"><a class="reference internal" href="my_first_root_plot.html">My First Root Plot</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Learning RDataFrame</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Pueo White Paper Reading Questions</span></p>
 <ul class="nav bd-sidenav">
@@ -250,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/unmovingcastle/log/edit/main/pueo_white/software/learning_root/my_first_root_plot.md" target="_blank"
+      <li><a href="https://github.com/unmovingcastle/log/edit/main/pueo_white/software/learning_root/RDataFrame.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -267,7 +267,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/unmovingcastle/log/issues/new?title=Issue%20on%20page%20%2Fsoftware/learning_root/my_first_root_plot.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/unmovingcastle/log/issues/new?title=Issue%20on%20page%20%2Fsoftware/learning_root/RDataFrame.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/software/learning_root/my_first_root_plot.md" target="_blank"
+      <li><a href="../../_sources/software/learning_root/RDataFrame.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -366,7 +366,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -377,11 +379,20 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>My First Root Plot</h1>
+    <h1>Learning RDataFrame</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-old-way">The old way</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-rdataframe">Using RDataFrame</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -391,76 +402,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="my-first-root-plot">
-<h1>My First Root Plot<a class="headerlink" href="#my-first-root-plot" title="Permalink to this heading">#</a></h1>
-<figure class="align-default" id="my-flavor-plot">
-<img alt="../../_images/my_flavor.png" src="../../_images/my_flavor.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">my neutrino flavor plot for run 1 out of 100.</span><a class="headerlink" href="#my-flavor-plot" title="Permalink to this image">#</a></p>
-</figcaption>
+  <section class="tex2jax_ignore mathjax_ignore" id="learning-rdataframe">
+<h1>Learning RDataFrame<a class="headerlink" href="#learning-rdataframe" title="Permalink to this heading">#</a></h1>
+<p>Consider the tree structure below.</p>
+<figure class="align-default">
+<img alt="../../_images/tbrowser_file_structure.png" src="../../_images/tbrowser_file_structure.png" />
 </figure>
-<p>I wrote a root-macro script to generate <a class="reference internal" href="#my-flavor-plot"><span class="std std-ref">my neutrino flavor plot for run 1 out of 100.</span></a>,
-which is to be compared with the <a class="reference internal" href="#tbrowser-flavor"><span class="std std-ref">neutrino flavor plot for run 1 out of 100, generated using TBrowser.</span></a>.</p>
-<figure class="align-default" id="tbrowser-flavor">
-<img alt="../../_images/tbrowser_flavor.png" src="../../_images/tbrowser_flavor.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">neutrino flavor plot for run 1 out of 100, generated using TBrowser.</span><a class="headerlink" href="#tbrowser-flavor" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<hr class="docutils" />
-<p>The script (<code class="docutils literal notranslate"><span class="pre">plotter.cpp</span></code>) is as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TCanvas.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TFile.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TH1F.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TTree.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<section id="the-old-way">
+<h2>The old way<a class="headerlink" href="#the-old-way" title="Permalink to this heading">#</a></h2>
+<p>Here is a script that plots the inelasticity histogram in the olden days:</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TFile.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TCanvas.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TTree&gt;</span>
 
-<span class="c1">// The lines above are not needed to run the macro but are included here so that my neovim</span>
-<span class="c1">// Lsp can find the types such as TH1F. Note: also note that a compile_flags.txt file that has</span>
-<span class="c1">// the proper include path, for example mine is -I/usr/include/root, is required for the Lsp</span>
-<span class="c1">// to find the header files.</span>
-
-<span class="w">   </span><span class="c1">//method name has to match file name</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">plotter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">  </span><span class="c1">// ptr for pointer</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">inelasticity_plotter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="n">TFile</span><span class="w"> </span><span class="o">*</span><span class="n">file_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TFile</span><span class="p">(</span><span class="s">&quot;2023-11-09_nnt_100.0_energy_21/run1/IceFinal_1_allTree.root&quot;</span><span class="p">,</span><span class="s">&quot;read&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="n">TCanvas</span><span class="w"> </span><span class="o">*</span><span class="n">c1_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TCanvas</span><span class="p">();</span>
-
-<span class="w">            </span><span class="c1">// file_ptr-&gt;Get(&quot;allTree&quot;) returns the address of allTree</span>
-<span class="w">            </span><span class="c1">// but this needs to be casted to the correct type, which is done by</span>
-<span class="w">            </span><span class="c1">// the  (TTree*)  part.</span>
+<span class="w">  </span><span class="n">TCanvas</span><span class="w"> </span><span class="o">*</span><span class="n">c2_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TCanvas</span><span class="p">();</span>
 <span class="w">  </span><span class="n">TTree</span><span class="w"> </span><span class="o">*</span><span class="n">tree_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TTree</span><span class="o">*</span><span class="p">)</span><span class="n">file_ptr</span><span class="o">-&gt;</span><span class="n">Get</span><span class="p">(</span><span class="s">&quot;allTree&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="c1">// Alternatively, this first TTree *tree_ptr could have been auto *tree_ptr,</span>
-<span class="w">  </span><span class="c1">// in which case we wouldn&#39;t need the casting.</span>
 
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">flavor</span><span class="p">;</span><span class="w"> </span><span class="c1">// neutrino flavor</span>
+<span class="w">  </span><span class="kt">double</span><span class="w"> </span><span class="n">inelasticity</span><span class="p">;</span>
 
-<span class="w">  </span><span class="c1">// assigning the variable flavor above to the corresponding var. stored inside the root file</span>
-<span class="w">  </span><span class="c1">// in this case the variable&#39;s name is eventSummary.neutrino.flavor</span>
-<span class="w">  </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">SetBranchAddress</span><span class="p">(</span><span class="s">&quot;eventSummary.neutrino.flavor&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">flavor</span><span class="p">);</span>
+<span class="w">  </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">SetBranchAddress</span><span class="p">(</span><span class="s">&quot;eventSummary.interaction.y&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">inelasticity</span><span class="p">);</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">num_entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">GetEntries</span><span class="p">();</span><span class="w"> </span>
 
-<span class="w">  </span><span class="c1">// this particular root file contains 100 neutrinoes, so num_entries should be 100.</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">num_entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">GetEntries</span><span class="p">();</span>
+<span class="w">  </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">hist_2_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">&quot;inelasticity&quot;</span><span class="p">,</span><span class="s">&quot;run1 inelasticity&quot;</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="w">                                                            </span><span class="c1">// 4 bins, x start:0, x end: 4</span>
-<span class="w">  </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">hist_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">&quot;my_histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;histogram_title&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
-
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">num_entries</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">num_entries</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
 <span class="w">    </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">GetEntry</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="w">    </span><span class="n">hist_ptr</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="p">(</span><span class="n">flavor</span><span class="p">);</span>
+<span class="w">    </span><span class="n">hist_2_ptr</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="p">(</span><span class="n">inelasticity</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 
-<span class="w">  </span><span class="n">hist_ptr</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
-<span class="w">  </span>
+<span class="w">  </span><span class="n">hist_2_ptr</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="using-rdataframe">
+<h2>Using RDataFrame<a class="headerlink" href="#using-rdataframe" title="Permalink to this heading">#</a></h2>
+<p>Here is a three-liner using <code class="docutils literal notranslate"><span class="pre">ROOT::RDataFrame</span></code>.</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;RDataFrame.h&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">ROOT</span><span class="p">;</span>
 
+<span class="kt">void</span><span class="w"> </span><span class="nf">inelasticity_plotter2</span><span class="p">(){</span>
 
-<span class="w">  </span>
+<span class="w">  </span><span class="n">RDataFrame</span><span class="w"> </span><span class="n">df</span><span class="p">(</span><span class="s">&quot;allTree&quot;</span><span class="p">,</span><span class="s">&quot;2023-11-09_nnt_100.0_energy_21/run1/IceFinal_1_allTree.root&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">df</span><span class="p">.</span><span class="n">Histo1D</span><span class="p">({</span><span class="s">&quot;Run1 Inelasticity&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Inelasticity&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">},</span><span class="s">&quot;eventSummary.interaction.y&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">h</span><span class="o">-&gt;</span><span class="n">DrawClone</span><span class="p">();</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Notice that when using <code class="docutils literal notranslate"><span class="pre">RDataFrame</span></code> we used <code class="docutils literal notranslate"><span class="pre">DrawClone()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">Draw()</span></code>;
+This is because
+“at the end of this function, the histogram pointed to by <code class="docutils literal notranslate"><span class="pre">h</span></code> will be deleted.” <a class="footnote-reference brackets" href="#f1" id="id1">1</a></p>
+</div>
+<p>Many thanks to Danilo for answering my
+<a class="reference external" href="https://root-forum.cern.ch/t/retrieving-tvector3-from-a-tree/57239">question</a>
+on ROOT Forum.</p>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://root.cern.ch/doc/master/df000__simple_8C.html">Simple RDataFrame Example by Enric Tejedor (CERN)</a></p>
+</dd>
+</dl>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -494,20 +501,20 @@ which is to be compared with the <a class="reference internal" href="#tbrowser-f
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ssh_autopassword.html"
+       href="my_first_root_plot.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">How to: Password-less ssh</p>
+        <p class="prev-next-title">My First Root Plot</p>
       </div>
     </a>
     <a class="right-next"
-       href="RDataFrame.html"
+       href="../../pueo_white/ch1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Learning RDataFrame</p>
+        <p class="prev-next-title">Introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -517,6 +524,21 @@ which is to be compared with the <a class="reference internal" href="#tbrowser-f
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-old-way">The old way</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-rdataframe">Using RDataFrame</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
