@@ -5,6 +5,7 @@ Consider the tree structure below.
 ```{figure} img/tbrowser_file_structure.png
 
 ```
+(LRDF_TOW)=
 ## The old way
 
 Here is a script that plots the inelasticity histogram in the olden days:
