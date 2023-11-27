@@ -255,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/unmovingcastle/log/edit/main/pueo_white/software/learning_root/Retrieving_TVector3.md" target="_blank"
+      <li><a href="https://github.com/unmovingcastle/log/edit/main/pueo_log/software/learning_root/Retrieving_TVector3.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -524,14 +524,16 @@ this method. The script is tested on macOS as well as Fedora Linux.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The script above simply prints out the <span class="math notranslate nohighlight">\(x\)</span> values of the 100 neutrino’s directions.
+<p>The inline-function <code class="docutils literal notranslate"><span class="pre">my_print_function</span></code> is known as a C++ lambda expression, and it doesn’t
+have to start with <code class="docutils literal notranslate"><span class="pre">auto</span></code> (see script below).
+The script above simply prints out the <span class="math notranslate nohighlight">\(x\)</span> values of the 100 neutrino’s directions.
 And below is a script for plotting these values:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">dir_plotter</span><span class="p">(){</span>
 <span class="w">  </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">&quot;Run1 X Direction&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;X Direction&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 
 <span class="w">  </span><span class="n">RDataFrame</span><span class="w"> </span><span class="n">my_df</span><span class="p">(</span><span class="s">&quot;allTree&quot;</span><span class="p">,</span><span class="s">&quot;2023-11-09_nnt_100.0_energy_21/run1/IceFinal_1_allTree.root&quot;</span><span class="p">);</span>
 
-<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">my_fill_function</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="n">TVector3</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">my_fill_function</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
 <span class="w">    </span><span class="p">[</span><span class="o">&amp;</span><span class="n">h</span><span class="p">](</span><span class="k">const</span><span class="w"> </span><span class="n">TVector3</span><span class="o">&amp;</span><span class="w"> </span><span class="n">v</span><span class="p">){</span>
 <span class="w">      </span><span class="n">h</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">X</span><span class="p">());</span>
 <span class="w">    </span><span class="p">};</span>
@@ -542,7 +544,10 @@ And below is a script for plotting these values:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Note the usage of <code class="docutils literal notranslate"><span class="pre">[&amp;h]</span></code>. Without this, we would get an error message:
+<p>In this case we swapped out the <code class="docutils literal notranslate"><span class="pre">auto</span></code> type for something more explicit.
+Also worth noting is the usage of the
+<a class="reference external" href="https://en.cppreference.com/w/cpp/language/lambda#Lambda_capture">capture clause</a>
+<code class="docutils literal notranslate"><span class="pre">[&amp;h]</span></code>. Without this, we would get an error message:
 “variable cannot be implicitly captured in a lambda with no capture-default specified.”</p>
 <p>This error message is
 <a class="reference external" href="https://stackoverflow.com/questions/30217956/error-variable-cannot-be-implicitly-captured-because-no-default-capture-mode-h">explained here</a>.</p>

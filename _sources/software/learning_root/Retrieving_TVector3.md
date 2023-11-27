@@ -125,6 +125,8 @@ void dir_printer(){
   my_df.Foreach(my_print_function, {"eventSummary.neutrino.path.direction"});
 }
 ```
+The inline-function `my_print_function` is known as a C++ lambda expression, and it doesn't
+have to start with `auto` (see script below).
 The script above simply prints out the $x$ values of the 100 neutrino's directions.
 And below is a script for plotting these values:
 ```C++
@@ -133,7 +135,7 @@ void dir_plotter(){
 
   RDataFrame my_df("allTree","2023-11-09_nnt_100.0_energy_21/run1/IceFinal_1_allTree.root");
 
-  auto my_fill_function = 
+  std::function<void(TVector3)> my_fill_function = 
     [&h](const TVector3& v){
       h->Fill(v.X());
     };
@@ -144,8 +146,10 @@ void dir_plotter(){
 }
 
 ```
-
-Note the usage of `[&h]`. Without this, we would get an error message: 
+In this case we swapped out the `auto` type for something more explicit.
+Also worth noting is the usage of the 
+[capture clause](https://en.cppreference.com/w/cpp/language/lambda#Lambda_capture)
+`[&h]`. Without this, we would get an error message: 
 "variable cannot be implicitly captured in a lambda with no capture-default specified."
 
 This error message is 
