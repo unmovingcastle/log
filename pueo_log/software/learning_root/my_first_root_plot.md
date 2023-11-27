@@ -1,4 +1,6 @@
-# My First Root Plot
+# Learning ROOT
+
+## My First Root Plot
 
 
 ```{figure} ./img/my_flavor.png

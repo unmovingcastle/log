@@ -13,8 +13,11 @@ parts:
   - file: software/pueoSim_installation
   - file: software/setting_up_github_ssh
   - file: software/ssh_autopassword
-  - file: software/learning_root/my_first_root_plot.md
-  - file: software/learning_root/RDataFrame.md
+
+  - file: software/learning_root/my_first_root_plot
+    sections:
+    - file: software/learning_root/RDataFrame
+    - file: software/learning_root/Retrieving_TVector3
 - caption: Pueo White Paper Reading Questions
   chapters:
   - file: pueo_white/ch1
