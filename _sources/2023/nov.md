@@ -166,6 +166,19 @@ ie. `~$ python` should work, and inside python, `>>> import ROOT` should work
 
 ### tasks
 + [ ] Contact OSC regarding python segmentation fault
-+ [ ] Make the unweighted plots for flavor, inelasticity, and direction.
++ [x] Make the unweighted plots for flavor, inelasticity, and direction.
 + [ ] time permitting, add weights to the plots (google cern root weighted
         histogram)
+
+
+## Meeting with Kaeli, Wednesday Nov. 29
+
+### tasks
++ [ ] Make weighted histogram 
++ [ ] Make slides regardless of progress
++ [ ] Make many root files for $e=10^{18}, 10^{19}, 10^{20}, 10^{20}$ eV.
+    +   Each energy should have 1000 **passed** events.
++ [ ] Make histograms for Inelasticity (1D), Direction (2D: $xy$, $yz$, $xz$), and flavor.
+    +   weighted 
+    +   for passed events only
++ [ ] Question: how do these distributions change with energy?

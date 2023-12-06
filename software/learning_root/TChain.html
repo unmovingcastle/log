@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Learning ROOT &#8212; My research log</title>
+    <title>Using TChain to combine files &#8212; My research log</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'software/learning_root/my_first_root_plot';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'software/learning_root/TChain';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Learning RDataFrame" href="RDataFrame.html" />
-    <link rel="prev" title="How to: Password-less ssh" href="../ssh_autopassword.html" />
+    <link rel="next" title="Introduction" href="../../pueo_white/ch1.html" />
+    <link rel="prev" title="Retrieving TVector3 From a Tree" href="Retrieving_TVector3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,10 +170,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../pueoSim_installation.html">Install pueoBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setting_up_github_ssh.html">How to Set up Github credentials on Linux/macOS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ssh_autopassword.html">How to: Password-less ssh</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Learning ROOT</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="my_first_root_plot.html">Learning ROOT</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="RDataFrame.html">Learning RDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Retrieving_TVector3.html">Retrieving TVector3 From a Tree</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TChain.html">Using TChain to combine files</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Using TChain to combine files</a></li>
 </ul>
 </li>
 </ul>
@@ -254,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/unmovingcastle/log/edit/main/pueo_log/software/learning_root/my_first_root_plot.md" target="_blank"
+      <li><a href="https://github.com/unmovingcastle/log/edit/main/pueo_log/software/learning_root/TChain.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -271,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/unmovingcastle/log/issues/new?title=Issue%20on%20page%20%2Fsoftware/learning_root/my_first_root_plot.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/unmovingcastle/log/issues/new?title=Issue%20on%20page%20%2Fsoftware/learning_root/TChain.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/software/learning_root/my_first_root_plot.md" target="_blank"
+      <li><a href="../../_sources/software/learning_root/TChain.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,9 +370,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -383,19 +381,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Learning ROOT</h1>
+    <h1>Using TChain to combine files</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-first-root-plot">My First Root Plot</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -405,81 +395,104 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="learning-root">
-<h1>Learning ROOT<a class="headerlink" href="#learning-root" title="Permalink to this heading">#</a></h1>
-<section id="my-first-root-plot">
-<h2>My First Root Plot<a class="headerlink" href="#my-first-root-plot" title="Permalink to this heading">#</a></h2>
-<figure class="align-default" id="my-flavor-plot">
-<img alt="../../_images/my_flavor.png" src="../../_images/my_flavor.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">my neutrino flavor plot for run 1 out of 100.</span><a class="headerlink" href="#my-flavor-plot" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>I wrote a root-macro script to generate <a class="reference internal" href="#my-flavor-plot"><span class="std std-ref">my neutrino flavor plot for run 1 out of 100.</span></a>,
-which is to be compared with the <a class="reference internal" href="#tbrowser-flavor"><span class="std std-ref">neutrino flavor plot for run 1 out of 100, generated using TBrowser.</span></a>.</p>
-<figure class="align-default" id="tbrowser-flavor">
-<img alt="../../_images/tbrowser_flavor.png" src="../../_images/tbrowser_flavor.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">neutrino flavor plot for run 1 out of 100, generated using TBrowser.</span><a class="headerlink" href="#tbrowser-flavor" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<hr class="docutils" />
-<p>The script (<code class="docutils literal notranslate"><span class="pre">plotter.cpp</span></code>) is as follows:</p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TCanvas.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TFile.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TH1F.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;TTree.h&gt;</span>
-<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-tchain-to-combine-files">
+<h1>Using TChain to combine files<a class="headerlink" href="#using-tchain-to-combine-files" title="Permalink to this heading">#</a></h1>
+<p>I used the following script to plot some 2 dimensional histograms.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+TChain Script<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="nb">dir</span><span class="p">(){</span>
 
-<span class="c1">// The lines above are not needed to run the macro but are included here so that my neovim</span>
-<span class="c1">// Lsp can find the types such as TH1F. Note: also note that a compile_flags.txt file that has</span>
-<span class="c1">// the proper include path, for example mine is -I/usr/include/root, is required for the Lsp</span>
-<span class="c1">// to find the header files.</span>
+<span class="o">/*</span> <span class="o">----------</span> <span class="n">setup</span> <span class="o">-------------*/</span>
 
-<span class="w">   </span><span class="c1">//method name has to match file name</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">plotter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+  <span class="nb">int</span> <span class="n">energy</span><span class="o">=</span><span class="mi">21</span><span class="p">;</span>
 
-<span class="w">  </span><span class="c1">// ptr for pointer</span>
-<span class="w">  </span><span class="n">TFile</span><span class="w"> </span><span class="o">*</span><span class="n">file_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TFile</span><span class="p">(</span><span class="s">&quot;2023-11-09_nnt_100.0_energy_21/run1/IceFinal_1_allTree.root&quot;</span><span class="p">,</span><span class="s">&quot;read&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="n">TCanvas</span><span class="w"> </span><span class="o">*</span><span class="n">c1_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TCanvas</span><span class="p">();</span>
+  <span class="n">TString</span> <span class="n">histogram</span> <span class="o">=</span> <span class="s2">&quot;Passed Events&quot;</span><span class="p">;</span>
+  <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">x_name</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">;</span>
+  <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">y_name</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span><span class="p">;</span>
+  <span class="n">TString</span> <span class="n">histogram_title</span> <span class="o">=</span> <span class="s2">&quot;Weighted (e=&quot;</span> <span class="o">+</span><span class="n">std</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span> <span class="o">+</span><span class="s2">&quot;) &quot;</span>
+                            <span class="o">+</span><span class="s2">&quot;Neutrino XY-direction Histogram;&quot;</span>
+                            <span class="o">+</span><span class="n">x_name</span><span class="o">+</span><span class="s2">&quot;;&quot;</span>
+                            <span class="o">+</span><span class="n">y_name</span><span class="p">;</span>
 
-<span class="w">            </span><span class="c1">// file_ptr-&gt;Get(&quot;allTree&quot;) returns the address of allTree</span>
-<span class="w">            </span><span class="c1">// but this needs to be casted to the correct type, which is done by</span>
-<span class="w">            </span><span class="c1">// the  (TTree*)  part.</span>
-<span class="w">  </span><span class="n">TTree</span><span class="w"> </span><span class="o">*</span><span class="n">tree_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">TTree</span><span class="o">*</span><span class="p">)</span><span class="n">file_ptr</span><span class="o">-&gt;</span><span class="n">Get</span><span class="p">(</span><span class="s">&quot;allTree&quot;</span><span class="p">);</span>
-<span class="w">  </span><span class="c1">// Alternatively, this first TTree *tree_ptr could have been auto *tree_ptr,</span>
-<span class="w">  </span><span class="c1">// in which case we wouldn&#39;t need the casting.</span>
-
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">flavor</span><span class="p">;</span><span class="w"> </span><span class="c1">// neutrino flavor</span>
-
-<span class="w">  </span><span class="c1">// assigning the variable flavor above to the corresponding var. stored inside the root file</span>
-<span class="w">  </span><span class="c1">// in this case the variable&#39;s name is eventSummary.neutrino.flavor</span>
-<span class="w">  </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">SetBranchAddress</span><span class="p">(</span><span class="s">&quot;eventSummary.neutrino.flavor&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">flavor</span><span class="p">);</span>
-
-<span class="w">  </span><span class="c1">// this particular root file contains 100 neutrinoes, so num_entries should be 100.</span>
-<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">num_entries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">GetEntries</span><span class="p">();</span>
-
-<span class="w">                                                            </span><span class="c1">// 4 bins, x start:0, x end: 4</span>
-<span class="w">  </span><span class="n">TH1F</span><span class="w"> </span><span class="o">*</span><span class="n">hist_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH1F</span><span class="p">(</span><span class="s">&quot;my_histogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;histogram_title&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
-
-<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">num_entries</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-<span class="w">    </span><span class="n">tree_ptr</span><span class="o">-&gt;</span><span class="n">GetEntry</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-<span class="w">    </span><span class="n">hist_ptr</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="p">(</span><span class="n">flavor</span><span class="p">);</span>
-<span class="w">  </span><span class="p">}</span>
-
-<span class="w">  </span><span class="n">hist_ptr</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
-<span class="w">  </span>
+  <span class="o">//</span> <span class="n">initialize</span> <span class="n">histogram</span>
+  <span class="n">TH2F</span> <span class="o">*</span> <span class="n">h</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TH2F</span><span class="p">(</span><span class="n">histogram</span><span class="p">,</span> <span class="n">histogram_title</span><span class="p">,</span>  
+                      <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
 
-<span class="w">  </span>
+
+<span class="o">/*</span> <span class="o">----------</span> <span class="n">begin</span> <span class="o">-------------*/</span>
+
+  <span class="o">//</span> <span class="n">initialize</span> <span class="n">TChain</span> <span class="ow">and</span> <span class="n">loop</span> <span class="n">through</span> <span class="nb">all</span> <span class="mi">100</span> <span class="n">subdirectories</span><span class="p">,</span> <span class="n">adding</span> <span class="n">root</span> <span class="n">files</span> <span class="n">to</span> <span class="n">chain</span><span class="o">.</span>
+  <span class="n">TChain</span> <span class="n">chain</span><span class="p">(</span><span class="s2">&quot;passTree&quot;</span><span class="p">);</span>
+  <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+    <span class="n">TString</span> <span class="n">file_name</span> <span class="o">=</span> 
+      <span class="s2">&quot;../2023-11-09_nnt_100.0_energy_&quot;</span><span class="o">+</span> <span class="n">std</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/run&quot;</span>
+      <span class="o">+</span> <span class="n">std</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+      <span class="o">+</span> <span class="s2">&quot;/IceFinal_&quot;</span>
+      <span class="o">+</span><span class="n">std</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_passTree1.root&quot;</span><span class="p">;</span>
+
+    <span class="n">chain</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">file_name</span><span class="p">);</span> 
+  <span class="p">}</span>
+  
+  <span class="n">RDataFrame</span> <span class="n">df</span><span class="p">(</span><span class="n">chain</span><span class="p">);</span>
+
+
+  <span class="o">//</span> <span class="k">lambda</span> <span class="n">expression</span> <span class="n">that</span> <span class="n">fills</span> <span class="n">the</span> <span class="n">histogram</span> <span class="k">with</span> <span class="n">entries</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">chain</span>
+  <span class="n">auto</span> <span class="n">fill_histogram</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">h</span><span class="p">]</span> <span class="p">(</span><span class="n">const</span> <span class="n">TVector3</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> 
+                              <span class="n">const</span> <span class="n">double</span> <span class="o">&amp;</span><span class="n">w1</span><span class="p">,</span> <span class="n">const</span> <span class="n">double</span> <span class="o">&amp;</span><span class="n">w2</span><span class="p">,</span> <span class="n">const</span> <span class="n">double</span> <span class="o">&amp;</span><span class="n">w3</span><span class="p">){</span>
+
+    <span class="o">//</span> <span class="n">total</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">path</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">position</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">direction</span> <span class="n">weight</span><span class="p">)</span>
+    <span class="n">double</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">w1</span><span class="o">/</span><span class="p">(</span><span class="n">w2</span><span class="o">*</span><span class="n">w3</span><span class="p">);</span>
+
+    <span class="n">h</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">X</span><span class="p">(),</span><span class="n">v</span><span class="o">.</span><span class="n">Y</span><span class="p">(),</span><span class="n">weight</span><span class="p">);</span> 
+  <span class="p">};</span>
+
+
+  <span class="n">df</span><span class="o">.</span><span class="n">Foreach</span><span class="p">(</span><span class="n">fill_histogram</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;event.neutrino.path.direction&quot;</span><span class="p">,</span> 
+                              <span class="s2">&quot;event.neutrino.path.weight&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;event.loop.positionWeight&quot;</span><span class="p">,</span>
+                              <span class="s2">&quot;event.loop.directionWeight&quot;</span><span class="p">});</span>
+
+<span class="o">/*</span> <span class="o">----------</span> <span class="n">Drawing</span> <span class="o">-------------*/</span>
+
+  <span class="n">Double_t</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">900</span><span class="p">;</span>
+  <span class="n">Double_t</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">900</span><span class="p">;</span>
+  <span class="n">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TCanvas</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
+  <span class="o">/*</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">SetWindowSize</span><span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">GetWw</span><span class="p">()),</span> <span class="n">height</span> <span class="o">+</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">GetWh</span><span class="p">()));</span> <span class="o">*/</span>
+  <span class="n">c</span><span class="o">-&gt;</span><span class="n">SetWindowSize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">);</span>
+
+  <span class="n">gStyle</span><span class="o">-&gt;</span><span class="n">SetPalette</span><span class="p">(</span><span class="mi">55</span><span class="p">);</span>     <span class="o">//</span> <span class="n">enables</span> <span class="n">rainbow</span> <span class="n">palette</span> <span class="p">(</span><span class="n">up</span> <span class="n">to</span> <span class="n">red</span><span class="p">)</span>
+  <span class="n">gStyle</span><span class="o">-&gt;</span><span class="n">SetOptStat</span><span class="p">(</span><span class="s2">&quot;ne&quot;</span><span class="p">);</span>   <span class="o">//</span> <span class="n">display</span> <span class="n">only</span> <span class="n">histogram</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">entries</span>
+  <span class="n">h</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;colz&quot;</span><span class="p">);</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-<div class="toctree-wrapper compound">
 </div>
+</details><figure class="align-default" id="xy-unweighted">
+<img alt="../../_images/XY_unweighted.png" src="../../_images/XY_unweighted.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Unweighted plot of direction (x and y compoents)</span><a class="headerlink" href="#xy-unweighted" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="xz">
+<img alt="../../_images/xz.png" src="../../_images/xz.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Weighted plot of direction (x and z compoents)</span><a class="headerlink" href="#xz" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="xy">
+<img alt="../../_images/XY.jpg" src="../../_images/XY.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Weighted plot of direction (x and y compoents)</span><a class="headerlink" href="#xy" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 
     <script type="text/x-thebe-config">
@@ -513,20 +526,20 @@ which is to be compared with the <a class="reference internal" href="#tbrowser-f
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ssh_autopassword.html"
+       href="Retrieving_TVector3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">How to: Password-less ssh</p>
+        <p class="prev-next-title">Retrieving TVector3 From a Tree</p>
       </div>
     </a>
     <a class="right-next"
-       href="RDataFrame.html"
+       href="../../pueo_white/ch1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Learning RDataFrame</p>
+        <p class="prev-next-title">Introduction</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -536,20 +549,6 @@ which is to be compared with the <a class="reference internal" href="#tbrowser-f
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#my-first-root-plot">My First Root Plot</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
