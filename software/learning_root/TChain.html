@@ -405,92 +405,99 @@ TChain Script<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="nb">dir</span><span class="p">(){</span>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">dir</span><span class="p">(){</span>
 
-<span class="o">/*</span> <span class="o">----------</span> <span class="n">setup</span> <span class="o">-------------*/</span>
+<span class="cm">/* ---------- setup -------------*/</span>
 
-  <span class="nb">int</span> <span class="n">energy</span><span class="o">=</span><span class="mi">21</span><span class="p">;</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">energy</span><span class="o">=</span><span class="mi">21</span><span class="p">;</span>
 
-  <span class="n">TString</span> <span class="n">histogram</span> <span class="o">=</span> <span class="s2">&quot;Passed Events&quot;</span><span class="p">;</span>
-  <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">x_name</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">;</span>
-  <span class="n">std</span><span class="p">::</span><span class="n">string</span> <span class="n">y_name</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span><span class="p">;</span>
-  <span class="n">TString</span> <span class="n">histogram_title</span> <span class="o">=</span> <span class="s2">&quot;Weighted (e=&quot;</span> <span class="o">+</span><span class="n">std</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span> <span class="o">+</span><span class="s2">&quot;) &quot;</span>
-                            <span class="o">+</span><span class="s2">&quot;Neutrino XY-direction Histogram;&quot;</span>
-                            <span class="o">+</span><span class="n">x_name</span><span class="o">+</span><span class="s2">&quot;;&quot;</span>
-                            <span class="o">+</span><span class="n">y_name</span><span class="p">;</span>
+<span class="w">  </span><span class="n">TString</span><span class="w"> </span><span class="n">histogram</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Passed Events&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">x_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">y_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;y&quot;</span><span class="p">;</span>
+<span class="w">  </span><span class="n">TString</span><span class="w"> </span><span class="n">histogram_title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Weighted (e=&quot;</span><span class="w"> </span><span class="o">+</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="s">&quot;) &quot;</span>
+<span class="w">                            </span><span class="o">+</span><span class="s">&quot;Neutrino XY-direction Histogram;&quot;</span>
+<span class="w">                            </span><span class="o">+</span><span class="n">x_name</span><span class="o">+</span><span class="s">&quot;;&quot;</span>
+<span class="w">                            </span><span class="o">+</span><span class="n">y_name</span><span class="p">;</span>
 
-  <span class="o">//</span> <span class="n">initialize</span> <span class="n">histogram</span>
-  <span class="n">TH2F</span> <span class="o">*</span> <span class="n">h</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TH2F</span><span class="p">(</span><span class="n">histogram</span><span class="p">,</span> <span class="n">histogram_title</span><span class="p">,</span>  
-                      <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-
-
-
-<span class="o">/*</span> <span class="o">----------</span> <span class="n">begin</span> <span class="o">-------------*/</span>
-
-  <span class="o">//</span> <span class="n">initialize</span> <span class="n">TChain</span> <span class="ow">and</span> <span class="n">loop</span> <span class="n">through</span> <span class="nb">all</span> <span class="mi">100</span> <span class="n">subdirectories</span><span class="p">,</span> <span class="n">adding</span> <span class="n">root</span> <span class="n">files</span> <span class="n">to</span> <span class="n">chain</span><span class="o">.</span>
-  <span class="n">TChain</span> <span class="n">chain</span><span class="p">(</span><span class="s2">&quot;passTree&quot;</span><span class="p">);</span>
-  <span class="k">for</span><span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-
-    <span class="n">TString</span> <span class="n">file_name</span> <span class="o">=</span> 
-      <span class="s2">&quot;../2023-11-09_nnt_100.0_energy_&quot;</span><span class="o">+</span> <span class="n">std</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/run&quot;</span>
-      <span class="o">+</span> <span class="n">std</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
-      <span class="o">+</span> <span class="s2">&quot;/IceFinal_&quot;</span>
-      <span class="o">+</span><span class="n">std</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_passTree1.root&quot;</span><span class="p">;</span>
-
-    <span class="n">chain</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">file_name</span><span class="p">);</span> 
-  <span class="p">}</span>
-  
-  <span class="n">RDataFrame</span> <span class="n">df</span><span class="p">(</span><span class="n">chain</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// initialize histogram</span>
+<span class="w">  </span><span class="n">TH2F</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TH2F</span><span class="p">(</span><span class="n">histogram</span><span class="p">,</span><span class="w"> </span><span class="n">histogram_title</span><span class="p">,</span><span class="w">  </span>
+<span class="w">                      </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
 
 
-  <span class="o">//</span> <span class="k">lambda</span> <span class="n">expression</span> <span class="n">that</span> <span class="n">fills</span> <span class="n">the</span> <span class="n">histogram</span> <span class="k">with</span> <span class="n">entries</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">chain</span>
-  <span class="n">auto</span> <span class="n">fill_histogram</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">h</span><span class="p">]</span> <span class="p">(</span><span class="n">const</span> <span class="n">TVector3</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">,</span> 
-                              <span class="n">const</span> <span class="n">double</span> <span class="o">&amp;</span><span class="n">w1</span><span class="p">,</span> <span class="n">const</span> <span class="n">double</span> <span class="o">&amp;</span><span class="n">w2</span><span class="p">,</span> <span class="n">const</span> <span class="n">double</span> <span class="o">&amp;</span><span class="n">w3</span><span class="p">){</span>
 
-    <span class="o">//</span> <span class="n">total</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">path</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">position</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">direction</span> <span class="n">weight</span><span class="p">)</span>
-    <span class="n">double</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">w1</span><span class="o">/</span><span class="p">(</span><span class="n">w2</span><span class="o">*</span><span class="n">w3</span><span class="p">);</span>
+<span class="cm">/* ---------- begin -------------*/</span>
 
-    <span class="n">h</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">X</span><span class="p">(),</span><span class="n">v</span><span class="o">.</span><span class="n">Y</span><span class="p">(),</span><span class="n">weight</span><span class="p">);</span> 
-  <span class="p">};</span>
+<span class="w">  </span><span class="c1">// initialize TChain and loop through all 100 subdirectories, adding root files to chain.</span>
+<span class="w">  </span><span class="n">TChain</span><span class="w"> </span><span class="n">chain</span><span class="p">(</span><span class="s">&quot;passTree&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+
+<span class="w">    </span><span class="n">TString</span><span class="w"> </span><span class="n">file_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">      </span><span class="s">&quot;../2023-11-09_nnt_100.0_energy_&quot;</span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">energy</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/run&quot;</span>
+<span class="w">      </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;/IceFinal_&quot;</span>
+<span class="w">      </span><span class="o">+</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;_passTree1.root&quot;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">chain</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">file_name</span><span class="p">);</span><span class="w"> </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="n">RDataFrame</span><span class="w"> </span><span class="n">df</span><span class="p">(</span><span class="n">chain</span><span class="p">);</span>
 
 
-  <span class="n">df</span><span class="o">.</span><span class="n">Foreach</span><span class="p">(</span><span class="n">fill_histogram</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;event.neutrino.path.direction&quot;</span><span class="p">,</span> 
-                              <span class="s2">&quot;event.neutrino.path.weight&quot;</span><span class="p">,</span>
-                              <span class="s2">&quot;event.loop.positionWeight&quot;</span><span class="p">,</span>
-                              <span class="s2">&quot;event.loop.directionWeight&quot;</span><span class="p">});</span>
+<span class="w">  </span><span class="c1">// lambda expression that fills the histogram with entries in the chain</span>
+<span class="w">  </span><span class="k">auto</span><span class="w"> </span><span class="n">fill_histogram</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="n">h</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">TVector3</span><span class="w"> </span><span class="o">&amp;</span><span class="n">v</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">w1</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">w2</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&amp;</span><span class="n">w3</span><span class="p">){</span>
 
-<span class="o">/*</span> <span class="o">----------</span> <span class="n">Drawing</span> <span class="o">-------------*/</span>
+<span class="w">    </span><span class="c1">// total weight = path weight / (position weight * direction weight)</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">weight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">w1</span><span class="o">/</span><span class="p">(</span><span class="n">w2</span><span class="o">*</span><span class="n">w3</span><span class="p">);</span>
 
-  <span class="n">Double_t</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">900</span><span class="p">;</span>
-  <span class="n">Double_t</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">900</span><span class="p">;</span>
-  <span class="n">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TCanvas</span><span class="p">(</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">);</span>
-  <span class="o">/*</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">SetWindowSize</span><span class="p">(</span><span class="n">width</span> <span class="o">+</span> <span class="p">(</span><span class="n">width</span> <span class="o">-</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">GetWw</span><span class="p">()),</span> <span class="n">height</span> <span class="o">+</span> <span class="p">(</span><span class="n">height</span> <span class="o">-</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">GetWh</span><span class="p">()));</span> <span class="o">*/</span>
-  <span class="n">c</span><span class="o">-&gt;</span><span class="n">SetWindowSize</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">);</span>
+<span class="w">    </span><span class="n">h</span><span class="o">-&gt;</span><span class="n">Fill</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">X</span><span class="p">(),</span><span class="n">v</span><span class="p">.</span><span class="n">Y</span><span class="p">(),</span><span class="n">weight</span><span class="p">);</span><span class="w"> </span>
+<span class="w">  </span><span class="p">};</span>
 
-  <span class="n">gStyle</span><span class="o">-&gt;</span><span class="n">SetPalette</span><span class="p">(</span><span class="mi">55</span><span class="p">);</span>     <span class="o">//</span> <span class="n">enables</span> <span class="n">rainbow</span> <span class="n">palette</span> <span class="p">(</span><span class="n">up</span> <span class="n">to</span> <span class="n">red</span><span class="p">)</span>
-  <span class="n">gStyle</span><span class="o">-&gt;</span><span class="n">SetOptStat</span><span class="p">(</span><span class="s2">&quot;ne&quot;</span><span class="p">);</span>   <span class="o">//</span> <span class="n">display</span> <span class="n">only</span> <span class="n">histogram</span> <span class="n">name</span> <span class="ow">and</span> <span class="n">number</span> <span class="n">of</span> <span class="n">entries</span>
-  <span class="n">h</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;colz&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="n">df</span><span class="p">.</span><span class="n">Foreach</span><span class="p">(</span><span class="n">fill_histogram</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;event.neutrino.path.direction&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">                              </span><span class="s">&quot;event.neutrino.path.weight&quot;</span><span class="p">,</span>
+<span class="w">                              </span><span class="s">&quot;event.loop.positionWeight&quot;</span><span class="p">,</span>
+<span class="w">                              </span><span class="s">&quot;event.loop.directionWeight&quot;</span><span class="p">});</span>
+
+<span class="cm">/* ---------- Drawing -------------*/</span>
+
+<span class="w">                       </span><span class="c1">// Canvas width, height</span>
+<span class="w">  </span><span class="n">TCanvas</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TCanvas</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">900</span><span class="p">,</span><span class="w"> </span><span class="mi">900</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// setting the colorbar position: starts at x=1.01 and ends at x=1.02</span>
+<span class="w">  </span><span class="n">TPaletteAxis</span><span class="w"> </span><span class="o">*</span><span class="n">palxis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TPaletteAxis</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">1.02</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">h</span><span class="p">);</span>
+<span class="w">  </span><span class="n">h</span><span class="o">-&gt;</span><span class="n">GetListOfFunctions</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">Add</span><span class="p">(</span><span class="n">palxis</span><span class="p">);</span>
+
+
+<span class="w">  </span><span class="n">gStyle</span><span class="o">-&gt;</span><span class="n">SetPalette</span><span class="p">(</span><span class="mi">55</span><span class="p">);</span><span class="w">     </span><span class="c1">// enables rainbow palette (up to red)</span>
+<span class="w">  </span><span class="n">gStyle</span><span class="o">-&gt;</span><span class="n">SetOptStat</span><span class="p">(</span><span class="s">&quot;ne&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// display only histogram name and number of entries</span>
+<span class="w">  </span><span class="n">h</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s">&quot;colz&quot;</span><span class="p">);</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-</details><figure class="align-default" id="xy-unweighted">
-<img alt="../../_images/XY_unweighted.png" src="../../_images/XY_unweighted.png" />
+</details><p>Dec. 6, 2023 Update: <br />
+The script above is slightly modified (the <code class="docutils literal notranslate"><span class="pre">Drawing</span></code> portion)
+to change the size of the colorbar (compare <a class="reference internal" href="#xz"><span class="std std-numref">Fig. 6</span></a> and <a class="reference internal" href="#xy"><span class="std std-numref">Fig. 7</span></a>).
+I did this following user couet’s
+<a class="reference external" href="https://root-forum.cern.ch/t/tpaletteaxis-size/33117/7?u=unmovingcastle">example on the ROOT Forum</a>.</p>
+<figure class="align-default" id="xy-unweighted">
+<a class="reference internal image-reference" href="../../_images/XY_unweighted.png"><img alt="../../_images/XY_unweighted.png" src="../../_images/XY_unweighted.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Unweighted plot of direction (x and y compoents)</span><a class="headerlink" href="#xy-unweighted" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Unweighted plot of direction (x and y compeonts)</span><a class="headerlink" href="#xy-unweighted" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="xz">
-<img alt="../../_images/xz.png" src="../../_images/xz.png" />
+<a class="reference internal image-reference" href="../../_images/xz.png"><img alt="../../_images/xz.png" src="../../_images/xz.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Weighted plot of direction (x and z compoents)</span><a class="headerlink" href="#xz" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Weighted plot of direction (x and z componets)</span><a class="headerlink" href="#xz" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="xy">
-<img alt="../../_images/XY.jpg" src="../../_images/XY.jpg" />
+<a class="reference internal image-reference" href="../../_images/xy.png"><img alt="../../_images/xy.png" src="../../_images/xy.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Weighted plot of direction (x and y compoents)</span><a class="headerlink" href="#xy" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Weighted plot of direction (x and y componets)</span><a class="headerlink" href="#xy" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>

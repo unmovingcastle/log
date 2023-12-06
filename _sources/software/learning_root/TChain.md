@@ -3,7 +3,7 @@
 I used the following script to plot some 2 dimensional histograms.
 
 ```` {dropdown} TChain Script
-```
+```C++
 void dir(){
 
 /* ---------- setup -------------*/
@@ -60,11 +60,13 @@ void dir(){
 
 /* ---------- Drawing -------------*/
 
-  Double_t width = 900;
-  Double_t height = 900;
-  auto c = new TCanvas("c", "c", width, height);
-  /* c->SetWindowSize(width + (width - c->GetWw()), height + (height - c->GetWh())); */
-  c->SetWindowSize(width,height);
+                       // Canvas width, height
+  TCanvas * c = new TCanvas("", "", 900, 900);
+
+        // setting the colorbar position: starts at x=1.01 and ends at x=1.02
+  TPaletteAxis *palxis = new TPaletteAxis(1.01,0,1.02,1,h);
+  h->GetListOfFunctions()->Add(palxis);
+
 
   gStyle->SetPalette(55);     // enables rainbow palette (up to red)
   gStyle->SetOptStat("ne");   // display only histogram name and number of entries
@@ -74,22 +76,37 @@ void dir(){
 ```
 ````
 
+Dec. 6, 2023 Update: \
+The script above is slightly modified (the `Drawing` portion) 
+to change the size of the colorbar (compare {numref}`xz` and {numref}`xy`).
+I did this following user couet's 
+[example on the ROOT Forum](https://root-forum.cern.ch/t/tpaletteaxis-size/33117/7?u=unmovingcastle).
+
+
+
+
 ```{figure} ./img/XY_unweighted.png
 ---
 name: xy_unweighted
+width: 50%
 ---
-Unweighted plot of direction (x and y compoents)
+Unweighted plot of direction (x and y compeonts)
 ```
+
 ```{figure} ./img/xz.png
 ---
 name: xz
+width: 50%
 ---
-Weighted plot of direction (x and z compoents)
+Weighted plot of direction (x and z componets)
 ```
-```{figure} ./img/XY.jpg
+
+```{figure} ./img/xy.png
 ---
 name: xy
+width: 50%
 ---
-Weighted plot of direction (x and y compoents)
+Weighted plot of direction (x and y componets)
 ```
+
 
