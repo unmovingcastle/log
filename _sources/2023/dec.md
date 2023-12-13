@@ -27,15 +27,15 @@ Flavor Histogram (energy=21)
     $ \nu_l + N \rightarrow l + X $\
     $ \nu_l + N \rightarrow \nu_l + N^* $\
     where $N$ stands for nucleon (ice).
-*   If $\nu_l$ above is an electron neutrino, then $l=e^-$, and the electrons energy
+*   If $\nu_l$ above is an electron neutrino, then $l=e^-$, and the electron's energy
     gets immediately deposited in the ice, right where the interaction occurs and we 
-    essentially see just $X$ (EM shower).
+    essentially see just a bigger $X$ (EM shower).
     (Think of ice as a soup of electrons, which interact with each other through EM forces)
 *   On the other hand, if $\nu$ above is a $\tau$-neutrino, then the interaction produces
     a $\tau$, which does not typically deposit its energy in ice; instead, the $\tau$ decays
     later as it travels in air, and we might be able to see this decay through geomagnetic 
     emission (aka secondaries). But this is of course not the same situation as the 
-    electron one, and because in this case the $\tau$ takes away some energy,
+    electronic interaction, and because in this case the $\tau$ takes away some energy,
     the corresponding $X$ (EM shower) is less energetic, making it less likely to be detected.
 
 ---
@@ -43,11 +43,10 @@ Flavor Histogram (energy=21)
 *   At high energies, we also see that electron neutrinos gets suppressed. This is due to
     the **LPM effect**.
 
-```{admonition} LPM effect
-    :class: seealso, dropdown
-
+    ```{admonition} LPM effect
+        :class: seealso, dropdown
     Kaeli will send reading
-```
+    ```
 
 ### Effective Volume
 
