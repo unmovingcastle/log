@@ -2,7 +2,8 @@
 
 ## Meeting with Kaeli, Wednesday Dec. 13
 
-Consider these the flavor plots below (bin 1 is $\nu_e$).
+### More passed electron neutrinos at lower energy
+Consider the flavor plots below (bin 1 is $\nu_e$).
 
 ```{figure} img/flavor_e=19.png
 ---
@@ -39,6 +40,7 @@ Flavor Histogram (energy=21)
     the corresponding $X$ (EM shower) is less energetic, making it less likely to be detected.
 
 ---
+### LPM effect
 
 *   At high energies, we also see that electron neutrinos gets suppressed. This is due to
     the **LPM effect**.
@@ -69,6 +71,7 @@ Flavor Histogram (energy=21)
 
 ### tasks
 + [ ] Carry out the $e=18$ run.
++ [ ] Read about LPM effect
 + [ ] For inelasticity plots, try 100 bins instead of 1000.
 + [ ] Make an effective volume plot
 + [ ] Make an effective area plot
