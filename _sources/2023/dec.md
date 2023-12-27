@@ -70,8 +70,99 @@ Flavor Histogram (energy=21)
 
 
 ### tasks
-+ [ ] Carry out the $e=18$ run.
++ [x] Carry out the $e=18$ run.
 + [ ] Read about LPM effect
-+ [ ] For inelasticity plots, try 100 bins instead of 1000.
++ [x] For inelasticity plots, try 100 bins instead of 1000.
 + [ ] Make an effective volume plot
 + [ ] Make an effective area plot
+
+## Using `awk` to collect effective volumes
+
+I splitted the energy `e=21` simulation into 100 slurm array jobs.
+As an example, job No. 37 would return
+````{dropdown} 37.out
+```bash
+.
+.
+.
+~~~~~ Summary for electron neutrinos  ~~~~~~~~~~~~~~~ 
+	Number simulated: 34
+	Number passed (unweighted): 18
+	Number passed (weighted): 0.000764247987475
+	Effective volume: 6957.09761591 km^3 sr
+	Effective area: 49.2280142537 km^2 sr
+
+
+~~~~~ Summary for mu neutrinos  ~~~~~~~~~~~~~~~ 
+	Number simulated: 34
+	Number passed (unweighted): 12
+	Number passed (weighted): 0.00709997645226
+	Effective volume: 64632.462314 km^3 sr
+	Effective area: 457.335508528 km^2 sr
+
+
+~~~~~ Summary for tau neutrinos  ~~~~~~~~~~~~~~~ 
+	Number simulated: 32
+	Number passed (unweighted): 17
+	Number passed (weighted): 0.00204211856722
+	Effective volume: 19751.6638595 km^3 sr
+	Effective area: 139.761613778 km^2 sr
+
+
+~~~~~ Summary for all neutrinos  ~~~~~~~~~~~~~~~ 
+	Number simulated: 100
+	Number passed (unweighted): 47
+	Number passed (weighted): 0.00990634300695
+	Effective volume: 30660.9828112 km^3 sr
+	Effective area: 216.955314155 km^2 sr
+
+got here
+finished simulation
+Elapsed runtime is 1:8 minutes`
+```
+````
+when it is completed (the output above only contains the final lines).
+
+---
+We can use `awk` to extract the information of interest; in this case, we would like to 
+have a script that spits out the Effective volume for all neutrinos (call it "total effective
+volume"). In the example above,
+this would be the line
+```
+Effective volume: 30660.9828112 km^3 sr
+```
+Below is the script I used for looping over all 100 output files contained inside an `out/`
+directory which stores all slurm outputs.
+The script returns a text file called `volumes.out` that contains all the 100 "total effective
+volumes" for the 100 jobs of an `e=21` simulation.
+````{dropdown} evol.bash
+```bash
+#!/bin/bash
+
+rm volumes.out # remove if already exists.
+
+# loop through all files in the directory "out" using a wildcard *
+for file in out/*
+do
+     # Matching all lines that contains the word 
+     # "Effective volume:", get the 3rd column of the line
+  awk '/Effective volume:/  {print $3}' $file  | tail -n 1 >> volumes.out
+   # awk will spit out four lines. we only need the last (tail) line.
+
+  # the following line is for debugging only. It will also display the
+  # file name along with the effective volume.
+  # awk '/Effective volume:/ {print FILENAME, $3}' $file  | tail -n 1
+done
+```
+````
+---
+Presumably we would then take an average of the 100 entries of `volumes.out` to get the
+averaged all-neutrino Effective volume. This can be done using Pandas in python:
+```python
+import pandas as pd
+
+title = ['all-neutrino effective volume']
+df = pd.read_csv('21_volumes.out', names=title)
+
+print(f'mean of {df.mean()}')
+```

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -141,9 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
+  
   
   
   
@@ -356,6 +358,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -365,6 +368,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -403,6 +407,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">tasks</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-awk-to-collect-effective-volumes">Using <code class="docutils literal notranslate"><span class="pre">awk</span></code> to collect effective volumes</a></li>
 </ul>
             </nav>
         </div>
@@ -492,13 +497,115 @@ where interaction length can be found in the source code.</p></li>
 <section id="tasks">
 <h3>tasks<a class="headerlink" href="#tasks" title="Permalink to this heading">#</a></h3>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Carry out the <span class="math notranslate nohighlight">\(e=18\)</span> run.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Carry out the <span class="math notranslate nohighlight">\(e=18\)</span> run.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read about LPM effect</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> For inelasticity plots, try 100 bins instead of 1000.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> For inelasticity plots, try 100 bins instead of 1000.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make an effective volume plot</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make an effective area plot</p></li>
 </ul>
 </section>
+</section>
+<section id="using-awk-to-collect-effective-volumes">
+<h2>Using <code class="docutils literal notranslate"><span class="pre">awk</span></code> to collect effective volumes<a class="headerlink" href="#using-awk-to-collect-effective-volumes" title="Permalink to this heading">#</a></h2>
+<p>I splitted the energy <code class="docutils literal notranslate"><span class="pre">e=21</span></code> simulation into 100 slurm array jobs.
+As an example, job No. 37 would return</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+37.out<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+.
+.
+~~~~~<span class="w"> </span>Summary<span class="w"> </span><span class="k">for</span><span class="w"> </span>electron<span class="w"> </span>neutrinos<span class="w">  </span>~~~~~~~~~~~~~~~<span class="w"> </span>
+<span class="w">	</span>Number<span class="w"> </span>simulated:<span class="w"> </span><span class="m">34</span>
+<span class="w">	</span>Number<span class="w"> </span>passed<span class="w"> </span><span class="o">(</span>unweighted<span class="o">)</span>:<span class="w"> </span><span class="m">18</span>
+<span class="w">	</span>Number<span class="w"> </span>passed<span class="w"> </span><span class="o">(</span>weighted<span class="o">)</span>:<span class="w"> </span><span class="m">0</span>.000764247987475
+<span class="w">	</span>Effective<span class="w"> </span>volume:<span class="w"> </span><span class="m">6957</span>.09761591<span class="w"> </span>km^3<span class="w"> </span>sr
+<span class="w">	</span>Effective<span class="w"> </span>area:<span class="w"> </span><span class="m">49</span>.2280142537<span class="w"> </span>km^2<span class="w"> </span>sr
+
+
+~~~~~<span class="w"> </span>Summary<span class="w"> </span><span class="k">for</span><span class="w"> </span>mu<span class="w"> </span>neutrinos<span class="w">  </span>~~~~~~~~~~~~~~~<span class="w"> </span>
+<span class="w">	</span>Number<span class="w"> </span>simulated:<span class="w"> </span><span class="m">34</span>
+<span class="w">	</span>Number<span class="w"> </span>passed<span class="w"> </span><span class="o">(</span>unweighted<span class="o">)</span>:<span class="w"> </span><span class="m">12</span>
+<span class="w">	</span>Number<span class="w"> </span>passed<span class="w"> </span><span class="o">(</span>weighted<span class="o">)</span>:<span class="w"> </span><span class="m">0</span>.00709997645226
+<span class="w">	</span>Effective<span class="w"> </span>volume:<span class="w"> </span><span class="m">64632</span>.462314<span class="w"> </span>km^3<span class="w"> </span>sr
+<span class="w">	</span>Effective<span class="w"> </span>area:<span class="w"> </span><span class="m">457</span>.335508528<span class="w"> </span>km^2<span class="w"> </span>sr
+
+
+~~~~~<span class="w"> </span>Summary<span class="w"> </span><span class="k">for</span><span class="w"> </span>tau<span class="w"> </span>neutrinos<span class="w">  </span>~~~~~~~~~~~~~~~<span class="w"> </span>
+<span class="w">	</span>Number<span class="w"> </span>simulated:<span class="w"> </span><span class="m">32</span>
+<span class="w">	</span>Number<span class="w"> </span>passed<span class="w"> </span><span class="o">(</span>unweighted<span class="o">)</span>:<span class="w"> </span><span class="m">17</span>
+<span class="w">	</span>Number<span class="w"> </span>passed<span class="w"> </span><span class="o">(</span>weighted<span class="o">)</span>:<span class="w"> </span><span class="m">0</span>.00204211856722
+<span class="w">	</span>Effective<span class="w"> </span>volume:<span class="w"> </span><span class="m">19751</span>.6638595<span class="w"> </span>km^3<span class="w"> </span>sr
+<span class="w">	</span>Effective<span class="w"> </span>area:<span class="w"> </span><span class="m">139</span>.761613778<span class="w"> </span>km^2<span class="w"> </span>sr
+
+
+~~~~~<span class="w"> </span>Summary<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>neutrinos<span class="w">  </span>~~~~~~~~~~~~~~~<span class="w"> </span>
+<span class="w">	</span>Number<span class="w"> </span>simulated:<span class="w"> </span><span class="m">100</span>
+<span class="w">	</span>Number<span class="w"> </span>passed<span class="w"> </span><span class="o">(</span>unweighted<span class="o">)</span>:<span class="w"> </span><span class="m">47</span>
+<span class="w">	</span>Number<span class="w"> </span>passed<span class="w"> </span><span class="o">(</span>weighted<span class="o">)</span>:<span class="w"> </span><span class="m">0</span>.00990634300695
+<span class="w">	</span>Effective<span class="w"> </span>volume:<span class="w"> </span><span class="m">30660</span>.9828112<span class="w"> </span>km^3<span class="w"> </span>sr
+<span class="w">	</span>Effective<span class="w"> </span>area:<span class="w"> </span><span class="m">216</span>.955314155<span class="w"> </span>km^2<span class="w"> </span>sr
+
+got<span class="w"> </span>here
+finished<span class="w"> </span>simulation
+Elapsed<span class="w"> </span>runtime<span class="w"> </span>is<span class="w"> </span><span class="m">1</span>:8<span class="w"> </span>minutes<span class="sb">`</span>
+</pre></div>
+</div>
+</div>
+</details><p>when it is completed (the output above only contains the final lines).</p>
+<hr class="docutils" />
+<p>We can use <code class="docutils literal notranslate"><span class="pre">awk</span></code> to extract the information of interest; in this case, we would like to
+have a script that spits out the Effective volume for all neutrinos (call it “total effective
+volume”). In the example above,
+this would be the line</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Effective</span> <span class="n">volume</span><span class="p">:</span> <span class="mf">30660.9828112</span> <span class="n">km</span><span class="o">^</span><span class="mi">3</span> <span class="n">sr</span>
+</pre></div>
+</div>
+<p>Below is the script I used for looping over all 100 output files contained inside an <code class="docutils literal notranslate"><span class="pre">out/</span></code>
+directory which stores all slurm outputs.
+The script returns a text file called <code class="docutils literal notranslate"><span class="pre">volumes.out</span></code> that contains all the 100 “total effective
+volumes” for the 100 jobs of an <code class="docutils literal notranslate"><span class="pre">e=21</span></code> simulation.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+evol.bash<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+rm<span class="w"> </span>volumes.out<span class="w"> </span><span class="c1"># remove if already exists.</span>
+
+<span class="c1"># loop through all files in the directory &quot;out&quot; using a wildcard *</span>
+<span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span>out/*
+<span class="k">do</span>
+<span class="w">     </span><span class="c1"># Matching all lines that contains the word </span>
+<span class="w">     </span><span class="c1"># &quot;Effective volume:&quot;, get the 3rd column of the line</span>
+<span class="w">  </span>awk<span class="w"> </span><span class="s1">&#39;/Effective volume:/  {print $3}&#39;</span><span class="w"> </span><span class="nv">$file</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>volumes.out
+<span class="w">   </span><span class="c1"># awk will spit out four lines. we only need the last (tail) line.</span>
+
+<span class="w">  </span><span class="c1"># the following line is for debugging only. It will also display the</span>
+<span class="w">  </span><span class="c1"># file name along with the effective volume.</span>
+<span class="w">  </span><span class="c1"># awk &#39;/Effective volume:/ {print FILENAME, $3}&#39; $file  | tail -n 1</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+</details><hr class="docutils" />
+<p>Presumably we would then take an average of the 100 entries of <code class="docutils literal notranslate"><span class="pre">volumes.out</span></code> to get the
+averaged all-neutrino Effective volume. This can be done using Pandas in python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">title</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;all-neutrino effective volume&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;21_volumes.out&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean of </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -530,7 +637,7 @@ where interaction length can be found in the source code.</p></li>
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="nov.html"
@@ -572,6 +679,7 @@ where interaction length can be found in the source code.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">tasks</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-awk-to-collect-effective-volumes">Using <code class="docutils literal notranslate"><span class="pre">awk</span></code> to collect effective volumes</a></li>
 </ul>
   </nav></div>
 
@@ -593,6 +701,7 @@ By Jason Yao
   
   <div class="footer-item">
     
+
   </div>
   
   <div class="footer-item">
@@ -612,8 +721,8 @@ By Jason Yao
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
