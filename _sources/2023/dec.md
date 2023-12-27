@@ -162,7 +162,15 @@ averaged all-neutrino Effective volume. This can be done using Pandas in python:
 import pandas as pd
 
 title = ['all-neutrino effective volume']
-df = pd.read_csv('21_volumes.out', names=title)
+df_21 = pd.read_csv('21_volumes.out', names=title, index_col=False)
+df_20 = pd.read_csv('20_volumes.out', names=title, index_col=False)
+df_19 = pd.read_csv('19_volumes.out', names=title, index_col=False)
+df_18 = pd.read_csv('18_volumes.out', names=title, index_col=False)
+# index_col=Flase forces pandas to not use the first column as index column and creates an
+# index column starting from 0.
 
-print(f'mean of {df.mean()}')
+print(f'mean of {df_21.mean()}')
+print(f'mean of {df_20.mean()}')
+print(f'mean of {df_19.mean()}')
+print(f'mean of {df_18.mean()}')
 ```
