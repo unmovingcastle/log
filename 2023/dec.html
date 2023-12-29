@@ -596,6 +596,33 @@ rm<span class="w"> </span>volumes.out<span class="w"> </span><span class="c1"># 
 </div>
 </div>
 </details><hr class="docutils" />
+<p>Below is a second version of the script above. This one utilizes GNU Awk.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+evol_v2.bash<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Note: gawk is GNU Awk, which is used because it has the &quot;ENDFILE&quot; check</span>
+<span class="c1">#       which, for instance, macOS Awk does not have.</span>
+<span class="c1">#       Note that using ENDFILE is not the same as using END</span>
+
+rm<span class="w"> </span>volumes.out
+
+<span class="c1"># find Effective volume line, assign it to variable a. This happens 4 times</span>
+gawk<span class="w"> </span><span class="s1">&#39;/Effective volume:/  {a=$3} </span>
+<span class="s1">      ENDFILE{print a}&#39;</span><span class="w"> </span>out/*.out<span class="w"> </span>&gt;&gt;<span class="w"> </span>volumes.out
+<span class="c1"># However, only when we reach the end of an input file do we print out &quot;a&quot;;</span>
+<span class="c1"># thus, only the final match will be printed (like using &gt;&gt; tail -n 1)</span>
+</pre></div>
+</div>
+</div>
+</details><p>I tested this second version on OSC. It turns out to be around 8 times faster than version
+one.</p>
+<hr class="docutils" />
 <p>Presumably we would then take an average of the 100 entries of <code class="docutils literal notranslate"><span class="pre">volumes.out</span></code> to get the
 averaged all-neutrino Effective volume. This can be done using Pandas in python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>

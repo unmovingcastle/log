@@ -156,6 +156,30 @@ done
 ```
 ````
 ---
+Below is a second version of the script above. This one utilizes GNU Awk.
+````{dropdown} evol_v2.bash
+```bash
+#!/bin/bash
+
+# Note: gawk is GNU Awk, which is used because it has the "ENDFILE" check
+#       which, for instance, macOS Awk does not have.
+#       Note that using ENDFILE is not the same as using END
+
+rm volumes.out
+
+# find Effective volume line, assign it to variable a. This happens 4 times
+gawk '/Effective volume:/  {a=$3} 
+      ENDFILE{print a}' out/*.out >> volumes.out
+# However, only when we reach the end of an input file do we print out "a";
+# thus, only the final match will be printed (like using >> tail -n 1)
+```
+````
+I tested this second version on OSC. It turns out to be around 8 times faster than version
+one.
+
+
+
+---
 Presumably we would then take an average of the 100 entries of `volumes.out` to get the
 averaged all-neutrino Effective volume. This can be done using Pandas in python:
 ```python
@@ -174,3 +198,4 @@ print(f'mean of {df_20.mean()}')
 print(f'mean of {df_19.mean()}')
 print(f'mean of {df_18.mean()}')
 ```
+
