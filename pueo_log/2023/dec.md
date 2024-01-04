@@ -193,9 +193,18 @@ df_18 = pd.read_csv('18_volumes.out', names=title, index_col=False)
 # index_col=Flase forces pandas to not use the first column as index column and creates an
 # index column starting from 0.
 
-print(f'mean of {df_21.mean()}')
-print(f'mean of {df_20.mean()}')
-print(f'mean of {df_19.mean()}')
-print(f'mean of {df_18.mean()}')
+df = pd.DataFrame([ [18, df_18.mean()], [19, df_19.mean()],
+                    [20, df_20.mean()], [21, df_21.mean()] ],
+                  columns=['energy','effective volume'])
+
+
+plot = df.plot.scatter(x='energy',y='effective volume',c='DarkBlue')
+plot.get_figure().savefig('effective_volume.png', format='png')
 ```
 
+```{figure} ./img/effective_volume.png
+---
+name: dec2023eff_vol_plot
+---
+An example effective volume plot
+```
