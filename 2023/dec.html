@@ -635,12 +635,21 @@ averaged all-neutrino Effective volume. This can be done using Pandas in python:
 <span class="c1"># index_col=Flase forces pandas to not use the first column as index column and creates an</span>
 <span class="c1"># index column starting from 0.</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean of </span><span class="si">{</span><span class="n">df_21</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean of </span><span class="si">{</span><span class="n">df_20</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean of </span><span class="si">{</span><span class="n">df_19</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;mean of </span><span class="si">{</span><span class="n">df_18</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="n">df_18</span><span class="o">.</span><span class="n">mean</span><span class="p">()],</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="n">df_19</span><span class="o">.</span><span class="n">mean</span><span class="p">()],</span>
+                    <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="n">df_20</span><span class="o">.</span><span class="n">mean</span><span class="p">()],</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="n">df_21</span><span class="o">.</span><span class="n">mean</span><span class="p">()]</span> <span class="p">],</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">,</span><span class="s1">&#39;effective volume&#39;</span><span class="p">])</span>
+
+
+<span class="n">plot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;energy&#39;</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;effective volume&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;DarkBlue&#39;</span><span class="p">)</span>
+<span class="n">plot</span><span class="o">.</span><span class="n">get_figure</span><span class="p">()</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;effective_volume.png&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<figure class="align-default" id="dec2023eff-vol-plot">
+<img alt="../_images/effective_volume.png" src="../_images/effective_volume.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">An example effective volume plot</span><a class="headerlink" href="#dec2023eff-vol-plot" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 </section>
 
