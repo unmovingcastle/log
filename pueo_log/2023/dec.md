@@ -40,15 +40,13 @@ Flavor Histogram (energy=21)
     the corresponding $X$ (EM shower) is less energetic, making it less likely to be detected.
 
 ---
+(LPM_effect)=
 ### LPM effect
 
 *   At high energies, we also see that electron neutrinos gets suppressed. This is due to
-    the **LPM effect**.
+    the **LPM effect**, here are some 
+    [slides](https://bpb-us-w2.wpmucdn.com/u.osu.edu/dist/0/890/files/2013/12/LPM-Effect-10f7n7w.pdf)
 
-    ```{admonition} LPM effect
-        :class: seealso, dropdown
-    Kaeli will send reading
-    ```
 
 ### Effective Volume
 
@@ -73,7 +71,7 @@ Flavor Histogram (energy=21)
 + [x] Carry out the $e=18$ run.
 + [ ] Read about LPM effect
 + [x] For inelasticity plots, try 100 bins instead of 1000.
-+ [ ] Make an effective volume plot
++ [x] Make an effective volume plot
 + [ ] Make an effective area plot
 
 ## Using `awk` to collect effective volumes
@@ -180,6 +178,7 @@ one.
 
 
 ---
+(average_effective_volume_version1)=
 Presumably we would then take an average of the 100 entries of `volumes.out` to get the
 averaged all-neutrino Effective volume. This can be done using Pandas in python:
 ```python
