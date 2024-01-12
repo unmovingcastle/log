@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>January 2024 &#8212; My research log</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2024/jan';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="October 2023" href="../2023/oct.html" />
+    <link rel="prev" title="Welcome" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">My research log</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Year 2024</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">January 2024</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Year 2023</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2023/oct.html">October 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2023/nov.html">November 2023</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2023/dec.html">December 2023</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../software/pueoSim_installation.html">Install pueoBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/setting_up_github_ssh.html">How to Set up Github credentials on Linux/macOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../software/ssh_autopassword.html">How to: Password-less ssh</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../software/learning_root/my_first_root_plot.html">Learning ROOT</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software/learning_root/RDataFrame.html">Learning RDataFrame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/learning_root/Retrieving_TVector3.html">Retrieving TVector3 From a Tree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/learning_root/TChain.html">Using TChain to combine files</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Pueo White Paper Reading Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../pueo_white/ch1.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pueo_white/ch2.html">The PUEO Science Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pueo_white/ch3.html">The Radio Detection Technique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pueo_white/ch4.html">Review of Results from ANITA</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/unmovingcastle/log" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/unmovingcastle/log/edit/main/pueo_log/2024/jan.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/unmovingcastle/log/issues/new?title=Issue%20on%20page%20%2F2024/jan.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2024/jan.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>January 2024</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-thursday-jan-11">Meeting with Kaeli, Thursday Jan. 11</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">logistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-volume-plot">Effective Volume Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-tuesday-jan-16">Meeting with Kaeli, Tuesday Jan.16</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Effective Volume Plot</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="january-2024">
+<h1>January 2024<a class="headerlink" href="#january-2024" title="Permalink to this heading">#</a></h1>
+<section id="meeting-with-kaeli-thursday-jan-11">
+<h2>Meeting with Kaeli, Thursday Jan. 11<a class="headerlink" href="#meeting-with-kaeli-thursday-jan-11" title="Permalink to this heading">#</a></h2>
+<section id="logistics">
+<h3>logistics<a class="headerlink" href="#logistics" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Start attending talks at least once per week, pick from below:</p>
+<ul>
+<li><p>Tuesday at noon - CCAPP seminar (overhang room, PRB 4<sup>th</sup> floor)</p></li>
+<li><p>Tuesday 3:45 - Physics General Colloquium</p></li>
+<li><p><strike>Friday 11:15 - Astroparticle Lunch (Price Place)</strike></p></li>
+</ul>
+</li>
+<li><p><strong>PUEO simulation call</strong> (Wednesday 1:00, tentative)</p></li>
+<li><p>individual meeting with Kaeli - Tuesday at 1:30</p></li>
+</ul>
+</section>
+<section id="effective-volume-plot">
+<h3>Effective Volume Plot<a class="headerlink" href="#effective-volume-plot" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Be sure to include units. For <span class="math notranslate nohighlight">\(x\)</span>-axis, use the following:<br />
+log(energy)[eV]</p></li>
+<li><p>Make <span class="math notranslate nohighlight">\(y\)</span>-axis log scaled.</p></li>
+<li><p>Our systematic error is 20% (no need to include in the plot)</p></li>
+<li><p>statistical error normally goes like <span class="math notranslate nohighlight">\(1/\sqrt{N}\)</span> but is more
+complicated for us; will deal with this next time.</p></li>
+<li><p><strong>Re-compute the effective volume!</strong> <br />
+Instead of <a class="reference internal" href="../2023/dec.html#average-effective-volume-version1"><span class="std std-ref">what I did in Dec. 2023</span></a>,
+do the following instead.</p>
+<ul>
+<li><p>Find out the (constant) total ice volume.</p></li>
+<li><p>For each array-output, obtain the <em>weighted</em> number of passed neutrinos.
+Add these all up (ie. run1 passed  + run2 passed + …)</p></li>
+<li><p>Figure out the total number of neutrinos thrown.</p></li>
+<li><p>Use the following to compute effective volume:</p>
+<div class="math notranslate nohighlight">
+\[{\rm(ice\,volume)} \cdot (4\pi) 
+\frac{\sum{\rm number\,passed\,(weighted)}}{\sum{\rm number\,thrown }}\]</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="tasks">
+<h3>tasks<a class="headerlink" href="#tasks" title="Permalink to this heading">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Schedule 20 hours of research hours, put in calendar.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read about <a class="reference internal" href="../2023/dec.html#lpm-effect"><span class="std std-ref">LPM effect</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Update the effective volume plot</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read the <a class="reference download internal" download="" href="../_downloads/dafac5540e7a5f3253e642773be9495b/gra_exp.pdf"><code class="xref download docutils literal notranslate"><span class="pre">GRA</span> <span class="pre">expectation</span> <span class="pre">document</span></code></a></p></li>
+</ul>
+</section>
+</section>
+<section id="meeting-with-kaeli-tuesday-jan-16">
+<h2>Meeting with Kaeli, Tuesday Jan.16<a class="headerlink" href="#meeting-with-kaeli-tuesday-jan-16" title="Permalink to this heading">#</a></h2>
+<section id="id1">
+<h3>Effective Volume Plot<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>This time, include error bars.</p></li>
+</ul>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Error-bar script from Kaeli<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">AddErrors</span><span class="p">(</span><span class="n">all_weights</span><span class="p">):</span><span class="c1">#the input is a numpy array of all the event weights, where each entry is an event</span>
+
+	<span class="c1">#set number of bins and max/min weights</span>
+	<span class="n">bin_num</span> <span class="o">=</span> <span class="mi">10</span>
+	<span class="n">max_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">all_weights</span><span class="p">)</span>
+	<span class="n">min_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">all_weights</span><span class="p">)</span>
+
+	<span class="c1">#set bin values for weights</span>
+	<span class="n">bin_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_weight</span><span class="p">,</span><span class="n">max_weight</span><span class="p">,</span><span class="n">bin_num</span><span class="p">)</span>
+
+	<span class="c1">#create arrays to hold both positive and negative errors</span>
+	<span class="n">bin_error_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_num</span><span class="p">)</span>
+	<span class="n">bin_error_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_num</span><span class="p">)</span>
+	<span class="n">test_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_num</span><span class="p">)</span>
+
+	<span class="c1">#Copy poisson errors from icemc:</span>
+	<span class="n">poissonerror_minus</span><span class="o">=</span><span class="p">[</span><span class="mf">0.</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">1.</span><span class="o">-</span><span class="mf">0.37</span><span class="p">,</span> <span class="mf">2.</span><span class="o">-</span><span class="mf">0.74</span><span class="p">,</span> <span class="mf">3.</span><span class="o">-</span><span class="mf">1.10</span><span class="p">,</span> <span class="mf">4.</span><span class="o">-</span><span class="mf">2.34</span><span class="p">,</span> <span class="mf">5.</span><span class="o">-</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">6.</span><span class="o">-</span><span class="mf">3.82</span><span class="p">,</span> <span class="mf">7.</span><span class="o">-</span><span class="mf">4.25</span><span class="p">,</span> <span class="mf">8.</span><span class="o">-</span><span class="mf">5.30</span><span class="p">,</span> <span class="mf">9.</span><span class="o">-</span><span class="mf">6.33</span><span class="p">,</span> <span class="mf">10.</span><span class="o">-</span><span class="mf">6.78</span><span class="p">,</span> <span class="mf">11.</span><span class="o">-</span><span class="mf">7.81</span><span class="p">,</span> <span class="mf">12.</span><span class="o">-</span><span class="mf">8.83</span><span class="p">,</span> <span class="mf">13.</span><span class="o">-</span><span class="mf">9.28</span><span class="p">,</span> <span class="mf">14.</span><span class="o">-</span><span class="mf">10.30</span><span class="p">,</span> <span class="mf">15.</span><span class="o">-</span><span class="mf">11.32</span><span class="p">,</span> <span class="mf">16.</span><span class="o">-</span><span class="mf">12.33</span><span class="p">,</span> <span class="mf">17.</span><span class="o">-</span><span class="mf">12.79</span><span class="p">,</span> <span class="mf">18.</span><span class="o">-</span><span class="mf">13.81</span><span class="p">,</span> <span class="mf">19.</span><span class="o">-</span><span class="mf">14.82</span><span class="p">,</span> <span class="mf">20.</span><span class="o">-</span><span class="mf">15.83</span><span class="p">]</span>
+	<span class="n">poissonerror_plus</span><span class="o">=</span><span class="p">[</span><span class="mf">1.29</span><span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">2.75</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">4.25</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">5.30</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">6.78</span><span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">7.81</span><span class="o">-</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">9.28</span><span class="o">-</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">10.30</span><span class="o">-</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">11.32</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">12.79</span><span class="o">-</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">13.81</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">14.82</span><span class="o">-</span><span class="mf">11.</span><span class="p">,</span> <span class="mf">16.29</span><span class="o">-</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">17.30</span><span class="o">-</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">18.32</span><span class="o">-</span><span class="mf">14.</span><span class="p">,</span> <span class="mf">19.32</span><span class="o">-</span><span class="mf">15.</span><span class="p">,</span> <span class="mf">20.80</span><span class="o">-</span><span class="mf">16.</span><span class="p">,</span> <span class="mf">21.81</span><span class="o">-</span><span class="mf">17.</span><span class="p">,</span> <span class="mf">22.82</span><span class="o">-</span><span class="mf">18.</span><span class="p">,</span> <span class="mf">23.82</span><span class="o">-</span><span class="mf">19.</span><span class="p">,</span> <span class="mf">25.30</span><span class="o">-</span><span class="mi">20</span><span class="p">]</span>
+	
+	<span class="c1">#histogram weights into bins</span>
+	<span class="n">counts</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">all_weights</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">bin_values</span><span class="p">)</span>
+	<span class="n">bin_centers</span> <span class="o">=</span> <span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">+</span><span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span>
+	<span class="n">bin_width</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+	<span class="c1">#loop over bins:</span>
+	<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bin_centers</span><span class="p">):</span>
+		<span class="c1">#if bin has less than 20 events, use poisson errors</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">):</span>
+			<span class="n">this_pp</span> <span class="o">=</span> <span class="n">poissonerror_plus</span><span class="p">[</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+			<span class="n">this_pm</span> <span class="o">=</span> <span class="n">poissonerror_minus</span><span class="p">[</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+		<span class="c1">#otherwise use sqrt(N)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">this_pp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+			<span class="n">this_pm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+		<span class="c1">#print(&#39;this pp pm is :&#39;,this_pp, this_pm)</span>
+
+		<span class="c1">#bin error is this error times the bin width</span>
+		<span class="n">bin_error_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">this_pp</span><span class="o">*</span><span class="n">b</span><span class="c1">#*bin_width</span>
+		<span class="n">bin_error_m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">this_pm</span><span class="o">*</span><span class="n">b</span><span class="c1">#*bin_width</span>
+
+		<span class="c1">#this is just here to compare against what I thought icemc was doing originally (not used)</span>
+		<span class="n">test_error</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">this_pp</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">bin_num</span><span class="o">*</span><span class="p">(</span><span class="n">max_weight</span><span class="o">-</span><span class="n">min_weight</span><span class="p">)</span><span class="o">+</span><span class="n">min_weight</span><span class="p">)</span>
+
+	<span class="c1">#total error is then added in quadrature </span>
+	<span class="n">total_error_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">bin_error_p</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+	<span class="n">total_error_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">bin_error_m</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+	<span class="c1">#again this is just a test to compare against icemc</span>
+	<span class="n">total_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">test_error</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+	<span class="k">return</span><span class="p">(</span><span class="n">total_error_p</span><span class="p">,</span><span class="n">total_error_m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./2024"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../2023/oct.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">October 2023</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-thursday-jan-11">Meeting with Kaeli, Thursday Jan. 11</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logistics">logistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-volume-plot">Effective Volume Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tasks">tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-tuesday-jan-16">Meeting with Kaeli, Tuesday Jan.16</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Effective Volume Plot</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jason Yao
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
