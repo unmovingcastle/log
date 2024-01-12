@@ -33,10 +33,10 @@
         ```
 
 ### tasks
-+ [ ] Schedule 20 hours of research hours, put in calendar.
++ [x] Schedule 20 hours of research hours, put in calendar.
 + [ ] Read about [LPM effect](LPM_effect)
 + [ ] Update the effective volume plot
-+ [ ] Read the {download}`GRA expectation document <pdf/gra_exp.pdf>`
++ [x] Read the {download}`GRA expectation document <pdf/gra_exp.pdf>`
 
 
 
