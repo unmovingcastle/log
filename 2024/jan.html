@@ -411,7 +411,14 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-tuesday-jan-16">Meeting with Kaeli, Tuesday Jan.16</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Effective Volume Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux">Energy Flux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-area">Effective Area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-tuesday-jan-23">Meeting with Kaeli, Tuesday Jan.23</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Effective Volume Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">tasks</a></li>
 </ul>
 </li>
 </ul>
@@ -481,8 +488,97 @@ Add these all up (ie. run1 passed  + run2 passed + …)</p></li>
 </section>
 <section id="meeting-with-kaeli-tuesday-jan-16">
 <h2>Meeting with Kaeli, Tuesday Jan.16<a class="headerlink" href="#meeting-with-kaeli-tuesday-jan-16" title="Permalink to this heading">#</a></h2>
+<section id="energy-flux">
+<h3>Energy Flux<a class="headerlink" href="#energy-flux" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>A good resource: ask question anonymously on Slack in the #idongetit channel.<br />
+Type <code class="docutils literal notranslate"><span class="pre">&quot;/abot</span> <span class="pre">#idontgetit</span> <span class="pre">message-content-here&quot;</span></code> to ask an anonymous question.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Slack</p>
+<p>There is a question regarding <a class="reference internal" href="#term-Single-Event-Sensitivity-SES"><span class="xref std std-term">single event sensitivity (SES)</span></a> inside this
+channel. Give it a read.</p>
+</div>
+</li>
+<li><p>The following is in the Appendix of the paper that Kaeli will send. <span class="math notranslate nohighlight">\(i\)</span> denotes the
+<span class="math notranslate nohighlight">\(i\)</span><sup>th</sup> energy bin.</p></li>
+<li><p>We will plot</p>
+<div class="math notranslate nohighlight">
+\[E_i F(E_i) = \frac{n_i}{\Lambda_i \, \ln(10) {\rm d}\log_{10} E_i}\]</div>
+<p>where</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(E_i\)</span> is the energy</p></li>
+<li><p><span class="math notranslate nohighlight">\(n_i\)</span> is the <strong>F-C</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>0 event corresponds to an F-C of 2.44</p>
+</div>
+</li>
+<li><p><span class="math notranslate nohighlight">\(\ln(10)\)</span> is there for normalization</p></li>
+<li><p>d<span class="math notranslate nohighlight">\(\log_{10}E\)</span> is the energy bin width. For example, if we plot something versus
+energy and the energies are <span class="math notranslate nohighlight">\(10^{18}\)</span>, <span class="math notranslate nohighlight">\(10^{19}\)</span>, <span class="math notranslate nohighlight">\(10^{20}\)</span>, and <span class="math notranslate nohighlight">\(10^{21}\)</span>, then
+the log (base 10) of the bin width would just be 1.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Lambda_i\)</span> is the <a class="reference internal" href="#term-Exposure"><span class="xref std std-term">exposure</span></a>.</p></li>
+</ul>
+</li>
+</ul>
+<dl class="glossary simple">
+<dt id="term-Exposure">Exposure<a class="headerlink" href="#term-Exposure" title="Permalink to this term">#</a></dt><dd><p>Efficiency <span class="math notranslate nohighlight">\(\epsilon_i\)</span> <span class="math notranslate nohighlight">\(\times\)</span>
+Effective Area <span class="math notranslate nohighlight">\(A_i\)</span> <span class="math notranslate nohighlight">\(\times\)</span>
+Time <span class="math notranslate nohighlight">\(T_i\)</span></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For simulation purposes, efficiency is 1. <br />
+Additionally, for PUEO, time is 30 days.</p>
+</div>
+</section>
+<section id="effective-area">
+<h3>Effective Area<a class="headerlink" href="#effective-area" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>To compute the effective area, recall that we <a class="reference internal" href="../2023/dec.html#loosely-effective-area"><span class="std std-ref">cut corners</span></a> by
+computing</p>
+<div class="math notranslate nohighlight">
+\[  A_{\rm eff} = \frac{V_{\rm eff}}{l_{\rm int}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(l_{\rm int}\)</span> is the <a class="reference internal" href="#term-Interaction-Length"><span class="xref std std-term">interaction length</span></a>.</p>
+</li>
+</ul>
+<dl class="glossary simple">
+<dt id="term-Interaction-Length">Interaction Length<a class="headerlink" href="#term-Interaction-Length" title="Permalink to this term">#</a></dt><dd><p>How much of the Earth a neutrino penetrates before interaction occurs.
+(we don’t know exactly what this value is for high energy neutrinos, but we have an
+estimate based on extrapolation from lower energy neutrinos).</p>
+</dd>
+<dt id="term-Single-Event-Sensitivity-SES">Single Event Sensitivity (SES)<a class="headerlink" href="#term-Single-Event-Sensitivity-SES" title="Permalink to this term">#</a></dt><dd><p>TBA</p>
+</dd>
+</dl>
+<div class="dropdown admonition">
+<p class="admonition-title">TODO</p>
+<p>Add <a class="reference internal" href="#term-Single-Event-Sensitivity-SES"><span class="xref std std-term">Single Event Sensitivity (SES)</span></a> glossary</p>
+</div>
+</section>
 <section id="id1">
-<h3>Effective Volume Plot<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>tasks<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Check why my Root script is slow.</p>
+<ul>
+<li><p>Make sure files are closed after opened.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make an effective area versus energy plot</p>
+<ul>
+<li><p>make sure to overlay this on the old PUEO plot (Kaeli will send data)</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make a flux versus energy plot</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read the [Upper Limit Paper]</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read about <a class="reference internal" href="../2023/dec.html#lpm-effect"><span class="std std-ref">LPM effect</span></a></p></li>
+</ul>
+</section>
+</section>
+<section id="meeting-with-kaeli-tuesday-jan-23">
+<h2>Meeting with Kaeli, Tuesday Jan.23<a class="headerlink" href="#meeting-with-kaeli-tuesday-jan-23" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>Effective Volume Plot<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>This time, include error bars.</p></li>
 </ul>
@@ -548,6 +644,12 @@ Error-bar script from Kaeli<div class="sd-summary-down docutils">
 </div>
 </div>
 </details></section>
+<section id="id3">
+<h3>tasks<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Attend Data Challenge workshops (Jan 30<sup>th</sup> and 31<sup>st</sup> 11am-3pm EST.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -621,7 +723,14 @@ Error-bar script from Kaeli<div class="sd-summary-down docutils">
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-tuesday-jan-16">Meeting with Kaeli, Tuesday Jan.16</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Effective Volume Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux">Energy Flux</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-area">Effective Area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">tasks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-tuesday-jan-23">Meeting with Kaeli, Tuesday Jan.23</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Effective Volume Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">tasks</a></li>
 </ul>
 </li>
 </ul>
