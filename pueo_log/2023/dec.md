@@ -62,6 +62,7 @@ Flavor Histogram (energy=21)
     One can find effective volume in the source code (`report.cc`?) or in the output of
     a simulation.
     ```
+(loosely-effective-area)=
 *   By the way, we cut some corners and define the effective area loosely as\
     Effective Area $\equiv$ Effective Volume / Interaction Length\
     where interaction length can be found in the source code.

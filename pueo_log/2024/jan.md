@@ -41,6 +41,77 @@
 
 
 ## Meeting with Kaeli, Tuesday Jan.16
+### Energy Flux
++ A good resource: ask question anonymously on Slack in the #idongetit channel.\
+    Type `"/abot #idontgetit message-content-here"` to ask an anonymous question.
+    ```{admonition} Slack
+    :class: seealso
+    There is a question regarding {term}`single event sensitivity (SES)` inside this
+    channel. Give it a read.
+    ```
++ The following is in the Appendix of the paper that Kaeli will send. $i$ denotes the
+    $i${sup}`th` energy bin.
++ We will plot
+  ```{math}
+  E_i F(E_i) = \frac{n_i}{\Lambda_i \, \ln(10) {\rm d}\log_{10} E_i}
+  ```
+  where 
+  + $E_i$ is the energy
+  + $n_i$ is the **F-C**
+    ```{note}
+    0 event corresponds to an F-C of 2.44
+    ```
+  + $\ln(10)$ is there for normalization
+  + d$\log_{10}E$ is the energy bin width. For example, if we plot something versus
+    energy and the energies are $10^{18}$, $10^{19}$, $10^{20}$, and $10^{21}$, then
+    the log (base 10) of the bin width would just be 1.
+  + $\Lambda_i$ is the {term}`exposure`.
+
+```{glossary}
+Exposure
+    Efficiency $\epsilon_i$ $\times$ 
+    Effective Area $A_i$ $\times$
+    Time $T_i$ 
+```
+
+```{note}
+For simulation purposes, efficiency is 1. \
+Additionally, for PUEO, time is 30 days.
+```
+
+### Effective Area
++ To compute the effective area, recall that we [cut corners](loosely-effective-area) by 
+    computing
+  ```{math}
+    A_{\rm eff} = \frac{V_{\rm eff}}{l_{\rm int}}
+  ```
+  where $l_{\rm int}$ is the {term}`interaction length`.
+
+```{glossary}
+Interaction Length
+    How much of the Earth a neutrino penetrates before interaction occurs.
+    (we don't know exactly what this value is for high energy neutrinos, but we have an
+    estimate based on extrapolation from lower energy neutrinos).
+
+Single Event Sensitivity (SES)
+    TBA
+```
+```{admonition} TODO
+:class: dropdown
+Add {term}`Single Event Sensitivity (SES)` glossary
+```
+
+### tasks
++ [ ] Check why my Root script is slow.
+    + Make sure files are closed after opened.
++ [ ] Make an effective area versus energy plot 
+    + make sure to overlay this on the old PUEO plot (Kaeli will send data)
++ [ ] Make a flux versus energy plot
+    
++ [ ] Read the [Upper Limit Paper]
++ [ ] Read about [LPM effect](LPM_effect)
+
+## Meeting with Kaeli, Tuesday Jan.23
 
 ### Effective Volume Plot
 +   This time, include error bars.
@@ -101,3 +172,5 @@ def AddErrors(all_weights):#the input is a numpy array of all the event weights,
 ```
 ::::
 
+### tasks
++ [ ] Attend Data Challenge workshops (Jan 30{sup}`th` and 31{sup}`st` 11am-3pm EST.
