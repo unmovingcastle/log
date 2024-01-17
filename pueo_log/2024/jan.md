@@ -34,7 +34,7 @@
 
 ### tasks
 + [x] Schedule 20 hours of research hours, put in calendar.
-+ [ ] Read about [LPM effect](LPM_effect)
++ [x] Read about [LPM effect](LPM_effect)
 + [x] Update the effective volume plot
 + [x] Read the {download}`GRA expectation document <pdf/gra_exp.pdf>`
 
@@ -102,14 +102,19 @@ Add {term}`Single Event Sensitivity (SES)` glossary
 ```
 
 ### tasks
-+ [ ] Check why my Root script is slow.
++ [x] Check why my Root script is slow.
     + Make sure files are closed after opened.
+    + Wed., Jan 17: Found a bug when counting the number of files for the e=18 simulation.
+      Should be 1000 instead of 100. The end result didn't change much on the log-log plot
+      though.
+    + I checked my `TChain` usage; pretty sure the memory is freed automatically the
+        way I wrote it, so I'm not sure why the script is so slow...
 + [ ] Make an effective area versus energy plot 
     + make sure to overlay this on the old PUEO plot (Kaeli will send data)
 + [ ] Make a flux versus energy plot
     
 + [ ] Read the [Upper Limit Paper]
-+ [ ] Read about [LPM effect](LPM_effect)
++ [x] Read about [LPM effect](LPM_effect)
 
 ## Meeting with Kaeli, Tuesday Jan.23
 
