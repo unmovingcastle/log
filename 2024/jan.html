@@ -480,7 +480,7 @@ Add these all up (ie. run1 passed  + run2 passed + …)</p></li>
 <h3>tasks<a class="headerlink" href="#tasks" title="Permalink to this heading">#</a></h3>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Schedule 20 hours of research hours, put in calendar.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read about <a class="reference internal" href="../2023/dec.html#lpm-effect"><span class="std std-ref">LPM effect</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Read about <a class="reference internal" href="../2023/dec.html#lpm-effect"><span class="std std-ref">LPM effect</span></a></p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Update the effective volume plot</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Read the <a class="reference download internal" download="" href="../_downloads/dafac5540e7a5f3253e642773be9495b/gra_exp.pdf"><code class="xref download docutils literal notranslate"><span class="pre">GRA</span> <span class="pre">expectation</span> <span class="pre">document</span></code></a></p></li>
 </ul>
@@ -559,9 +559,14 @@ estimate based on extrapolation from lower energy neutrinos).</p>
 <section id="id1">
 <h3>tasks<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Check why my Root script is slow.</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Check why my Root script is slow.</p>
 <ul>
 <li><p>Make sure files are closed after opened.</p></li>
+<li><p>Wed., Jan 17: Found a bug when counting the number of files for the e=18 simulation.
+Should be 1000 instead of 100. The end result didn’t change much on the log-log plot
+though.</p></li>
+<li><p>I checked my <code class="docutils literal notranslate"><span class="pre">TChain</span></code> usage; pretty sure the memory is freed automatically the
+way I wrote it, so I’m not sure why the script is so slow…</p></li>
 </ul>
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make an effective area versus energy plot</p>
@@ -571,7 +576,7 @@ estimate based on extrapolation from lower energy neutrinos).</p>
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make a flux versus energy plot</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read the [Upper Limit Paper]</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read about <a class="reference internal" href="../2023/dec.html#lpm-effect"><span class="std std-ref">LPM effect</span></a></p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Read about <a class="reference internal" href="../2023/dec.html#lpm-effect"><span class="std std-ref">LPM effect</span></a></p></li>
 </ul>
 </section>
 </section>
