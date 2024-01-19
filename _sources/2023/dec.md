@@ -180,6 +180,7 @@ one.
 
 ---
 (average_effective_volume_version1)=
+
 Presumably we would then take an average of the 100 entries of `volumes.out` to get the
 averaged all-neutrino Effective volume. This can be done using Pandas in python:
 ```python
@@ -202,9 +203,31 @@ plot = df.plot.scatter(x='energy',y='effective volume',c='DarkBlue')
 plot.get_figure().savefig('effective_volume.png', format='png')
 ```
 
+The result is given in {numref}`effective_volume_estimate_jan19`.
+
+```{list-table} Effective Volume Estimate
+:name: effective_volume_estimate_jan19
+:header-rows: 1
+
+* - Energy [eV]
+  - Effective Volume [km$^3$ sr]
+
+*   - 18
+    - 44.843654
+*   - 19 
+    - 2553.348809
+*   - 20
+    - 13122.487126
+*   - 21
+    - 24129.468761
+```
 ```{figure} ./img/effective_volume.png
 ---
 name: dec2023eff_vol_plot
 ---
 An example effective volume plot
 ```
+**Jan 19 Update:**\
+Note that this is only an estimate of the effective volume.
+See {ref}`the January 2024 entry <effective_volume_proper_average>` 
+for the proper way to find the average effective volume.

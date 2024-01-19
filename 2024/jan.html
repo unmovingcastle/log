@@ -416,11 +416,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">tasks</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-tuesday-jan-23">Meeting with Kaeli, Tuesday Jan.23</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Effective Volume Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">tasks</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -451,7 +446,7 @@ document.write(`
 </ul>
 </section>
 <section id="effective-volume-plot">
-<h3>Effective Volume Plot<a class="headerlink" href="#effective-volume-plot" title="Permalink to this heading">#</a></h3>
+<span id="effective-volume-proper-average"></span><h3>Effective Volume Plot<a class="headerlink" href="#effective-volume-plot" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>Be sure to include units. For <span class="math notranslate nohighlight">\(x\)</span>-axis, use the following:<br />
 log(energy)[eV]</p></li>
@@ -558,9 +553,9 @@ estimate based on extrapolation from lower energy neutrinos).</p>
 </section>
 <section id="id1">
 <h3>tasks<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<ul class="contains-task-list simple">
+<ul class="contains-task-list">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Check why my Root script is slow.</p>
-<ul>
+<ul class="simple">
 <li><p>Make sure files are closed after opened.</p></li>
 <li><p>Wed., Jan 17: Found a bug when counting the number of files for the e=18 simulation.
 Should be 1000 instead of 100. The end result didn’t change much on the log-log plot
@@ -571,89 +566,115 @@ way I wrote it, so I’m not sure why the script is so slow…</p></li>
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make an effective area versus energy plot</p>
 <ul>
-<li><p>make sure to overlay this on the old PUEO plot (Kaeli will send data)</p></li>
+<li><p>Here is a table of the averaged effective volume calcuated properly as
+described in <a class="reference internal" href="#effective-volume-proper-average"><span class="std std-ref">Effective Volume Plot</span></a>.</p>
+<table class="table" id="effective-volume-jan19">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Average Effective Volume </span><a class="headerlink" href="#effective-volume-jan19" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Energy [eV]</p></th>
+<th class="head"><p>Effective Volume [km<span class="math notranslate nohighlight">\(^3\)</span> sr]</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>48.9026</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>2784.46</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>14310.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p>26313.5</p></td>
+</tr>
+</tbody>
+</table>
+<p>compared with <a class="reference internal" href="../2023/dec.html#effective-volume-estimate-jan19"><span class="std std-numref">Table 2</span></a>, we see that
+there is not a huge difference. so I don’t think I made a mistake in
+calculating the effective volume.</p>
+</li>
+<li><p>Here is the effective area plot.</p>
+<figure class="align-default" id="fig-jan19-effar">
+<img alt="../_images/jan19_effar.png" src="../_images/jan19_effar.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">No significant difference between the previous and new effective area.</span><a class="headerlink" href="#fig-jan19-effar" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
 </ul>
 </li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Make a flux versus energy plot</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Read the [Upper Limit Paper]</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Read about <a class="reference internal" href="../2023/dec.html#lpm-effect"><span class="std std-ref">LPM effect</span></a></p></li>
 </ul>
-</section>
-</section>
-<section id="meeting-with-kaeli-tuesday-jan-23">
-<h2>Meeting with Kaeli, Tuesday Jan.23<a class="headerlink" href="#meeting-with-kaeli-tuesday-jan-23" title="Permalink to this heading">#</a></h2>
-<section id="id2">
-<h3>Effective Volume Plot<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>This time, include error bars.</p></li>
-</ul>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Error-bar script from Kaeli<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">AddErrors</span><span class="p">(</span><span class="n">all_weights</span><span class="p">):</span><span class="c1">#the input is a numpy array of all the event weights, where each entry is an event</span>
-
-	<span class="c1">#set number of bins and max/min weights</span>
-	<span class="n">bin_num</span> <span class="o">=</span> <span class="mi">10</span>
-	<span class="n">max_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">all_weights</span><span class="p">)</span>
-	<span class="n">min_weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">all_weights</span><span class="p">)</span>
-
-	<span class="c1">#set bin values for weights</span>
-	<span class="n">bin_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_weight</span><span class="p">,</span><span class="n">max_weight</span><span class="p">,</span><span class="n">bin_num</span><span class="p">)</span>
-
-	<span class="c1">#create arrays to hold both positive and negative errors</span>
-	<span class="n">bin_error_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_num</span><span class="p">)</span>
-	<span class="n">bin_error_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_num</span><span class="p">)</span>
-	<span class="n">test_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bin_num</span><span class="p">)</span>
-
-	<span class="c1">#Copy poisson errors from icemc:</span>
-	<span class="n">poissonerror_minus</span><span class="o">=</span><span class="p">[</span><span class="mf">0.</span><span class="o">-</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">1.</span><span class="o">-</span><span class="mf">0.37</span><span class="p">,</span> <span class="mf">2.</span><span class="o">-</span><span class="mf">0.74</span><span class="p">,</span> <span class="mf">3.</span><span class="o">-</span><span class="mf">1.10</span><span class="p">,</span> <span class="mf">4.</span><span class="o">-</span><span class="mf">2.34</span><span class="p">,</span> <span class="mf">5.</span><span class="o">-</span><span class="mf">2.75</span><span class="p">,</span> <span class="mf">6.</span><span class="o">-</span><span class="mf">3.82</span><span class="p">,</span> <span class="mf">7.</span><span class="o">-</span><span class="mf">4.25</span><span class="p">,</span> <span class="mf">8.</span><span class="o">-</span><span class="mf">5.30</span><span class="p">,</span> <span class="mf">9.</span><span class="o">-</span><span class="mf">6.33</span><span class="p">,</span> <span class="mf">10.</span><span class="o">-</span><span class="mf">6.78</span><span class="p">,</span> <span class="mf">11.</span><span class="o">-</span><span class="mf">7.81</span><span class="p">,</span> <span class="mf">12.</span><span class="o">-</span><span class="mf">8.83</span><span class="p">,</span> <span class="mf">13.</span><span class="o">-</span><span class="mf">9.28</span><span class="p">,</span> <span class="mf">14.</span><span class="o">-</span><span class="mf">10.30</span><span class="p">,</span> <span class="mf">15.</span><span class="o">-</span><span class="mf">11.32</span><span class="p">,</span> <span class="mf">16.</span><span class="o">-</span><span class="mf">12.33</span><span class="p">,</span> <span class="mf">17.</span><span class="o">-</span><span class="mf">12.79</span><span class="p">,</span> <span class="mf">18.</span><span class="o">-</span><span class="mf">13.81</span><span class="p">,</span> <span class="mf">19.</span><span class="o">-</span><span class="mf">14.82</span><span class="p">,</span> <span class="mf">20.</span><span class="o">-</span><span class="mf">15.83</span><span class="p">]</span>
-	<span class="n">poissonerror_plus</span><span class="o">=</span><span class="p">[</span><span class="mf">1.29</span><span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">2.75</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">4.25</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">5.30</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">6.78</span><span class="o">-</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">7.81</span><span class="o">-</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">9.28</span><span class="o">-</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">10.30</span><span class="o">-</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">11.32</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">12.79</span><span class="o">-</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">13.81</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">14.82</span><span class="o">-</span><span class="mf">11.</span><span class="p">,</span> <span class="mf">16.29</span><span class="o">-</span><span class="mf">12.</span><span class="p">,</span> <span class="mf">17.30</span><span class="o">-</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">18.32</span><span class="o">-</span><span class="mf">14.</span><span class="p">,</span> <span class="mf">19.32</span><span class="o">-</span><span class="mf">15.</span><span class="p">,</span> <span class="mf">20.80</span><span class="o">-</span><span class="mf">16.</span><span class="p">,</span> <span class="mf">21.81</span><span class="o">-</span><span class="mf">17.</span><span class="p">,</span> <span class="mf">22.82</span><span class="o">-</span><span class="mf">18.</span><span class="p">,</span> <span class="mf">23.82</span><span class="o">-</span><span class="mf">19.</span><span class="p">,</span> <span class="mf">25.30</span><span class="o">-</span><span class="mi">20</span><span class="p">]</span>
-	
-	<span class="c1">#histogram weights into bins</span>
-	<span class="n">counts</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">all_weights</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="n">bin_values</span><span class="p">)</span>
-	<span class="n">bin_centers</span> <span class="o">=</span> <span class="p">(</span><span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">+</span><span class="n">bins</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mf">2.0</span>
-	<span class="n">bin_width</span> <span class="o">=</span> <span class="n">bins</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">bins</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-	<span class="c1">#loop over bins:</span>
-	<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">bin_centers</span><span class="p">):</span>
-		<span class="c1">#if bin has less than 20 events, use poisson errors</span>
-		<span class="k">if</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">):</span>
-			<span class="n">this_pp</span> <span class="o">=</span> <span class="n">poissonerror_plus</span><span class="p">[</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
-			<span class="n">this_pm</span> <span class="o">=</span> <span class="n">poissonerror_minus</span><span class="p">[</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
-		<span class="c1">#otherwise use sqrt(N)</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="n">this_pp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-			<span class="n">this_pm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">counts</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-		<span class="c1">#print(&#39;this pp pm is :&#39;,this_pp, this_pm)</span>
-
-		<span class="c1">#bin error is this error times the bin width</span>
-		<span class="n">bin_error_p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">this_pp</span><span class="o">*</span><span class="n">b</span><span class="c1">#*bin_width</span>
-		<span class="n">bin_error_m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">this_pm</span><span class="o">*</span><span class="n">b</span><span class="c1">#*bin_width</span>
-
-		<span class="c1">#this is just here to compare against what I thought icemc was doing originally (not used)</span>
-		<span class="n">test_error</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">this_pp</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">bin_num</span><span class="o">*</span><span class="p">(</span><span class="n">max_weight</span><span class="o">-</span><span class="n">min_weight</span><span class="p">)</span><span class="o">+</span><span class="n">min_weight</span><span class="p">)</span>
-
-	<span class="c1">#total error is then added in quadrature </span>
-	<span class="n">total_error_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">bin_error_p</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-	<span class="n">total_error_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">bin_error_m</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-
-	<span class="c1">#again this is just a test to compare against icemc</span>
-	<span class="n">total_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">test_error</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-
-	<span class="k">return</span><span class="p">(</span><span class="n">total_error_p</span><span class="p">,</span><span class="n">total_error_m</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details></section>
-<section id="id3">
-<h3>tasks<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Attend Data Challenge workshops (Jan 30<sup>th</sup> and 31<sup>st</sup> 11am-3pm EST.</p></li>
-</ul>
+<!-- ## Meeting with Kaeli, Tuesday Jan.23 -->
+<!--  -->
+<!-- ### Effective Volume Plot -->
+<!-- +   This time, include error bars. -->
+<!--  -->
+<!-- ::::{dropdown} Error-bar script from Kaeli -->
+<!-- ``` python -->
+<!-- def AddErrors(all_weights):#the input is a numpy array of all the event weights, where each entry is an event -->
+<!--  -->
+<!-- 	#set number of bins and max/min weights -->
+<!-- 	bin_num = 10 -->
+<!-- 	max_weight = np.max(all_weights) -->
+<!-- 	min_weight = np.min(all_weights) -->
+<!--  -->
+<!-- 	#set bin values for weights -->
+<!-- 	bin_values = np.linspace(min_weight,max_weight,bin_num) -->
+<!--  -->
+<!-- 	#create arrays to hold both positive and negative errors -->
+<!-- 	bin_error_p = np.zeros(bin_num) -->
+<!-- 	bin_error_m = np.zeros(bin_num) -->
+<!-- 	test_error = np.zeros(bin_num) -->
+<!--  -->
+<!-- 	#Copy poisson errors from icemc: -->
+<!-- 	poissonerror_minus=[0.-0.00, 1.-0.37, 2.-0.74, 3.-1.10, 4.-2.34, 5.-2.75, 6.-3.82, 7.-4.25, 8.-5.30, 9.-6.33, 10.-6.78, 11.-7.81, 12.-8.83, 13.-9.28, 14.-10.30, 15.-11.32, 16.-12.33, 17.-12.79, 18.-13.81, 19.-14.82, 20.-15.83] -->
+<!-- 	poissonerror_plus=[1.29-0., 2.75-1., 4.25-2., 5.30-3., 6.78-4., 7.81-5., 9.28-6., 10.30-7., 11.32-8., 12.79-9., 13.81-10., 14.82-11., 16.29-12., 17.30-13., 18.32-14., 19.32-15., 20.80-16., 21.81-17., 22.82-18., 23.82-19., 25.30-20] -->
+<!-- 	 -->
+<!-- 	#histogram weights into bins -->
+<!-- 	counts, bins =np.histogram(all_weights,bins=bin_values) -->
+<!-- 	bin_centers = (bins[1:]+bins[:-1])/2.0 -->
+<!-- 	bin_width = bins[1]-bins[0] -->
+<!--  -->
+<!-- 	#loop over bins: -->
+<!-- 	for i, b in enumerate(bin_centers): -->
+<!-- 		#if bin has less than 20 events, use poisson errors -->
+<!-- 		if(counts[i]<20): -->
+<!-- 			this_pp = poissonerror_plus[counts[i]] -->
+<!-- 			this_pm = poissonerror_minus[counts[i]] -->
+<!-- 		#otherwise use sqrt(N) -->
+<!-- 		else: -->
+<!-- 			this_pp = np.sqrt(counts[i]) -->
+<!-- 			this_pm = np.sqrt(counts[i]) -->
+<!-- 		#print('this pp pm is :',this_pp, this_pm) -->
+<!--  -->
+<!-- 		#bin error is this error times the bin width -->
+<!-- 		bin_error_p[i]=this_pp*b#*bin_width -->
+<!-- 		bin_error_m[i]=this_pm*b#*bin_width -->
+<!--  -->
+<!-- 		#this is just here to compare against what I thought icemc was doing originally (not used) -->
+<!-- 		test_error[i]=this_pp*10**(-1*(i+0.5)/bin_num*(max_weight-min_weight)+min_weight) -->
+<!--  -->
+<!-- 	#total error is then added in quadrature  -->
+<!-- 	total_error_p = np.sqrt(np.sum(bin_error_p**2)) -->
+<!-- 	total_error_m = np.sqrt(np.sum(bin_error_m**2)) -->
+<!--  -->
+<!-- 	#again this is just a test to compare against icemc -->
+<!-- 	total_test = np.sqrt(np.sum(test_error**2)) -->
+<!--  -->
+<!-- 	return(total_error_p,total_error_m) -->
+<!-- ``` -->
+<!-- :::: -->
+<!--  -->
+<!-- ### tasks -->
+<!-- + [ ] Attend Data Challenge workshops (Jan 30{sup}`th` and 31{sup}`st` 11am-3pm EST. -->
 </section>
 </section>
 </section>
@@ -731,11 +752,6 @@ Error-bar script from Kaeli<div class="sd-summary-down docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-flux">Energy Flux</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#effective-area">Effective Area</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">tasks</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#meeting-with-kaeli-tuesday-jan-23">Meeting with Kaeli, Tuesday Jan.23</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Effective Volume Plot</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">tasks</a></li>
 </ul>
 </li>
 </ul>

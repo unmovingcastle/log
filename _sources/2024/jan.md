@@ -11,6 +11,7 @@
 +   **PUEO simulation call** (Wednesday 1:00, tentative)
 +   individual meeting with Kaeli - Tuesday at 1:30
 
+(effective_volume_proper_average)=
 ### Effective Volume Plot
 
 +   Be sure to include units. For $x$-axis, use the following:\
@@ -110,72 +111,105 @@ Add {term}`Single Event Sensitivity (SES)` glossary
     + I checked my `TChain` usage; pretty sure the memory is freed automatically the
         way I wrote it, so I'm not sure why the script is so slow...
 + [ ] Make an effective area versus energy plot 
-    + make sure to overlay this on the old PUEO plot (Kaeli will send data)
+    + Here is a table of the averaged effective volume calcuated properly as 
+        described in {ref}`effective_volume_proper_average`.
+
+        ```{list-table} Average Effective Volume 
+        :name: effective_volume_jan19
+        :header-rows: 1
+
+        * - Energy [eV]
+          - Effective Volume [km$^3$ sr]
+
+        * - 18
+          - 48.9026
+        * - 19 
+          - 2784.46
+        * - 20
+          - 14310.2
+        * - 21
+          - 26313.5
+        ```
+        compared with {numref}`effective_volume_estimate_jan19`, we see that
+        there is not a huge difference. so I don't think I made a mistake in
+        calculating the effective volume.
+
+    + Here is the effective area plot.
+        ```{figure} ./img/jan19_effar.png
+        ---
+        name: fig:jan19_effar
+        ---
+        No significant difference between the previous and new effective area.
+        ```
+        
 + [ ] Make a flux versus energy plot
     
 + [ ] Read the [Upper Limit Paper]
 + [x] Read about [LPM effect](LPM_effect)
 
-## Meeting with Kaeli, Tuesday Jan.23
 
-### Effective Volume Plot
-+   This time, include error bars.
 
-::::{dropdown} Error-bar script from Kaeli
-``` python
-def AddErrors(all_weights):#the input is a numpy array of all the event weights, where each entry is an event
+<!-- ## Meeting with Kaeli, Tuesday Jan.23 -->
+<!--  -->
+<!-- ### Effective Volume Plot -->
+<!-- +   This time, include error bars. -->
+<!--  -->
+<!-- ::::{dropdown} Error-bar script from Kaeli -->
+<!-- ``` python -->
+<!-- def AddErrors(all_weights):#the input is a numpy array of all the event weights, where each entry is an event -->
+<!--  -->
+<!-- 	#set number of bins and max/min weights -->
+<!-- 	bin_num = 10 -->
+<!-- 	max_weight = np.max(all_weights) -->
+<!-- 	min_weight = np.min(all_weights) -->
+<!--  -->
+<!-- 	#set bin values for weights -->
+<!-- 	bin_values = np.linspace(min_weight,max_weight,bin_num) -->
+<!--  -->
+<!-- 	#create arrays to hold both positive and negative errors -->
+<!-- 	bin_error_p = np.zeros(bin_num) -->
+<!-- 	bin_error_m = np.zeros(bin_num) -->
+<!-- 	test_error = np.zeros(bin_num) -->
+<!--  -->
+<!-- 	#Copy poisson errors from icemc: -->
+<!-- 	poissonerror_minus=[0.-0.00, 1.-0.37, 2.-0.74, 3.-1.10, 4.-2.34, 5.-2.75, 6.-3.82, 7.-4.25, 8.-5.30, 9.-6.33, 10.-6.78, 11.-7.81, 12.-8.83, 13.-9.28, 14.-10.30, 15.-11.32, 16.-12.33, 17.-12.79, 18.-13.81, 19.-14.82, 20.-15.83] -->
+<!-- 	poissonerror_plus=[1.29-0., 2.75-1., 4.25-2., 5.30-3., 6.78-4., 7.81-5., 9.28-6., 10.30-7., 11.32-8., 12.79-9., 13.81-10., 14.82-11., 16.29-12., 17.30-13., 18.32-14., 19.32-15., 20.80-16., 21.81-17., 22.82-18., 23.82-19., 25.30-20] -->
+<!-- 	 -->
+<!-- 	#histogram weights into bins -->
+<!-- 	counts, bins =np.histogram(all_weights,bins=bin_values) -->
+<!-- 	bin_centers = (bins[1:]+bins[:-1])/2.0 -->
+<!-- 	bin_width = bins[1]-bins[0] -->
+<!--  -->
+<!-- 	#loop over bins: -->
+<!-- 	for i, b in enumerate(bin_centers): -->
+<!-- 		#if bin has less than 20 events, use poisson errors -->
+<!-- 		if(counts[i]<20): -->
+<!-- 			this_pp = poissonerror_plus[counts[i]] -->
+<!-- 			this_pm = poissonerror_minus[counts[i]] -->
+<!-- 		#otherwise use sqrt(N) -->
+<!-- 		else: -->
+<!-- 			this_pp = np.sqrt(counts[i]) -->
+<!-- 			this_pm = np.sqrt(counts[i]) -->
+<!-- 		#print('this pp pm is :',this_pp, this_pm) -->
+<!--  -->
+<!-- 		#bin error is this error times the bin width -->
+<!-- 		bin_error_p[i]=this_pp*b#*bin_width -->
+<!-- 		bin_error_m[i]=this_pm*b#*bin_width -->
+<!--  -->
+<!-- 		#this is just here to compare against what I thought icemc was doing originally (not used) -->
+<!-- 		test_error[i]=this_pp*10**(-1*(i+0.5)/bin_num*(max_weight-min_weight)+min_weight) -->
+<!--  -->
+<!-- 	#total error is then added in quadrature  -->
+<!-- 	total_error_p = np.sqrt(np.sum(bin_error_p**2)) -->
+<!-- 	total_error_m = np.sqrt(np.sum(bin_error_m**2)) -->
+<!--  -->
+<!-- 	#again this is just a test to compare against icemc -->
+<!-- 	total_test = np.sqrt(np.sum(test_error**2)) -->
+<!--  -->
+<!-- 	return(total_error_p,total_error_m) -->
+<!-- ``` -->
+<!-- :::: -->
+<!--  -->
+<!-- ### tasks -->
+<!-- + [ ] Attend Data Challenge workshops (Jan 30{sup}`th` and 31{sup}`st` 11am-3pm EST. -->
 
-	#set number of bins and max/min weights
-	bin_num = 10
-	max_weight = np.max(all_weights)
-	min_weight = np.min(all_weights)
-
-	#set bin values for weights
-	bin_values = np.linspace(min_weight,max_weight,bin_num)
-
-	#create arrays to hold both positive and negative errors
-	bin_error_p = np.zeros(bin_num)
-	bin_error_m = np.zeros(bin_num)
-	test_error = np.zeros(bin_num)
-
-	#Copy poisson errors from icemc:
-	poissonerror_minus=[0.-0.00, 1.-0.37, 2.-0.74, 3.-1.10, 4.-2.34, 5.-2.75, 6.-3.82, 7.-4.25, 8.-5.30, 9.-6.33, 10.-6.78, 11.-7.81, 12.-8.83, 13.-9.28, 14.-10.30, 15.-11.32, 16.-12.33, 17.-12.79, 18.-13.81, 19.-14.82, 20.-15.83]
-	poissonerror_plus=[1.29-0., 2.75-1., 4.25-2., 5.30-3., 6.78-4., 7.81-5., 9.28-6., 10.30-7., 11.32-8., 12.79-9., 13.81-10., 14.82-11., 16.29-12., 17.30-13., 18.32-14., 19.32-15., 20.80-16., 21.81-17., 22.82-18., 23.82-19., 25.30-20]
-	
-	#histogram weights into bins
-	counts, bins =np.histogram(all_weights,bins=bin_values)
-	bin_centers = (bins[1:]+bins[:-1])/2.0
-	bin_width = bins[1]-bins[0]
-
-	#loop over bins:
-	for i, b in enumerate(bin_centers):
-		#if bin has less than 20 events, use poisson errors
-		if(counts[i]<20):
-			this_pp = poissonerror_plus[counts[i]]
-			this_pm = poissonerror_minus[counts[i]]
-		#otherwise use sqrt(N)
-		else:
-			this_pp = np.sqrt(counts[i])
-			this_pm = np.sqrt(counts[i])
-		#print('this pp pm is :',this_pp, this_pm)
-
-		#bin error is this error times the bin width
-		bin_error_p[i]=this_pp*b#*bin_width
-		bin_error_m[i]=this_pm*b#*bin_width
-
-		#this is just here to compare against what I thought icemc was doing originally (not used)
-		test_error[i]=this_pp*10**(-1*(i+0.5)/bin_num*(max_weight-min_weight)+min_weight)
-
-	#total error is then added in quadrature 
-	total_error_p = np.sqrt(np.sum(bin_error_p**2))
-	total_error_m = np.sqrt(np.sum(bin_error_m**2))
-
-	#again this is just a test to compare against icemc
-	total_test = np.sqrt(np.sum(test_error**2))
-
-	return(total_error_p,total_error_m)
-```
-::::
-
-### tasks
-+ [ ] Attend Data Challenge workshops (Jan 30{sup}`th` and 31{sup}`st` 11am-3pm EST.
