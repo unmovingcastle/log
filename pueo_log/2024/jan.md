@@ -133,6 +133,14 @@ Add {term}`Single Event Sensitivity (SES)` glossary
         compared with {numref}`effective_volume_estimate_jan19`, we see that
         there is not a huge difference. so I don't think I made a mistake in
         calculating the effective volume.
+
+    + Here is the effective area plot.
+        ```{figure} ./img/jan19_effar.png
+        ---
+        name: fig:jan19_effar
+        ---
+        No significant difference between the previous and new effective area.
+        ```
         
 + [ ] Make a flux versus energy plot
     
