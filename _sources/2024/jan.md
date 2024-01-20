@@ -110,7 +110,7 @@ Add {term}`Single Event Sensitivity (SES)` glossary
       though.
     + I checked my `TChain` usage; pretty sure the memory is freed automatically the
         way I wrote it, so I'm not sure why the script is so slow...
-+ [ ] Make an effective area versus energy plot 
++ [x] Make an effective area versus energy plot 
     + Here is a table of the averaged effective volume calcuated properly as 
         described in {ref}`effective_volume_proper_average`.
 
@@ -149,8 +149,8 @@ Add {term}`Single Event Sensitivity (SES)` glossary
 
 
 
-<!-- ## Meeting with Kaeli, Tuesday Jan.23 -->
-<!--  -->
+## Meeting with Kaeli, Tuesday Jan.23
+
 <!-- ### Effective Volume Plot -->
 <!-- +   This time, include error bars. -->
 <!--  -->

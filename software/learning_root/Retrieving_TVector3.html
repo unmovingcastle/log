@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="RDataFrame.html">Learning RDataFrame</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Retrieving TVector3 From a Tree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TChain.html">Using TChain to combine files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TTreeReader.html">Using TTreeReader vs RDataFrame</a></li>
 </ul>
 </li>
 </ul>
@@ -470,9 +471,9 @@ Again, this is just how C++/ROOT does things when it comes to non-primitive type
 on the ROOT forum.</p>
 </section>
 <section id="the-newer-way">
-<h2>the newer way<a class="headerlink" href="#the-newer-way" title="Permalink to this heading">#</a></h2>
+<span id="subsec-ttreereader"></span><h2>the newer way<a class="headerlink" href="#the-newer-way" title="Permalink to this heading">#</a></h2>
 <p>The method introduced above worked for me when I create a simple tree containing a simple
-vector. However, it did not work when I tried to retrive the branch
+vector. However, it did not work when I tried to retrieve the branch
 “eventSummary.neutrino.path.direction”, which is a <code class="docutils literal notranslate"><span class="pre">TVector3</span></code>. I don’t know why I keep
 getting a segmentation fault, but here is another
 <a class="reference external" href="https://stackoverflow.com/a/28332810">more modern method</a>

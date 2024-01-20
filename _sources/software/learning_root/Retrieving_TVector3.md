@@ -54,9 +54,10 @@ Again, this is just how C++/ROOT does things when it comes to non-primitive type
 [explained](https://root-forum.cern.ch/t/retrieving-tvector3-from-a-tree/57239/5?u=unmovingcastle)
 on the ROOT forum.
 
+(subsec:ttreereader)=
 ## the newer way
 The method introduced above worked for me when I create a simple tree containing a simple
-vector. However, it did not work when I tried to retrive the branch 
+vector. However, it did not work when I tried to retrieve the branch 
 "eventSummary.neutrino.path.direction", which is a `TVector3`. I don't know why I keep
 getting a segmentation fault, but here is another 
 [more modern method](https://stackoverflow.com/a/28332810) 
