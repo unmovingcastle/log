@@ -210,6 +210,11 @@ Add {term}`Single Event Sensitivity (SES)` glossary
 <!-- ``` -->
 <!-- :::: -->
 <!--  -->
-<!-- ### tasks -->
-<!-- + [ ] Attend Data Challenge workshops (Jan 30{sup}`th` and 31{sup}`st` 11am-3pm EST. -->
-
+### tasks
++ [x] Fix the bug in my effective area plot
++ [ ] Do another run using the current version of PueoSim
++ [ ] Make a new effective area plot using all three sets of data.
+    + Kaeli's data is from Oct. 23
++ [x] Send Kaeli the flux plot
++ [ ] go through the slides on reconstruction work in the 
+        [database](https://pueo.uchicago.edu/DocDB/cgi-bin/DocumentDatabase)
