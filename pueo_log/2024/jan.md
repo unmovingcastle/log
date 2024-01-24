@@ -212,9 +212,67 @@ Add {term}`Single Event Sensitivity (SES)` glossary
 <!--  -->
 ### tasks
 + [x] Fix the bug in my effective area plot
-+ [ ] Do another run using the current version of PueoSim
-+ [ ] Make a new effective area plot using all three sets of data.
++ [x] Do another run using the current version of PueoSim
++ [x] Make a new effective area plot using all three sets of data.
     + Kaeli's data is from Oct. 23
 + [x] Send Kaeli the flux plot
 + [ ] go through the slides on reconstruction work in the 
         [database](https://pueo.uchicago.edu/DocDB/cgi-bin/DocumentDatabase)
+
+
+### updated effective area plot
+```{figure} img/jan_24_effective_area_plot.png
+---
+name: fig:jan24_effar
+---
+```
+
+```{list-table} Number of neutrinos passed
+:name: jan_2024passed_nn
+:header-rows: 1
+
+* - 
+  - total number thrown
+  - number passed
+  - number passed (weighted)
+
+* - Nov. '23, energy 21
+  -  10000
+  -  4493
+  -  0.779606
+
+* - Nov. '23, energy 20
+  - 10000
+  - 2029
+  - 0.423978
+
+* - Nov. '23, energy 19
+  -  40000
+  -  1547
+  -  0.329987
+
+* - Nov. '23, energy 18
+  - 1000000
+  - 1324
+  - 0.144887
+
+* - Jan. '24, energy 21
+  - 10000
+  - 4900
+  - 0.766993
+
+* - Jan. '24, energy 20
+  - 10000
+  - 2420
+  - 0.414757
+
+* - Jan. '24, energy 19
+  - 40000
+  - 2110
+  - 0.567759
+
+* - Jan. '24, energy 18
+  - 1000000
+  - 1889
+  - 0.272608
+```
