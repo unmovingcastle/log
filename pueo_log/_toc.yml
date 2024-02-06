@@ -7,6 +7,7 @@ parts:
 - caption: Year 2024
   chapters:
   - file: 2024/jan
+  - file: 2024/feb
 - caption: Year 2023
   chapters:
   - file: 2023/oct
