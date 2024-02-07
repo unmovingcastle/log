@@ -18,6 +18,7 @@ parts:
   - file: software/pueoSim_installation
   - file: software/setting_up_github_ssh
   - file: software/ssh_autopassword
+  - file: software/rsync_regex.md
 
   - file: software/learning_root/my_first_root_plot
     sections:

@@ -10,6 +10,7 @@
 
   Add the following to the config file:
 
+  (osc_ssh_setup)=
   ```bash
   Host osc (or whatever you want to call it)
     HostName pitzer.osc.edu
