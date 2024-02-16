@@ -30,5 +30,34 @@ name: fig:feb6_flight_paths_effars
 Made with latest PueoSim (Jan 2024).
 ```
 
-+ [ ] Go over [Will's util scrtips](https://github.com/PUEOCollaboration/pueoAnalysisTools/tree/main/WillUtils).
++ [x] Go over [Will's util scrtips](https://github.com/PUEOCollaboration/pueoAnalysisTools/tree/main/WillUtils).
 
+
+## Meeting with Kaeli, Tuesday Feb. 14
+
+### nicemc and pueoSim combination
+
+```{list-table} commits of nicemc and pueoSim used for effective area history plot
+:name: commit_combination
+:header-rows: 1
+
+* - Date
+  - nicemc commit hash
+  - pueoSim commit hash
+
+* - Jan. 2023
+  - [f3880dc](https://github.com/PUEOCollaboration/nicemc/commits/main/?since=2023-01-01&until=2023-01-31)
+  - [7340dbd](https://github.com/PUEOCollaboration/pueoSim/commits/main/?since=2023-01-01&until=2023-01-31)
+
+* - Feb. 2023
+  - no commit
+  - no commit
+
+* - March 2023
+  - [7b0acfe](https://github.com/PUEOCollaboration/nicemc/commits/main/?since=2023-03-01&until=2023-03-31)
+  - [f7ef28e](https://github.com/PUEOCollaboration/pueoSim/commits/main/?since=2023-03-01&until=2023-03-31)
+
+* - August 2023
+  - [ce37c49](https://github.com/PUEOCollaboration/nicemc/commits/main/?since=2023-08-01&until=2023-08-31)
+  - [a11998c](https://github.com/PUEOCollaboration/pueoSim/commits/main/?since=2023-08-01&until=2023-08-31)
+```
