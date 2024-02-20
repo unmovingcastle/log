@@ -69,3 +69,50 @@ Made with latest PueoSim (Jan 2024).
   - [6dc9447](https://github.com/PUEOCollaboration/libAntarcticaRoot/commits/master/?since=2023-10-20&until=2023-10-31)\
     (Oct. 20, 2023)
 ```
+
+
+```{list-table} Number of neutrinos passed
+:name: aur_production_passed_nn
+:header-rows: 1
+
+* - 
+  - total number thrown
+  - number passed
+  - number passed (weighted)
+
+* - Aug. '23, energy 21
+  -  10000
+  -  4047
+  -  0.517381
+
+* - Aug. '23, energy 20
+  - 10000
+  - 1866
+  - 0.276859
+
+* - Aug. '23, energy 19
+  - 40000
+  - 1508
+  - 0.205364
+
+* - Aug. '23, energy 18.5
+  - 1000000
+  - 11486
+  - 1.5161
+
+* - Aug. '23, energy 18
+  - 1000000
+  - 1655
+  - 0.121783
+```
+```{warning}
+something is wrong, these number change every time I run the macro that
+counts passed events.
+```
+
+```{figure} ./img/Effective_area_history.png
+---
+name: fig:feb20_effar_history
+---
+Red stars are from August 2023 reproduction runs.
+```

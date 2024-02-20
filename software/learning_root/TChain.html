@@ -176,6 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../pueoSim_installation.html">Install pueoBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../setting_up_github_ssh.html">How to Set up Github credentials on Linux/macOS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ssh_autopassword.html">How to: Password-less ssh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rsync_regex.html">Using RSync with Regex</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="my_first_root_plot.html">Learning ROOT</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="RDataFrame.html">Learning RDataFrame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Retrieving_TVector3.html">Retrieving TVector3 From a Tree</a></li>
@@ -486,25 +487,25 @@ TChain Script<div class="sd-summary-down docutils">
 </div>
 </details><p>Dec. 6, 2023 Update: <br />
 The script above is slightly modified (the <code class="docutils literal notranslate"><span class="pre">Drawing</span></code> portion)
-to change the size of the colorbar (compare <a class="reference internal" href="#xz"><span class="std std-numref">Fig. 12</span></a> and <a class="reference internal" href="#xy"><span class="std std-numref">Fig. 13</span></a>).
+to change the size of the colorbar (compare <a class="reference internal" href="#xz"><span class="std std-numref">Fig. 13</span></a> and <a class="reference internal" href="#xy"><span class="std std-numref">Fig. 14</span></a>).
 I did this following user couet’s
 <a class="reference external" href="https://root-forum.cern.ch/t/tpaletteaxis-size/33117/7?u=unmovingcastle">example on the ROOT Forum</a>.</p>
 <figure class="align-default" id="xy-unweighted">
 <a class="reference internal image-reference" href="../../_images/XY_unweighted.png"><img alt="../../_images/XY_unweighted.png" src="../../_images/XY_unweighted.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Unweighted plot of direction (x and y compeonts)</span><a class="headerlink" href="#xy-unweighted" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Unweighted plot of direction (x and y compeonts)</span><a class="headerlink" href="#xy-unweighted" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="xz">
 <a class="reference internal image-reference" href="../../_images/xz.png"><img alt="../../_images/xz.png" src="../../_images/xz.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Weighted plot of direction (x and z componets)</span><a class="headerlink" href="#xz" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Weighted plot of direction (x and z componets)</span><a class="headerlink" href="#xz" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="xy">
 <a class="reference internal image-reference" href="../../_images/xy.png"><img alt="../../_images/xy.png" src="../../_images/xy.png" style="width: 50%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Weighted plot of direction (x and y componets)</span><a class="headerlink" href="#xy" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Weighted plot of direction (x and y componets)</span><a class="headerlink" href="#xy" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
