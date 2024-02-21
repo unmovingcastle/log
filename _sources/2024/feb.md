@@ -105,9 +105,13 @@ Made with latest PueoSim (Jan 2024).
   - 1655
   - 0.121783
 ```
-```{warning}
+```{note}
 something is wrong, these number change every time I run the macro that
 counts passed events.
+
+Feb 21 Edit:
+Cosmin told me that this has to do with multithreading, so I probably want 
+to turn that off.
 ```
 
 ```{figure} ./img/Effective_area_history.png
