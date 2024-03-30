@@ -343,3 +343,159 @@ Date:   Thu Dec 15 16:18:42 2022 -0600
 ````
 
 Note: missing pull request #41.
+
+### progress table
+```{list-table} nicemc commits
+:name: effar_check2_nicemc_hash
+:header-rows: 1
+
+* - commit hash
+  - date 
+  - status
+
+* -  cd7362f4
+  -   Mar 18 2024 
+  -  in progress
+ 
+* -  e3d63ba0
+  -   Feb 28 2024 
+  - [ ]
+ 
+* -  ae79416e
+  -   Feb 12 2024 
+  - [ ]
+ 
+* -  5f6dffcb
+  -   Feb 7  2024 
+  - [ ]
+ 
+* -  3aace5f2
+  -   Jan 24 2024 
+  - [ ]
+ 
+* -  4962c98e
+  -   Dec 22 2023 
+  - [ ]
+ 
+* -  50c4104d
+  -   Nov 17 2023 
+  - [ ]
+ 
+* -  a11998ca
+  -   Aug 28 2023 
+  - [ ]
+ 
+* -  2a14ffa8
+  -   Aug 28 2023 
+  - [ ]
+ 
+* -  859bb4ec
+  -   May 5  2023 
+  - [ ]
+ 
+* -  7b0acfe3
+  -   Mar 7  2023 
+  - [ ]
+ 
+* -  f3880dc1
+  -   Jan 5  2023 
+  - [ ]
+
+```
+
+```{list-table} pueosim commits
+:name: effar_check2_pueosim_hash
+:header-rows: 1
+
+* - commit hash
+  - date 
+  - status
+
+* - 0c785b8f
+  - Mon Mar 18 2024 
+  - in progress
+
+* - f96f7ae3
+  - Wed Feb 28 2024 
+  - [ ] 
+
+* - f27b4471
+  - Tue Feb 27 2024 
+  - [ ] 
+
+* - e2e77d0c
+  - Tue Feb 27 2024 
+  - [ ] 
+
+* - 3eda84b1
+  - Tue Feb 27 2024 
+  - [ ] 
+
+* - 248c2ac8
+  - Thu Feb 22 2024 
+  - [ ] 
+
+* - 1d5fbba8
+  - Thu Feb 15 2024 
+  - [ ] 
+
+* - 9f91576f
+  - Tue Feb 13 2024 
+  - [ ] 
+
+* - c3e1e683
+  - Wed Jan 31 2024 
+  - [ ] 
+
+* - fde9b202
+  - Fri Jan 26 2024 
+  - [ ] 
+
+* - a55ace9d
+  - Fri Jan 26 2024 
+  - [ ] 
+
+* - c73cbcc2
+  - Wed Jan 3 2024
+  - [ ] 
+
+* - 75687a0e
+  - Fri Dec 22 2023 
+  - [ ] 
+
+* - a33789aa
+  - Fri Nov 17 2023 
+  - [ ] 
+
+* - ce37c493
+  - Mon Aug 28 2023 
+  - [ ] 
+
+* - f87d6cac
+  - Mon Aug 28 2023 
+  - [ ] 
+
+* - b84105e2
+  - Fri Jun 16 2023 
+  - [ ] 
+
+* - 399e0e00
+  - Tue May 16 2023 
+  - [ ] 
+
+* - d8b233b0
+  - Fri May 5 2023 
+  - [ ] 
+
+* - 7340dbd9
+  - Thu Jan 26 2023 
+  - [ ] 
+
+* - de86f1c4
+  - Tue Jan 24 2023 
+  - [ ] 
+
+* - 2127694a
+  - Thu Dec 15 2022 
+  - [ ] 
+```
