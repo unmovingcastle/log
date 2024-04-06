@@ -375,7 +375,7 @@ Note: missing pull request #41.
  
 * -  4962c98e
   -   Dec 22 2023 
-  - in progress
+  - done
  
 * -  50c4104d
   -   Nov 17 2023 
@@ -391,7 +391,7 @@ Note: missing pull request #41.
  
 * -  859bb4ec
   -   May 5  2023 
-  - [ ]
+  - in progress
  
 * -  7b0acfe3
   -   Mar 7  2023 
@@ -461,7 +461,7 @@ Note: missing pull request #41.
 
 * - 75687a0e
   - Dec 22 2023 
-  - in progress
+  - done
 
 * - a33789aa
   - Nov 17 2023 
@@ -481,7 +481,7 @@ Note: missing pull request #41.
 
 * - 399e0e00
   - May 16 2023 
-  - [ ] 
+  - in progress
 
 * - d8b233b0
   - May 5 2023 
