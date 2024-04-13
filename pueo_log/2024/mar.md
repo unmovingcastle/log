@@ -379,11 +379,11 @@ Note: missing pull request #41.
  
 * -  50c4104d
   -   Nov 17 2023 
-  - [ ]
+  - in progress
  
 * -  a11998ca
   -   Aug 28 2023 
-  -  in progress
+  -  done
  
 * -  2a14ffa8
   -   Aug 28 2023 
@@ -465,11 +465,11 @@ Note: missing pull request #41.
 
 * - a33789aa
   - Nov 17 2023 
-  - [ ] 
+  - in progress 
 
 * - ce37c493
   - Aug 28 2023 
-  - in progress 
+  - done
 
 * - f87d6cac
   - Aug 28 2023 
