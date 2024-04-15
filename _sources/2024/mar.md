@@ -379,7 +379,7 @@ Note: missing pull request #41.
  
 * -  50c4104d
   -   Nov 17 2023 
-  - in progress
+  - done
  
 * -  a11998ca
   -   Aug 28 2023 
@@ -399,7 +399,7 @@ Note: missing pull request #41.
  
 * -  f3880dc1
   -   Jan 5  2023 
-  - [ ]
+  - done; removed.
 
 ```
 
@@ -465,7 +465,7 @@ Note: missing pull request #41.
 
 * - a33789aa
   - Nov 17 2023 
-  - in progress 
+  - done
 
 * - ce37c493
   - Aug 28 2023 
@@ -489,7 +489,7 @@ Note: missing pull request #41.
 
 * - 7340dbd9
   - Jan 26 2023 
-  - [ ] 
+  - done; removed.
 
 * - de86f1c4
   - Jan 24 2023 
