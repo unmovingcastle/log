@@ -15,7 +15,7 @@
 
 
 ### Effective Area History
-```{figure} ./img/Effective_area_history_v2.png
+```{figure} ./img/Effective_area_history_v2.jpg
 ---
 name: fig:feb20_effar_history_v2
 ---
