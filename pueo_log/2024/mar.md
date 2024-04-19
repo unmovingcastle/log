@@ -433,11 +433,11 @@ Note: missing pull request #41.
 
 * - 248c2ac8
   - Feb 22 2024 
-  - in progress
+  - done
 
 * - 1d5fbba8
   - Feb 15 2024 
-  - [ ] 
+  - in progress
 
 * - 9f91576f
   - Feb 13 2024 
