@@ -20,4 +20,16 @@
 name: fig:feb20_effar_history_v2
 ---
 Significant drop between June 2023 and August 2023.
+
+Edit: We know this comes from chaning the gain of RF chain; this drop is fine.
+```
+
+
+### Effective Area History
+```{figure} ./img/effective_area_history_v3.png
+---
+name: fig:effective_area_history_v3
+---
+Significant drop between Feb. 13 and Feb. 15.
+Here's a [link to PR 40](https://github.com/PUEOCollaboration/pueoSim/pull/40)
 ```
