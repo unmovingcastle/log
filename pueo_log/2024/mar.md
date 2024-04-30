@@ -421,7 +421,7 @@ Note: missing pull request #41.
 
 * - f27b4471
   - Feb 27 2024 
-  - [ ] 
+  - in progress 
 
 * - e2e77d0c
   - Feb 27 2024 
@@ -437,7 +437,7 @@ Note: missing pull request #41.
 
 * - 1d5fbba8
   - Feb 15 2024 
-  - in progress
+  - done
 
 * - 9f91576f
   - Feb 13 2024 
