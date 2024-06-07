@@ -11,6 +11,7 @@ parts:
   - file: 2024/mar
   - file: 2024/apr
   - file: 2024/may
+  - file: 2024/jun
 - caption: Year 2023
   chapters:
   - file: 2023/oct
