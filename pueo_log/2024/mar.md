@@ -363,7 +363,7 @@ Note: missing pull request #41.
  
 * -  ae79416e
   -   Feb 12 2024 
-  - in progress
+  - done
  
 * -  5f6dffcb
   -   Feb 7  2024 
@@ -421,7 +421,7 @@ Note: missing pull request #41.
 
 * - f27b4471
   - Feb 27 2024 
-  - in progress 
+  - done
 
 * - e2e77d0c
   - Feb 27 2024 
@@ -477,7 +477,7 @@ Note: missing pull request #41.
 
 * - b84105e2
   - Jun 16 2023 
-  - in progress
+  - done
 
 * - 399e0e00
   - May 16 2023 

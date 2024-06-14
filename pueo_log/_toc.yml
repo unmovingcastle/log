@@ -4,35 +4,38 @@
 format: jb-book
 root: index
 parts:
-- caption: Year 2024
-  chapters:
-  - file: 2024/jan
-  - file: 2024/feb
-  - file: 2024/mar
-  - file: 2024/apr
-  - file: 2024/may
-  - file: 2024/jun
-- caption: Year 2023
-  chapters:
-  - file: 2023/oct
-  - file: 2023/nov
-  - file: 2023/dec
-- caption: Software
-  chapters:
-  - file: software/pueoSim_installation
-  - file: software/setting_up_github_ssh
-  - file: software/ssh_autopassword
-  - file: software/rsync_regex.md
+  - caption: Papers that I should read
+    chapters:
+      - file: papers/papers_to_read.md
+  - caption: Year 2024
+    chapters:
+      - file: 2024/jan
+      - file: 2024/feb
+      - file: 2024/mar
+      - file: 2024/apr
+      - file: 2024/may
+      - file: 2024/jun
+  - caption: Year 2023
+    chapters:
+      - file: 2023/oct
+      - file: 2023/nov
+      - file: 2023/dec
+  - caption: Software
+    chapters:
+      - file: software/pueoSim_installation
+      - file: software/setting_up_github_ssh
+      - file: software/ssh_autopassword
+      - file: software/rsync_regex.md
 
-  - file: software/learning_root/my_first_root_plot
-    sections:
-    - file: software/learning_root/RDataFrame
-    - file: software/learning_root/Retrieving_TVector3
-    - file: software/learning_root/TChain
-    - file: software/learning_root/TTreeReader
-- caption: Pueo White Paper Reading Questions
-  chapters:
-  - file: pueo_white/ch1
-  - file: pueo_white/ch2
-  - file: pueo_white/ch3
-  - file: pueo_white/ch4
+      - file: software/learning_root/my_first_root_plot
+        sections:
+          - file: software/learning_root/RDataFrame
+          - file: software/learning_root/Retrieving_TVector3
+          - file: software/learning_root/TChain
+          - file: software/learning_root/TTreeReader
+  - caption: Pueo White Paper Reading Questions
+    chapters:
+      - file: pueo_white/ch1
+      - file: pueo_white/ch2
+      - file: pueo_white/ch3
+      - file: pueo_white/ch4
