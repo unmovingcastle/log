@@ -21,6 +21,10 @@
   -
   -
 
+* - {download}`Stafford Dissertation <stafford_dissertation.pdf>`
+  -
+  -
+
 * - {download}`Ludwig Dissertation <ludwig_dissertation.pdf>`
   -
   -
