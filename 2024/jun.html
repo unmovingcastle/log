@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '2024/jun';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -160,7 +162,11 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Year 2024</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Papers that I should read</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../papers/papers_to_read.html">Reading List</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Year 2024</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="jan.html">January 2024</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feb.html">February 2024</a></li>
@@ -406,6 +412,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-waveforms-on-the-zerosignal-fix">Noise waveforms: on the <code class="docutils literal notranslate"><span class="pre">ZEROSIGNAL</span></code> fix.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-reading-the-flux-plots">On reading the flux plots.</a></li>
 </ul>
             </nav>
         </div>
@@ -435,6 +442,51 @@ but 1 and 2 are needed for the pre-thermal-update version of <code class="docuti
 </li>
 </ul>
 </section>
+<section id="on-reading-the-flux-plots">
+<h2>On reading the flux plots.<a class="headerlink" href="#on-reading-the-flux-plots" title="Permalink to this heading">#</a></h2>
+<p>I have been confused by the y-axis units on these plots since forever ago.
+Luckily there’s a detailed explanation on <a class="reference external" href="https://physics.stackexchange.com/questions/740471/understanding-the-graph-of-cosmic-rays-flux">StackExchange</a>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+In case that post gets taken down, here is User Gonstasp’s reply to OP’s question.<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<figure class="align-default" id="fig-flux-understanding">
+<img alt="../_images/flux_understanding.png" src="../_images/flux_understanding.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Stolen plot from StackExchange.</span><a class="headerlink" href="#fig-flux-understanding" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p class="sd-card-text">This graph shows the distribution of cosmic rays detected on ground
+(per unit of time [s], surface [<span class="math notranslate nohighlight">\(m^2\)</span>], energy [GeV] and solid angle
+[“sr”, i.e. steradian]), with respect to their energy [eV].</p>
+<p class="sd-card-text">It is not an electromagnetic flux, but a particle flux.
+Cosmic rays are not photons,
+they are high-energy particles traveling through space
+(hadrons, leptons; for example protons and electrons, etc.)</p>
+<p class="sd-card-text">You can read the graph as follows :
+on Earth, the incoming flux of cosmic rays with an energy</p>
+<div class="math notranslate nohighlight">
+\[ E=10^{19} {\rm eV} \]</div>
+<p class="sd-card-text">is approximately <span class="math notranslate nohighlight">\(10^{−24}\)</span> m<span class="math notranslate nohighlight">\(^{−2}\)</span> sr<span class="math notranslate nohighlight">\(^{−1}\)</span> s<span class="math notranslate nohighlight">\(^{−1}\)</span> GeV<span class="math notranslate nohighlight">\(^{−1}\)</span>.</p>
+<p class="sd-card-text">It means that on a 1 kilometer surface, it would require (statistically) :</p>
+<div class="math notranslate nohighlight">
+\[
+1 / (10^6 {\rm[m→km\, surface]} × 10^{19} {\rm[particle\, energy,x-axis]} ×
+10^{−24} {\rm[flux,y-axis]} × 10^{−9} {\rm[eV→GeV]} × 2\pi {\rm[full\, hemisphere\, coverage]}) 
+=108/2\pi {\rm\, seconds}
+\]</div>
+<p class="sd-card-text">to observe one cosmic ray with that energy, or approximately 6 months.</p>
+<p class="sd-card-text">By the way, this is why the error bars are larger at the bottom-right end of the graph.
+These high-energy events are very rare.</p>
+<p class="sd-card-text">…</p>
+<p class="sd-card-text">…[Note that] given a flux of particle <em>per second</em> <span class="math notranslate nohighlight">\(F\)</span> [T<span class="math notranslate nohighlight">\(^{-1}\)</span>] (the dimension
+of <span class="math notranslate nohighlight">\(F\)</span> is time<span class="math notranslate nohighlight">\(^{-1}\)</span>), the time required to observe one particle is <span class="math notranslate nohighlight">\(1/F\)</span> [T]
+(the dimension of <span class="math notranslate nohighlight">\(1/F\)</span> is time)…</p>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -501,6 +553,7 @@ but 1 and 2 are needed for the pre-thermal-update version of <code class="docuti
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-waveforms-on-the-zerosignal-fix">Noise waveforms: on the <code class="docutils literal notranslate"><span class="pre">ZEROSIGNAL</span></code> fix.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-reading-the-flux-plots">On reading the flux plots.</a></li>
 </ul>
   </nav></div>
 
