@@ -62,3 +62,13 @@ These high-energy events are very rare.
 of $F$ is time$^{-1}$), the time required to observe one particle is $1/F$ [T]
 (the dimension of $1/F$ is time)...
 ````
+
+## On ANITA's elevation angle
+- $\theta = +90^{\circ}$ corresponds to the $-\hat{z}$ direction.
+- But in a way it makes sense, because if a signal is coming straight down, we
+    will say that the signal is hitting the horizon at an elevation angle of
+    90 degrees.
+- Here is a note by Dr. Ben Strutt on the derivation of Eqn 8.3 in his thesis.
+    In the derivation he included the definition of the elevation angle: 
+    {download}`Ben's derivation of expected time-delay as a function of
+    incoming signal direction (theta and phi)<ben_strutt_notes.pdf>`
