@@ -1,7 +1,7 @@
-# Felman & Cousins
+# Feldman & Cousins
 
 ```{list-table} progress
-:name: tab:felman_cousins_progress
+:name: tab:feldman_cousins_progress
 :header-rows: 1
 
 *   - chapter
