@@ -2,6 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: My research log
+logo: logo.png
 author: Jason Yao
 # logo: logo.png
 
@@ -26,6 +27,7 @@ repository:
   path_to_book: pueo_log/  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
+
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
@@ -36,3 +38,4 @@ html:
 sphinx:
   config:
     html_show_copyright: false
+
