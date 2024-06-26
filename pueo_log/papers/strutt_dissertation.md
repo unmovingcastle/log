@@ -28,4 +28,19 @@
     - [x]
     - [x]
     - Should read {ref}`anita_interferometry_paper` in more detail.
+
+*   - 8.2 Hilbert Envelope
+    - [x]
+    - [ ]
+    - heck is a Hilbert transform?
+
+*   - 8.3 Antenna Position Calibration
+    - [ ]
+    - [ ]
+    - Consider reading chapter 6 about timing calibration also
+
+*   - 8.4+
+    - [ ]
+    - [ ]
+    - Phase center stuff. Resume after reading chapter 7
 ```
