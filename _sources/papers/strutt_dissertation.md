@@ -1,7 +1,7 @@
 # Strutt Dissertation
 
-```{list-table} progress
-:name: tab:strutt_diss_progress
+```{list-table} strutt thesis reading progress
+:name: tab:strutt_diss_progress_1
 :header-rows: 1
 
 *   - chapter
@@ -9,21 +9,30 @@
     - second pass
     - note
 
-*   - 1. Introduction 
+*   - One. Introduction 
     - [x]
     - [x]
     - [ ]
 
-*   - 2. The Standard Model and Neutrino Physics
+*   - Two. The Standard Model and Neutrino Physics
     - [x]
     - [x]
     - Still not quite familiar with particle physics stuff though
 
-*   - 3. Ultra-High Energy Astroparticle Physics
+*   - Three. Ultra-High Energy Astroparticle Physics
     - [x]
-    - [ ]
-    - 
+    - [x]
+    - why does photon horizon go back up???
 
+*   - Four. Radio Emission in Ultra-High Energy particle Showers
+    - [ ]
+    - [ ]
+    - where can I find the relation b/w $\nu$ energy and recorded voltages?
+```
+
+```{list-table} strutt thesis reading progress
+:name: tab:strutt_diss_progress_2
+:header-rows: 1
 *   - 8.1 Event Reconstruction: Interferometric Method
     - [x]
     - [x]

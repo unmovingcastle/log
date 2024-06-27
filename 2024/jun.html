@@ -498,6 +498,128 @@ These high-energy events are very rare.</p>
 of <span class="math notranslate nohighlight">\(F\)</span> is time<span class="math notranslate nohighlight">\(^{-1}\)</span>), the time required to observe one particle is <span class="math notranslate nohighlight">\(1/F\)</span> [T]
 (the dimension of <span class="math notranslate nohighlight">\(1/F\)</span> is time)…</p>
 </div>
+</details><p>Actually <a class="reference external" href="https://physics.stackexchange.com/questions/591926/how-do-you-convert-between-different-units-of-particle-flux">this other post</a>.
+might have a more accurate explanation.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+User J. Murray’s response<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The “per MeV” refers to the fact that the flux rate <span class="math notranslate nohighlight">\(f(\theta, \phi, E)\)</span>
+tells you the particle flux per unit solid angle <em>per unit energy</em>.
+That is, <span class="math notranslate nohighlight">\(f(\theta, \phi, E) d \Omega d E\)</span> is the particle flux
+(in particles per unit area per second) within a small solid angle <span class="math notranslate nohighlight">\(d\Omega\)</span>
+around <span class="math notranslate nohighlight">\((\theta,\phi)\)</span> and a small energy range <span class="math notranslate nohighlight">\(dE\)</span> around E.</p>
+<p class="sd-card-text">If you want to find the particle flux per unit solid angle (without the
+energy part), then you need to interate over all energies in some range,
+i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{f}(\theta,\phi) = \int_{E_1}^{E_2} f(\theta,\phi,E) dE
+\]</div>
+<p class="sd-card-text">which is the flux of particles per unit steradian with energy between
+<span class="math notranslate nohighlight">\(E_1\)</span> and <span class="math notranslate nohighlight">\(E_2\)</span>. It’s worth noting that when you have a histogram with
+energy bins <span class="math notranslate nohighlight">\(\Delta E_i\)</span>, then the quantity being plotted is
+<span class="math notranslate nohighlight">\(f(\theta,\phi,E_i) \Delta E_i\)</span>.</p>
+<p class="sd-card-text">To obtain <span class="math notranslate nohighlight">\(f(\theta,\phi,E)\)</span> from a histogram, you divide the counts
+in each bin by the bin width. Conversely, if you have the so-called
+<em>differential flux</em> <span class="math notranslate nohighlight">\(f(\theta,\phi,E)\)</span> and want to know how many counts to
+expect in a histogram bin at some energy, you simply multiply it by the bin
+width.</p>
+<hr class="docutils" />
+<p class="sd-card-text">The figure in question is this one:</p>
+<figure class="align-default">
+<img alt="../_images/flux_understanding.png" src="../_images/flux_understanding.png" />
+</figure>
+<p class="sd-card-text">The point marked “1 particle per m<span class="math notranslate nohighlight">\(^2\)</span>” has <span class="math notranslate nohighlight">\(f(\theta,\phi,E) \approx 10^{-1}\)</span>
+m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span>  sr<span class="math notranslate nohighlight">\(^{-1}\)</span>  GeV<span class="math notranslate nohighlight">\(^{-1}\)</span>.
+If we multiply by <span class="math notranslate nohighlight">\(4\pi\)</span> (assuming the flux is isotropic) and a bin width
+of 1 GeV, then we get the right flux.</p>
+<p class="sd-card-text">Apparently at 10<span class="math notranslate nohighlight">\(^{11}\)</span> eV, the bin sizes are approximately 1 GeV.
+The logarithmic scale suggests logarithmic binning, so at 10<span class="math notranslate nohighlight">\(^{16}\)</span> eV
+we would expect a bin size of about 10<span class="math notranslate nohighlight">\(^5\)</span> GeV. The plot indicates
+that <span class="math notranslate nohighlight">\(f(\theta,\phi,10^{16} eV) \approx 10^{-14}\)</span>
+m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span>  sr<span class="math notranslate nohighlight">\(^{-1}\)</span>  GeV<span class="math notranslate nohighlight">\(^{-1}\)</span>, so multiplying by <span class="math notranslate nohighlight">\(4\pi\)</span>
+and 10<span class="math notranslate nohighlight">\(^{5}\)</span> GeV yields a flux of 0.4 particles per square meter per year,
+which is the right order of magnitude for the second label.</p>
+<p class="sd-card-text">As far as interpretations go, you should take the first label as saying
+that about 1 particle within energy 1 GeV of <span class="math notranslate nohighlight">\(10^{11}\)</span> eV passes through
+a 1 m<span class="math notranslate nohighlight">\(^2\)</span> target every second. The second label tells you that about
+1 particle with energy within <span class="math notranslate nohighlight">\(10^{5}\)</span> eV of <span class="math notranslate nohighlight">\(10^{16}\)</span> eV passes through
+a 1 m<span class="math notranslate nohighlight">\(^2\)</span> target every year.</p>
+<p class="sd-card-text">An alternative way to say it is that one particle with energy within 1%
+of <span class="math notranslate nohighlight">\(10^{11}\)</span> eV passes through a 1 m<span class="math notranslate nohighlight">\(^2\)</span> target every second, while
+one particle with energy within 1% of <span class="math notranslate nohighlight">\(10^{16}\)</span> eV passes through a 1 m<span class="math notranslate nohighlight">\(^2\)</span>
+target every year.</p>
+</div>
+</details><p>And <a class="reference external" href="https://physics.stackexchange.com/questions/365044/units-used-in-x-ray-energy-spectrums/365059">here is yet another related post</a></p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+User rob’s answer<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Question</strong></p>
+<p class="sd-card-text">I am trying to understand the X-ray emission spectrum based on medical
+X-ray tubes and there are several variants of the graph function given in
+several books as in this image:</p>
+<figure class="align-default" id="fig-flux-understanding-2">
+<img alt="../_images/flux_understanding_2.png" src="../_images/flux_understanding_2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Yet another stolen plot from StackExchange.</span><a class="headerlink" href="#fig-flux-understanding-2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p class="sd-card-text">At a specific energy (in KeV) the plot shows the number of photons emitted by
+an element in the units of hash/[KeV * cm<span class="math notranslate nohighlight">\(^2\)</span> * mAs] where Hash is the
+numeric value of the number of photons.</p>
+<p class="sd-card-text">My question is regarding the units of the dependent variable of the graph
+function. How is there a KeV unit addedto it? Shouldn’t the number of
+photons have the units of hash/[cm<span class="math notranslate nohighlight">\(^2\)</span> * mAs] where Hash is the numeric value
+of the number of photons where, the photons cross an area over a particular
+current-time product and therefore cm<span class="math notranslate nohighlight">\(^2\)</span>*mAs in the denominator is understood
+but why a KeV term (unit) is also present?</p>
+<p class="sd-card-text"><strong>Answer</strong></p>
+<p class="sd-card-text">I think the way to read you “hash” (“#”) is as a “number.”</p>
+<p class="sd-card-text">What you’ve plotted here is a differential spectrum: the number of x-ray
+events observed in each energy window from <span class="math notranslate nohighlight">\(E_i\)</span> to <span class="math notranslate nohighlight">\(E_i + \Delta E\)</span> .
+The most common way to construct such a spectrum is to build a histogram. But
+in a histogram, the number of events in each bin depends on the width of the
+bins, <span class="math notranslate nohighlight">\(\Delta E\)</span>. For example, if you start with a histogram that has 100
+energy bins, decide it’s too noisy, and combine the odd bins with their
+even neighbors to produce a new histogram with 50 bins, the number of events
+in each bin will approximately double.</p>
+<p class="sd-card-text">You can avoid that blurring between data and representation by displaying,
+rather than raw counts per bin, the counts divided by the bin width. In our
+100→50 rebinning example, the number of counts in the larger bins would
+approximately double, but the width doubles as well: the differential spectrum
+doesn’t change.</p>
+<p class="sd-card-text">Essentially, each point in your spectrum here is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dN}{dE \cdot dA \cdot dt \cdot dI}
+\]</div>
+<p class="sd-card-text">where the integral of this spectrum, <span class="math notranslate nohighlight">\(N\)</span>, is the total number of events
+you’d expect from the experiment.
+You’re not bothered by the fact that if you ran the experiment twice as long,
+or used a detector with twice the area, or drove twice as much current through
+the source, that you’d double the number of photons you find. For energy the
+relationship is nonlinear: the total number of events is</p>
+<div class="math notranslate nohighlight">
+\[
+N = \int \frac{dN}{dE} dE
+\]</div>
+<p class="sd-card-text">and what’s plotted here is the differential <span class="math notranslate nohighlight">\(dN/dE\)</span>.</p>
+<p class="sd-card-text">I learned this as a graduate student when I tried, unsuccessfully, to
+turn a plot of neutron flux versus wavelength, <span class="math notranslate nohighlight">\(dN/d\lambda\)</span>, into a plot
+of neutron flux versus energy, <span class="math notranslate nohighlight">\(dN/dE\)</span>, using the deBroglie
+relation <span class="math notranslate nohighlight">\(p=\hbar/\lambda\)</span> and the kinetic energy <span class="math notranslate nohighlight">\(E = p^2/2m\)</span>.
+You can’t just re-map the points on the spectrum to the new values;
+you have to take into account that the denominator is different as well
+in order to ahve the two spectra integrate to the same <span class="math notranslate nohighlight">\(N\)</span>.</p>
+</div>
 </details></section>
 <section id="on-anita-s-elevation-angle">
 <h2>On ANITA’s elevation angle<a class="headerlink" href="#on-anita-s-elevation-angle" title="Permalink to this heading">#</a></h2>
