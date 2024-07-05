@@ -1,4 +1,4 @@
-# Dailey Dissertation
+# Clark Dissertation
 
 
 ```{list-table} Clark Dissertation Reading Progress
