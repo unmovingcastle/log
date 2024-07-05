@@ -16,6 +16,7 @@ parts:
           - file: papers/stafford_dissertation.md
           - file: papers/ludwig_dissertation.md
           - file: papers/dailey_dissertation.md
+          - file: papers/clark_dissertation.md
   - caption: Year 2024
     chapters:
       - file: 2024/jan

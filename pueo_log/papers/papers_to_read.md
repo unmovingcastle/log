@@ -33,5 +33,8 @@
 * - {download}`Dailey Dissertation <dailey_dissertation.pdf>`
   - haven't started
 
+* - `Clark Dissertation`
+  - 
+
 ```
 ````
