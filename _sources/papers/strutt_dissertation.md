@@ -25,7 +25,7 @@
     - why does photon horizon go back up???
 
 *   - Four. Radio Emission in Ultra-High Energy particle Showers
-    - [ ]
+    - [x]
     - [ ]
     - 1. where can I find the relation b/w $\nu$ energy and recorded voltages?
       2. better start reading about the math behind cherenkov rad. Jackson? :(
