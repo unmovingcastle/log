@@ -1,8 +1,7 @@
 # Reading List
 
-````{div} full-width
-```{list-table} list of papers
-:name: tab:lof
+```{list-table} A Long To-do list
+:name: tab:to-read-list
 :header-rows: 1
 
 * - paper
@@ -18,14 +17,8 @@
 * - {download}`Snow White that Kaeli sent <snowwhite.pdf>`
   - Good for candidacy; pretty dense.
 
-* - {download}`Strutt Dissertation <strutt_dissertation.pdf>`
-  - 06/24/2024: using chapter 8.1 to prepare Tuesday's presentation
-
 * - {download}`ANITA Interferometric Method <interferometric_technique.pdf>`
   - 06/24/2024: pretty useful stuff, should read in more detail
-
-* - {download}`Stafford Dissertation <stafford_dissertation.pdf>`
-  - Seems easier than Strutt's.
 
 * - {download}`Ludwig Dissertation <ludwig_dissertation.pdf>`
   - Seems to have a more detailed intro.
@@ -33,8 +26,4 @@
 * - {download}`Dailey Dissertation <dailey_dissertation.pdf>`
   - haven't started
 
-* - Clark Dissertation
-  - 
-
 ```
-````
