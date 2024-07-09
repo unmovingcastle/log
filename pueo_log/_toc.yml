@@ -8,15 +8,13 @@ parts:
     chapters:
       - file: papers/papers_to_read.md
         sections:
+          - file: papers/strutt_dissertation.md
           - file: papers/feldman_cousins.md
           - file: papers/noise_simulation.md
           - file: papers/snowwhite.md
-          - file: papers/strutt_dissertation.md
           - file: papers/interferometric_technique.md
-          - file: papers/stafford_dissertation.md
           - file: papers/ludwig_dissertation.md
           - file: papers/dailey_dissertation.md
-          - file: papers/clark_dissertation.md
   - caption: Year 2024
     chapters:
       - file: 2024/jan
@@ -49,3 +47,6 @@ parts:
       - file: pueo_white/ch2
       - file: pueo_white/ch3
       - file: pueo_white/ch4
+  - caption: Miscellaneous
+    chapters:
+    - file: miscellaneous/glossary.md
