@@ -24,6 +24,43 @@
 == Outline
 #touying-outline()
 
+= Confidence Interval (CI)
+
+== CI Definition
+#slide[
+- Goal: estimate parameter $mu$ whose true value is $mu_t$
+- Make a measurement $x$; suppose the first measurement yields $x_0$.
+- Construct an interval (discussed later) $[mu_l,mu_u]$
+  - $mu_l = mu_l (x_0)$: lower bound associated w/ this $1^"st"$ measurement
+  - $mu_u = mu_u (x_0)$: upper bound associated w/ this $1^"st"$ measurement
+
+- Repeat; get outcome $x_1$ #sym.arrow.r construct [$mu_l(x_1), mu_u (x_1)$]
+- Repeat so that we have a bunch of intervals. _i.e._ we get a set 
+  $ C equiv {[mu_l (x_0), mu_u (x_0)] , [mu_l (x_1), mu_u (x_1)] , [mu_l (x_2), mu_u (x_2)]...} $
+]
+
+#slide[
+- The set $C$ has the property that 
+  $ P( [mu_l, mu_u] in.rev mu ) = alpha #h(2em) forall "allowed" mu $
+- In words:
+  - pick a _fixed_ value of $mu$; say we pick the truth $mu_t$.
+  - of the members in $C$, a fraction $alpha$ would cover $mu_t$.
+  - others won't.
+- The members of $C$ are called _confidence intervals_.
+]
+
+== CI Construction: Confidence Belt
+#slide[
+
+]
+
+
+
+
+
+
+
+
 = Bayesian
 == Poisson Distribution
 
