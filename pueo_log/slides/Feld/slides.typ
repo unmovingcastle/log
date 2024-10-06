@@ -29,31 +29,165 @@
 == CI Definition
 #slide[
 - Goal: estimate parameter $mu$ whose true value is $mu_t$
+#pause
 - Make a measurement $x$; suppose the first measurement yields $x_0$.
+#pause
 - Construct an interval (discussed later) $[mu_l,mu_u]$
+  #pause
   - $mu_l = mu_l (x_0)$: lower bound associated w/ this $1^"st"$ measurement
+  #pause
   - $mu_u = mu_u (x_0)$: upper bound associated w/ this $1^"st"$ measurement
 
-- Repeat; get outcome $x_1$ #sym.arrow.r construct [$mu_l(x_1), mu_u (x_1)$]
-- Repeat so that we have a bunch of intervals. _i.e._ we get a set 
+  #pause
+
+- Repeat experiment; get outcome $x_1$ #sym.arrow.r construct [$mu_l (x_1), mu_u (x_1)$]
+  #pause
+
+- More experiments; get a bunch of intervals. _i.e._ we get a set 
   $ C equiv {[mu_l (x_0), mu_u (x_0)] , [mu_l (x_1), mu_u (x_1)] , [mu_l (x_2), mu_u (x_2)]...} $
 ]
 
 #slide[
 - The set $C$ has the property that 
   $ P( [mu_l, mu_u] in.rev mu ) = alpha #h(2em) forall "allowed" mu $
+
+  #pause
 - In words:
   - pick a _fixed_ value of $mu$; say we pick the truth $mu_t$.
+  #pause
   - of the members in $C$, a fraction $alpha$ would cover $mu_t$.
+  #pause
+
   - others won't.
+
+  #pause
+  
 - The members of $C$ are called _confidence intervals_.
 ]
 
 == CI Construction: Confidence Belt
-#slide[
+#slide(composer:(1fr, auto))[
+  - Consider probability $Pr(x|mu)$
 
+  #pause
+  - Take an example $mu=4$, consider $Pr(x|mu=4)$
+
+  #pause
+  - Select a region $[x_l, x_u]$ such that the probability of measuring $x in [x_l, x_u]$
+    is, say, $80%$.
+  
+  #pause
+  - that is, $ Pr(x in [x_l, x_u]|mu=4) =80% $
+][
+#pause
+#image("example_belt_initial.png")#pin(1) 
+#pause
+#pinit-point-from(1, pin-dx: 160pt, pin-dy: -105pt, 
+                     offset-dy: -161pt,offset-dx: 200pt, body-dx: -93pt, 
+                     body-dy:-97pt )[_acceptance region_ $[x_l, x_u]$,\ 
+                     associated with  a \ particular value of $mu$] 
 ]
 
+#slide(composer:(1fr, auto))[
+  - Take another value $mu$, say $mu=5$
+  - Get another acceptance region $[x_l, x_u]$
+    associated with this value
+$ Pr(x in [x_l, x_u]|mu=5) =80% $
+
+][
+#image("example_belt_initial.png")#pin(1) 
+]
+
+#slide(composer:(1fr, auto))[
+  - Take another value $mu$, say $mu=5$
+  - Get another acceptance region $[x_l, x_u]$
+    associated with this value
+$ Pr(x in [x_l, x_u]|mu=5) =80% $
+
+  - Do this many times.
+  - Get confidence belt.
+][
+#image("example_belt_fakeTruth.png")#pin(1) 
+#pause
+#pinit-point-from(1, pin-dx: 160pt, pin-dy: -90pt, 
+                     offset-dy: -36pt, body-dx: -193pt, 
+                     body-dy:4pt )[suppose this is $mu_"true"$] 
+]
+
+#slide(composer:(1fr, auto))[
+  - Make a measurement, get result $x_0$
+
+  - The probability of $x_0$ falling in the region is $80%$, by construction
+
+][
+#image("example_belt_oneLine.png")#pin(1) 
+]
+
+#slide(composer:(1fr, auto))[
+  - The #text(red)[confidence interval] $[mu_l, mu_u]$ from this experiment is
+    the vertical intercept.
+][
+#image("example_belt_oneLine.png")#pin(1) 
+  #pause
+#pinit-point-from(1, pin-dx: 309pt, pin-dy: -148pt, 
+                     offset-dy: -101pt, body-dx: 0pt, offset-dx: 345pt,
+                     body-dy:4pt )[$mu_l (x_0)$] 
+#pinit-point-from(1, pin-dx: 290pt, pin-dy: -320pt, 
+                     offset-dy: -247pt, offset-dx: 157pt, body-dx: -47pt, 
+                     body-dy:5pt )[$mu_u (x_0)$] 
+#pinit-place(1,dx:287pt,dy:-163pt,[#text(red)[#sym.dot.circle]])
+#pinit-place(1,dx:287pt,dy:-337pt,[#text(red)[#sym.dot.circle]])
+#pinit-point-from(1, pin-dx: 300pt, pin-dy: -320pt, 
+                     offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
+                     body-dy:5pt )[] 
+#pinit-point-from(1, pin-dx: 300pt, pin-dy: -155pt, 
+                     offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
+                     body-dy:5pt )[] 
+]
+
+#slide(composer:(1fr, auto))[
+  - Make some more measurements
+  - Get some more confidence intervals.
+  - Have a set
+    $  C = {"CI"_1,  "CI"_2,  "CI"_3, "CI"_4,  "CI"_5} $
+
+  - $80%$ of this set would cover the true value, $mu_t$.
+][
+#image("example_belt_allLines.png")#pin(1) 
+#pinit-point-from(1, pin-dx: 300pt, pin-dy: -320pt, 
+                     offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
+                     body-dy:5pt )[] 
+#pinit-point-from(1, pin-dx: 300pt, pin-dy: -155pt, 
+                     offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
+                     body-dy:5pt )[] 
+#pinit-point-from(1, pin-dx: 207pt, pin-dy: -77pt, 
+                     offset-dy: -130pt, offset-dx: 207pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+#pinit-point-from(1, pin-dx: 207pt, pin-dy: -178pt, 
+                     offset-dy: -130pt, offset-dx: 207pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+
+#pinit-point-from(1, pin-dx: 172pt, pin-dy: -66pt, 
+                     offset-dy: -130pt, offset-dx: 172pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+#pinit-point-from(1, pin-dx: 172pt, pin-dy: -143pt, 
+                     offset-dy: -130pt, offset-dx: 172pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+
+#pinit-point-from(1, pin-dx: 157pt, pin-dy: -59pt, 
+                     offset-dy: -105pt, offset-dx: 156pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+#pinit-point-from(1, pin-dx: 157pt, pin-dy: -129pt, 
+                     offset-dy: -105pt, offset-dx: 156pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+
+#pinit-point-from(1, pin-dx: 122pt, pin-dy: -55pt, 
+                     offset-dy: -78pt, offset-dx: 121pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+#pinit-point-from(1, pin-dx: 122pt, pin-dy: -100pt, 
+                     offset-dy: -78pt, offset-dx: 121pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+]
 
 
 
