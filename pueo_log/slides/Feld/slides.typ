@@ -1,28 +1,25 @@
 #import "../preamble.typ": * 
 
-#let s = (s.methods.info)(
-  self: s,
-  title: [90% Confidence Level Upper Bound],
-  subtitle:[Overview of Feldman & Cousins],
-  author:([#v(1em) Jason]),
-  date: "09-05-2024",
-  // institution: [OSU],
-  logo: image("../osu.jpg",width:8%)
-)
 
 // Set the speaker notes configuration, you can show it by pympress
 // #let s = (s.methods.show-notes-on-second-screen)(self: s, right)
 
-#let (init, slides, touying-outline, alert, speaker-note) = utils.methods(s)
+// #let (init, slides, touying-outline, alert, speaker-note) = utils.methods(s)
 
-#show: init
-#show strong: alert
-#let (slide, empty-slide, title-slide, focus-slide, matrix-slide) = utils.slides(s)
-#show: slides
+#show: university-theme.with(
+  aspect-ratio: "16-9",
+  config-info(
+    title: [90% Confidence Level Upper Bound],
+    subtitle: [Brief discussion of Feldman & Cousins],
+    date: [10-31-2024],
+  ),
+  config-colors(primary: rgb("#DC143C"), secondary: rgb("#000000"), tertiary: rgb("#808080"))
+)
 
+#title-slide()
 
-== Outline
-#touying-outline()
+== Outline                                                       
+#components.adaptive-columns(outline(title: none, indent: 1em))
 
 = Confidence Interval (CI)
 
@@ -154,10 +151,10 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $
   - $80%$ of this set would cover the true value, $mu_t$.
 ][
 #image("example_belt_allLines.png")#pin(1) 
-#pinit-point-from(1, pin-dx: 300pt, pin-dy: -320pt, 
+#pinit-point-from(1, pin-dx: 301pt, pin-dy: -320pt, 
                      offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
                      body-dy:5pt )[] 
-#pinit-point-from(1, pin-dx: 300pt, pin-dy: -155pt, 
+#pinit-point-from(1, pin-dx: 301pt, pin-dy: -155pt, 
                      offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
                      body-dy:5pt )[] 
 #pinit-point-from(1, pin-dx: 207pt, pin-dy: -77pt, 
@@ -175,20 +172,19 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $
                      body-dy:4pt )[] 
 
 #pinit-point-from(1, pin-dx: 157pt, pin-dy: -59pt, 
-                     offset-dy: -105pt, offset-dx: 156pt, body-dx: -47pt, 
+                     offset-dy: -105pt, offset-dx: 157pt, body-dx: -47pt, 
                      body-dy:4pt )[] 
 #pinit-point-from(1, pin-dx: 157pt, pin-dy: -129pt, 
-                     offset-dy: -105pt, offset-dx: 156pt, body-dx: -47pt, 
+                     offset-dy: -105pt, offset-dx: 157pt, body-dx: -47pt, 
                      body-dy:4pt )[] 
 
 #pinit-point-from(1, pin-dx: 122pt, pin-dy: -55pt, 
-                     offset-dy: -78pt, offset-dx: 121pt, body-dx: -47pt, 
+                     offset-dy: -78pt, offset-dx: 122pt, body-dx: -47pt, 
                      body-dy:4pt )[] 
 #pinit-point-from(1, pin-dx: 122pt, pin-dy: -100pt, 
-                     offset-dy: -78pt, offset-dx: 121pt, body-dx: -47pt, 
+                     offset-dy: -78pt, offset-dx: 122pt, body-dx: -47pt, 
                      body-dy:4pt )[] 
 ]
-
 
 
 
