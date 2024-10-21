@@ -21,6 +21,28 @@
 == Outline                                                       
 #components.adaptive-columns(outline(title: none, indent: 1em))
 
+= Parameter Estimataion
+== Poisson Distribution
+
+#slide(composer:(auto, auto))[
+- Expect an average of $mu$ counts per time, with 
+  $mu in RR>=0$
+  #pause
+
+- Probability of getting $n in NN$ counts per time?
+#pause
+
+- Poisson Distribution:
+
+  $ Pr(n|mu) = (e^(-mu) mu^n)/n! $
+
+- Prob. of data $n$, given parameter $mu$; aka the _likelihood_.
+][
+  #pause 
+  - Example:
+  #image("poiss_example.png", height:auto)
+]
+
 = Confidence Interval (CI)
 
 == CI Definition
@@ -67,65 +89,53 @@
   - Consider probability $Pr(x|mu)$
 
   #pause
-  - Take an example $mu=4$, consider $Pr(x|mu=4)$
+  - Take for example $mu=4$, consider $Pr(x|mu=4)$
 
   #pause
-  - Select a region $[x_l, x_u]$ such that the probability of measuring $x in [x_l, x_u]$
-    is, say, $80%$.
+  #uncover("2-")[
+    - Select a region $[x_l, x_u]$ such that the probability of measuring $x in [x_l, x_u]$ is, say, $80%$.
+  ]
   
-  #pause
-  - that is, $ Pr(x in [x_l, x_u]|mu=4) =80% $
+  #uncover("4")[- that is, $ Pr(x in [x_l, x_u]|mu=4) =80% $]
 ][
-#pause
+  #uncover("2-")[
 #image("example_belt_initial.png")#pin(1) 
-#pause
 #pinit-point-from(1, pin-dx: 160pt, pin-dy: -105pt, 
                      offset-dy: -161pt,offset-dx: 200pt, body-dx: -93pt, 
                      body-dy:-97pt )[_acceptance region_ $[x_l, x_u]$,\ 
                      associated with  a \ particular value of $mu$] 
-]
+]]
 
 #slide(composer:(1fr, auto))[
   - Take another value $mu$, say $mu=5$
+  #uncover("2-")[
   - Get another acceptance region $[x_l, x_u]$
     associated with this value
-$ Pr(x in [x_l, x_u]|mu=5) =80% $
+$ Pr(x in [x_l, x_u]|mu=5) =80% $]
 
+  #uncover("3-")[
+    - Rinse and repeat
+  ]
 ][
-#image("example_belt_initial.png")#pin(1) 
+#only(1)[#image("example_belt_initial.png")]
+#only(2)[#image("example_belt_initial_twoline.png")]
+#only(3)[#image("example_belt_fakeTruth.png")#pin(1)]
+#only(4)[#image("example_belt_fakeTruth.png")#pin(1)
+#pinit-point-from(1, pin-dx: 150pt, pin-dy: -94pt, body-dx: -62pt)[suppose this is $mu_t$]
+]
 ]
 
 #slide(composer:(1fr, auto))[
-  - Take another value $mu$, say $mu=5$
-  - Get another acceptance region $[x_l, x_u]$
-    associated with this value
-$ Pr(x in [x_l, x_u]|mu=5) =80% $
+  - Make a measurement, get result $x_0=6$
 
-  - Do this many times.
-  - Get confidence belt.
+  - The probability of $x_0$ falling in the acceptance region (red) is $80%$, by construction
+
+  #uncover(2)[
+  - The *confidence interval* $[mu_l, mu_u]$ from this experiment is
+    the vertical intercept.]
 ][
-#image("example_belt_fakeTruth.png")#pin(1) 
-#pause
-#pinit-point-from(1, pin-dx: 160pt, pin-dy: -90pt, 
-                     offset-dy: -36pt, body-dx: -193pt, 
-                     body-dy:4pt )[suppose this is $mu_"true"$] 
-]
-
-#slide(composer:(1fr, auto))[
-  - Make a measurement, get result $x_0$
-
-  - The probability of $x_0$ falling in the region is $80%$, by construction
-
-][
-#image("example_belt_oneLine.png")#pin(1) 
-]
-
-#slide(composer:(1fr, auto))[
-  - The #text(red)[confidence interval] $[mu_l, mu_u]$ from this experiment is
-    the vertical intercept.
-][
-#image("example_belt_oneLine.png")#pin(1) 
-  #pause
+#only(1)[#image("example_belt_oneLine.png")]
+#only(2)[#image("example_belt_oneLine.png")#pin(1) 
 #pinit-point-from(1, pin-dx: 309pt, pin-dy: -148pt, 
                      offset-dy: -101pt, body-dx: 0pt, offset-dx: 345pt,
                      body-dy:4pt )[$mu_l (x_0)$] 
@@ -140,7 +150,7 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $
 #pinit-point-from(1, pin-dx: 300pt, pin-dy: -155pt, 
                      offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
                      body-dy:5pt )[] 
-]
+]]
 
 #slide(composer:(1fr, auto))[
   - Make some more measurements
@@ -187,29 +197,69 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $
 ]
 
 
+= Acceptance Region
+== Maximum Likelihood
+
+#slide(composer: (6cm,auto))[#image("example_belt_initial_nmu.png")][
+  - Recall acceptance region: 
+  $ Pr(n in #pin(1) [n_1, n_2] #pin(2) | mu_"fixed") = 80% $
+  #pinit-highlight(1,2)
+  #show link: underline
+  - #link("https://phas.ubc.ca/~oser/p509/Lec_16.pdf#page=3")[#text(blue)[Complete freedom]]
+    in choosing how to construct the acceptance regions.
+
+  - Consider Poisson with background $b$:
+    $ cal(L) equiv Pr( n | mu ) = ((mu+b)^n e^(-mu+ b))/ n! $
+
+  - F&C propose to compute a likelihood ratio $R$
+
+    - This needs a "best fit" $#pin(3)mu_"best" equiv max(0,n-b)#pin(4)$
+  #pinit-highlight(3,4)
+]
+
+
+=== Derivation (skip me!)
+- Likelihood is a Poisson in this case.
+
+$ cal(L) equiv Pr( n | mu ) = ((mu+b)^n e^(-mu+ b))/ n! $
+
+- Find maximum (fixing $n$, vary $mu$):
+$ eval(dv(cal(L),mu))_(mu = mu_"best") = 0 $
+
+- Result: "best fit" $mu = mu_"best" = n-b$
+
+- Require physical $mu>=0=> mu_"best" = max(0,n-b)$
+
+#let mytab(entry1, entry2, entry3,entry4,entry5,entry6) = table(
+  columns: 6,inset: (x: 0.6em,y: 0.5em), align: center+horizon,
+  table.header[*$n$*][*$Pr(n|mu)$*][*$mu_"best"$*][*$Pr(n|mu_"best")$*][*$R$*][*rank*],
+  [#entry1], [#entry2],[#entry3], [#entry4], [#entry5], [#entry6]
+)
+== Likelihood Ratio
+#slide(composer: (8cm,auto))[
+- Do this for representative values of $mu$; say we start with $mu=0.5$\
+  - As an example background, $b=3$
+  - $=> mu_"best" equiv max(0,n-b) = max(0,n-3)$
+
+- Procedure:
+  - #uncover("2-")[For $n=0$, compute $Pr(n | mu=0.5)$]
+  - #uncover("3-")[For $n=0$, compute $mu_"best" = 0$]
+  - #uncover("4-")[For $n=0$, compute $Pr(n | mu=mu_"best")$]
+  - #uncover("5-")[Divide likelihoods to get $R$.]
+  #only("1")[#mytab(0,none,none,none,none,none)]
+  #only("2")[#mytab(0,0.03,none,none,none,none)]
+  #only("3")[#mytab(0,0.03,0,none,none,none)]
+  #only("4")[#mytab(0,0.03,0,0.05,none,none)]
+  #only("5")[#mytab(0,0.03,0,0.05,0.607,none)]
+]
+
+
+
 
 
 
 
 = Bayesian
-== Poisson Distribution
-
-#slide(composer:(1fr,auto))[
-
-- Expect an average of  $lambda$ counts per hour, with \
-  $lambda in RR>=0$
-  #pause
-
-- Probability of getting $n in NN$ counts per hour?
-#pause
-
-- Poisson Distribution:
-
-  $ Pr(n|lambda) = (e^(-lambda) lambda^n)/n! $
-][
-  #pause Example:
-  #image("poiss_example.png", height: 85%)
-]
 
 == Bayes Theorem
 #slide[
