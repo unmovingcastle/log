@@ -18,9 +18,11 @@
 
 #title-slide()
 
+#set text(21pt)
 == Outline                                                       
-#components.adaptive-columns(outline(title: none, indent: 1em))
+#components.adaptive-columns(outline(title: none,depth: 2, indent: 1em))
 
+#set text(25pt)
 = Parameter Estimataion
 == Poisson Distribution
 
@@ -202,7 +204,7 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $]
 
 #slide(composer: (6cm,auto))[#image("example_belt_initial_nmu.png")][
   - Recall acceptance region: 
-  $ Pr(n in #pin(1) [n_1, n_2] #pin(2) | mu_"fixed") = 80% $
+  $ Pr(n in #pin(1) [n_1, n_2] #pin(2) | mu_"fixed") = 90% $
   #pinit-highlight(1,2)
   #show link: underline
   - #link("https://phas.ubc.ca/~oser/p509/Lec_16.pdf#page=3")[#text(blue)[Complete freedom]]
@@ -254,7 +256,68 @@ $ eval(dv(cal(L),mu))_(mu = mu_"best") = 0 $
 ]
 
 
+#slide[
+- As a reminder, this is still just for $mu=0.5$ (and example $b=3$)
+  #mytab(0,0.03,0,0.05,0.607,none)
+#only("1")[
+- We will see that the acceptance region for $mu=0.5$ is this:
+  #image("example_belt_empty.png", height: 45%)
+]
+#only("2")[
+- We will see that the acceptance region for $mu=0.5$ is this:
+  #image("poisson_belt_oneline.png", height: 45%)
+]
 
+#only("3")[
+- To construct the region, make a new row for $n=1$
+  #table(
+    columns: 6,inset: (x: 0.6em,y: 0.5em), align: center+horizon,
+    table.header[*$n$*][*$Pr(n|mu)$*][*$mu_"best"$*][*$Pr(n|mu_"best")$*][*$R$*][*rank*],
+    [0], [0.030],[0], [0.050], [0.607], [#none],
+    [1], [0.106],[0], [0.149], [0.708], [#none]
+  )]
+]
+
+== Example acceptance region for $mu=0.5$
+#slide[
+#only("1")[And then for a bunch of other $n$.]
+#only("2")[
+#table(
+  columns: 6,inset: (x: 0.6em,y: 0.5em), align: center+horizon,
+  table.header[*$n$*][*$Pr(n|mu)$*][*$mu_"best"$*][*$Pr(n|mu_"best")$*][*$R$*][*rank*],
+  [0], [0.030],[0], [0.050], [0.607], [#none],
+  [1], [0.106],[0], [0.149], [0.708], [#none],
+  [2], [0.185],[0], [0.224], [0.826], [#none],
+  [3], [0.216],[0], [0.224], [0.963], [#none],
+  [4], [0.189],[1], [0.195], [0.966], [#none],
+  [5], [0.132],[2], [0.175], [0.753], [#none],
+  [6], [0.077],[3], [0.161], [0.480], [#none],
+  [7], [0.039],[4], [0.149], [0.259], [#none]
+)]
+#only("3")[
+#table(
+  columns: 6,inset: (x: 0.6em,y: 0.5em), align: center+horizon,
+  table.header[*$n$*][*$Pr(n|mu)$*][*$mu_"best"$*][*$Pr(n|mu_"best")$*][*$R$*][*rank*],
+  [0], [0.030],[0], [0.050], [0.607], [6],
+  [1], [0.106],[0], [0.149], [0.708], [5],
+  [2], [0.185],[0], [0.224], [0.826], [3],
+  [3], [0.216],[0], [0.224], [0.963], [2],
+  [4], [0.189],[1], [0.195], [0.966], [1],
+  [5], [0.132],[2], [0.175], [0.753], [4],
+  [6], [0.077],[3], [0.161], [0.480], [7],
+  [7], [0.039],[4], [0.149], [0.259], [#none],
+)]]
+
+#slide(composer: (auto, 9cm))[
+  - Start adding $Pr(n|mu)$ in the second column based on the rank.
+  - Stop when total probability exceeds 90%.
+  - The $n$'s that contribute to the sum are the ones included in the acceptance region.
+  #uncover("2-")[
+  - Acceptance region for $mu=0.5$ is therefore $n in [0,6]$ 
+  ]
+  #uncover("3-")[
+  - Next, construct the acceptance region for other $mu$ as well.]
+][#uncover("2-")[#image("poisson_belt_oneline.png", height: 43%)]]
 
 
 
