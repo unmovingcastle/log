@@ -124,6 +124,7 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
 
 #slide(composer:(1fr, auto))[
   - But of course $mu_t$ is unknown.
+
   #uncover("2-")[ - The true flux $mu_t$ could be, say, $mu=5$]
 
   #uncover("3-")[ - So, construct another acceptance region $[x_l, x_u]$ for $mu=5$]
@@ -132,12 +133,12 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
     - Rinse and repeat
   ]
 ][
-#only(1)[#image("example_belt_initial.png")]
-#only(2)[#image("example_belt_initial.png")]
-#only(3)[#image("example_belt_initial_twoline.png")]
-#only(4)[#image("example_belt_fakeTruth.png")#pin(1)]
-#only(5)[#image("example_belt_fakeTruth.png")#pin(1)
-#pinit-point-from(1, pin-dx: 150pt, pin-dy: -94pt, body-dx: -62pt)[suppose this is $mu_t$]
+#only(1)[#v(2em) #image("example_belt_initial.png")]
+#only(2)[#v(2em) #image("example_belt_initial.png")]
+#only(3)[#v(2em) #image("example_belt_initial_twoline.png")]
+#only(4)[#v(2em) #image("example_belt_fakeTruth.png")#pin(1)]
+#only(5)[#v(2em) #image("example_belt_fakeTruth.png")#pin(1)
+#pinit-point-from(1, pin-dx: 150pt, pin-dy: -94pt, body-dx: -62pt, body-dy: -1pt, offset-dy: -10pt, offset-dx: 69pt)[suppose this is $mu_t$]
 ]
 ]
 
@@ -150,9 +151,9 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
   - The *confidence interval* $[mu_l, mu_u]$ from this experiment is
     the vertical intercept.]
 ][
-#only(1)[#image("example_belt_oneLine.png")]
-#only(2)[#image("example_belt_oneLine.png")]
-#only(3)[#image("example_belt_oneLine.png")#pin(1) 
+#only(1)[#v(2em) #image("example_belt_oneLine.png")]
+#only(2)[#v(2em) #image("example_belt_oneLine.png")]
+#only(3)[#v(2em) #image("example_belt_oneLine.png")#pin(1) 
 #pinit-point-from(1, pin-dx: 309pt, pin-dy: -148pt, 
                      offset-dy: -101pt, body-dx: 0pt, offset-dx: 345pt,
                      body-dy:4pt )[$mu_l (x_0)$] 
@@ -171,14 +172,15 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
 
 #slide(composer:(1fr, auto))[
   - Make some more measurements
+  
   #uncover("2-")[- Get some more confidence intervals.]
   #uncover("3-")[- Have a set
                    $  C = {"CI"_1,  "CI"_2,  "CI"_3, "CI"_4,  "CI"_5} $ ]
                 
   #uncover("3-")[- $80%$ of this set would cover the true value, $mu_t$.]
 ][
-#only(1)[ #image("example_belt_allLines.png")]
-#only(2)[
+#only(1)[#v(2em) #image("example_belt_allLines.png")]
+#only(2)[#v(2em)
 #image("example_belt_allLines.png")#pin(1) 
 #pinit-point-from(1, pin-dx: 301pt, pin-dy: -320pt, 
                      offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
@@ -214,7 +216,7 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
                      offset-dy: -78pt, offset-dx: 122pt, body-dx: -47pt, 
                      body-dy:4pt )[] 
 ]
-#only(3)[
+#only(3)[#v(2em)
 #image("example_belt_allLines.png")#pin(1) 
 #pinit-point-from(1, pin-dx: 301pt, pin-dy: -320pt, 
                      offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
