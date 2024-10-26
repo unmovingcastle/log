@@ -27,12 +27,13 @@
 == Poisson Distribution
 
 #slide(composer:(auto, auto))[
-- Expect an average of $mu$ counts per time, with 
-  $mu in RR>=0$
+- Expect an average of (real) \ $mu>=0$ neutrinos per time
+  
   #pause
 
-- Probability of getting $n in NN$ counts per time?
-#pause
+- Probability of seeing (integer) $n>=0$ neutrinos per time?
+
+  #pause
 
 - Poisson Distribution:
 
@@ -50,13 +51,21 @@
 == CI Definition
 #slide[
 - Goal: estimate parameter $mu$ whose true value is $mu_t$
-#pause
-- Make a measurement $x$; suppose the first measurement yields $x_0$.
-#pause
+
+  #pause
+
+- Make a measurement $x$; first measurement yields $x_0$.
+
+  #pause
+
 - Construct an interval (discussed later) $[mu_l,mu_u]$
+
   #pause
+
   - $mu_l = mu_l (x_0)$: lower bound associated w/ this $1^"st"$ measurement
+
   #pause
+
   - $mu_u = mu_u (x_0)$: upper bound associated w/ this $1^"st"$ measurement
 
   #pause
@@ -69,17 +78,22 @@
 ]
 
 #slide[
+- $ C equiv {[mu_l , mu_u ] , [mu_l , mu_u ] , [mu_l , mu_u ]...} $
+
 - The set $C$ has the property that 
-  $ P( [mu_l, mu_u] in.rev mu ) = alpha #h(2em) forall "allowed" mu $
+$ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
 
   #pause
 - In words:
-  - pick a _fixed_ value of $mu$; say we pick the truth $mu_t$.
-  #pause
-  - of the members in $C$, a fraction $alpha$ would cover $mu_t$.
+
+  - the true value $mu_t$ is _fixed_ (although unknown)
+
   #pause
 
-  - others won't.
+  - Some members of $C$ would _cover_ this true value 
+
+  #pause 
+  -  e.g. say $mu_t = 2$, and maybe in $C$ there is  $[1, 3]$.
 
   #pause
   
@@ -88,41 +102,41 @@
 
 == CI Construction: Confidence Belt
 #slide(composer:(1fr, auto))[
-  - Consider probability $Pr(x|mu)$
+  - Recall _likelihood_ $Pr(x|mu)$ (ie. probability of data, assume known paramater)
 
-  #pause
-  - Take for example $mu=4$, consider $Pr(x|mu=4)$
+  #uncover("2-")[ - Take for example $mu=4$. Expect 4 neutrinos per time.]
 
-  #pause
-  #uncover("2-")[
+  #uncover("4-")[
     - Select a region $[x_l, x_u]$ such that the probability of measuring $x in [x_l, x_u]$ is, say, $80%$.
   ]
   
-  #uncover("4")[- that is, $ Pr(x in [x_l, x_u]|mu=4) =80% $]
 ][
-  #uncover("2-")[
-#image("example_belt_initial.png")#pin(1) 
-#pinit-point-from(1, pin-dx: 160pt, pin-dy: -105pt, 
+  #uncover("3-")[ #v(2em) #image("example_belt_initial.png")#pin(1) ]
+  #uncover("5")[ #pinit-point-from(1, pin-dx: 160pt, pin-dy: -105pt, 
                      offset-dy: -161pt,offset-dx: 200pt, body-dx: -93pt, 
-                     body-dy:-97pt )[_acceptance region_ $[x_l, x_u]$,\ 
-                     associated with  a \ particular value of $mu$] 
-]]
+                     body-dy:-97pt )[*acceptance region* $[x_l, x_u]$,\ 
+                     associated with  a \ particular value of $mu$] ]
+  #uncover("6")[ #pinit-point-from(1, pin-dx: 160pt, pin-dy: -105pt, 
+                     offset-dy: -161pt,offset-dx: 200pt, body-dx: -115pt, 
+                     body-dy:-39pt )[$Pr(x in [x_l, x_u] | mu=4) =80%$] ]
+]
+
 
 #slide(composer:(1fr, auto))[
-  - Take another value $mu$, say $mu=5$
-  #uncover("2-")[
-  - Get another acceptance region $[x_l, x_u]$
-    associated with this value
-$ Pr(x in [x_l, x_u]|mu=5) =80% $]
+  - But of course $mu_t$ is unknown.
+  #uncover("2-")[ - The true flux $mu_t$ could be, say, $mu=5$]
 
-  #uncover("3-")[
+  #uncover("3-")[ - So, construct another acceptance region $[x_l, x_u]$ for $mu=5$]
+
+  #uncover("4-")[
     - Rinse and repeat
   ]
 ][
 #only(1)[#image("example_belt_initial.png")]
-#only(2)[#image("example_belt_initial_twoline.png")]
-#only(3)[#image("example_belt_fakeTruth.png")#pin(1)]
-#only(4)[#image("example_belt_fakeTruth.png")#pin(1)
+#only(2)[#image("example_belt_initial.png")]
+#only(3)[#image("example_belt_initial_twoline.png")]
+#only(4)[#image("example_belt_fakeTruth.png")#pin(1)]
+#only(5)[#image("example_belt_fakeTruth.png")#pin(1)
 #pinit-point-from(1, pin-dx: 150pt, pin-dy: -94pt, body-dx: -62pt)[suppose this is $mu_t$]
 ]
 ]
@@ -130,14 +144,15 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $]
 #slide(composer:(1fr, auto))[
   - Make a measurement, get result $x_0=6$
 
-  - The probability of $x_0$ falling in the acceptance region (red) is $80%$, by construction
+  #uncover("2-")[- The probability of $x_0$ falling in the acceptance region (red) is $80%$, by construction]
 
-  #uncover(2)[
+  #uncover("3-")[
   - The *confidence interval* $[mu_l, mu_u]$ from this experiment is
     the vertical intercept.]
 ][
 #only(1)[#image("example_belt_oneLine.png")]
-#only(2)[#image("example_belt_oneLine.png")#pin(1) 
+#only(2)[#image("example_belt_oneLine.png")]
+#only(3)[#image("example_belt_oneLine.png")#pin(1) 
 #pinit-point-from(1, pin-dx: 309pt, pin-dy: -148pt, 
                      offset-dy: -101pt, body-dx: 0pt, offset-dx: 345pt,
                      body-dy:4pt )[$mu_l (x_0)$] 
@@ -156,12 +171,14 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $]
 
 #slide(composer:(1fr, auto))[
   - Make some more measurements
-  - Get some more confidence intervals.
-  - Have a set
-    $  C = {"CI"_1,  "CI"_2,  "CI"_3, "CI"_4,  "CI"_5} $
-
-  - $80%$ of this set would cover the true value, $mu_t$.
+  #uncover("2-")[- Get some more confidence intervals.]
+  #uncover("3-")[- Have a set
+                   $  C = {"CI"_1,  "CI"_2,  "CI"_3, "CI"_4,  "CI"_5} $ ]
+                
+  #uncover("3-")[- $80%$ of this set would cover the true value, $mu_t$.]
 ][
+#only(1)[ #image("example_belt_allLines.png")]
+#only(2)[
 #image("example_belt_allLines.png")#pin(1) 
 #pinit-point-from(1, pin-dx: 301pt, pin-dy: -320pt, 
                      offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
@@ -197,7 +214,42 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $]
                      offset-dy: -78pt, offset-dx: 122pt, body-dx: -47pt, 
                      body-dy:4pt )[] 
 ]
+#only(3)[
+#image("example_belt_allLines.png")#pin(1) 
+#pinit-point-from(1, pin-dx: 301pt, pin-dy: -320pt, 
+                     offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
+                     body-dy:5pt )[] 
+#pinit-point-from(1, pin-dx: 301pt, pin-dy: -155pt, 
+                     offset-dy: -215pt, offset-dx: 301pt, body-dx: -47pt, 
+                     body-dy:5pt )[] 
+#pinit-point-from(1, pin-dx: 207pt, pin-dy: -77pt, 
+                     offset-dy: -130pt, offset-dx: 207pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+#pinit-point-from(1, pin-dx: 207pt, pin-dy: -178pt, 
+                     offset-dy: -130pt, offset-dx: 207pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
 
+#pinit-point-from(1, pin-dx: 172pt, pin-dy: -66pt, 
+                     offset-dy: -130pt, offset-dx: 172pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+#pinit-point-from(1, pin-dx: 172pt, pin-dy: -143pt, 
+                     offset-dy: -130pt, offset-dx: 172pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+
+#pinit-point-from(1, pin-dx: 157pt, pin-dy: -59pt, 
+                     offset-dy: -105pt, offset-dx: 157pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+#pinit-point-from(1, pin-dx: 157pt, pin-dy: -129pt, 
+                     offset-dy: -105pt, offset-dx: 157pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+
+#pinit-point-from(1, pin-dx: 122pt, pin-dy: -55pt, 
+                     offset-dy: -78pt, offset-dx: 122pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+#pinit-point-from(1, pin-dx: 122pt, pin-dy: -100pt, 
+                     offset-dy: -78pt, offset-dx: 122pt, body-dx: -47pt, 
+                     body-dy:4pt )[] 
+]]
 
 = Acceptance Region
 == Maximum Likelihood
@@ -210,8 +262,8 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $]
   - #link("https://phas.ubc.ca/~oser/p509/Lec_16.pdf#page=3")[#text(blue)[Complete freedom]]
     in choosing how to construct the acceptance regions.
 
-  - Consider Poisson with background $b$:
-    $ cal(L) equiv Pr( n | mu ) = ((mu+b)^n e^(-mu+ b))/ n! $
+  - Consider likelihood: Poisson with background $b$:
+    $ cal(L) equiv Pr( n | mu ) = ((mu+b)^n e^(- (mu+ b)))/ n! $
 
   - F&C propose to compute a likelihood ratio $R$
 
@@ -223,7 +275,7 @@ $ Pr(x in [x_l, x_u]|mu=5) =80% $]
 === Derivation (skip me!)
 - Likelihood is a Poisson in this case.
 
-$ cal(L) equiv Pr( n | mu ) = ((mu+b)^n e^(-mu+ b))/ n! $
+$ cal(L) equiv Pr( n | mu ) = ((mu+b)^n e^( -(mu+ b)))/ n! $
 
 - Find maximum (fixing $n$, vary $mu$):
 $ eval(dv(cal(L),mu))_(mu = mu_"best") = 0 $
