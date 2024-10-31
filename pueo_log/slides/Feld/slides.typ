@@ -23,6 +23,9 @@
 #set text(21pt)
 == Outline                                                       
 #components.adaptive-columns(outline(title: none,depth: 1, indent: 1em))
+#slide[
+#text(size:16pt)[
+#components.adaptive-columns(outline(title: none,depth: 2, indent: 3em))]]
 
 #set text(25pt)
 = Parameter Estimataion
@@ -255,51 +258,84 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
                      body-dy:4pt )[] 
 ]]
 
-= Two Types of CI
+= Standard CIs
 
 == Acceptance region?
-  - Recall acceptance region: 
-  $ Pr(n in #pin(1) [n_1, n_2] #pin(2) | mu_"fixed") = 90% $
-  #pinit-highlight(1,2)
-  #pause
-  - Consider Gaussian distribution with known $sigma=1$
-  $ P(n | mu ) = 1/(sqrt(2pi)) dot e^(- (x-mu)^2\/2) $
-  #show link: underline
-  #pause
-  - #link("https://phas.ubc.ca/~oser/p509/Lec_16.pdf#page=3")[Complete freedom]
-    in choosing how to construct acceptance regions.
-  #pause
-  - _A_ choice#footnote[Feldman & Cousins Section II.B] leads to something we call the 
-    *upper limit*.
-  #pause
-  - Another common choice leads to a *central interval*.
+#slide(composer: (4fr,1fr))[
+#v(1cm)
+  #uncover("1-")[
+    - Recall acceptance region: 
+    $ Pr(n in #pin(1) [n_1, n_2] #pin(2) | mu_"fixed") = 90% $
+    #pinit-highlight(1,2)
+  ]
 
-== Example: Gaussian likelihood
+  #uncover("2-")[
+  - #link("https://phas.ubc.ca/~oser/p509/Lec_16.pdf#page=3")[Complete freedom]
+    in choosing a 90% range.
+  ]
+
+  #uncover("3-")[
+  - _A_ choice#footnote[See Feldman & Cousins Section II.B] leads to the *upper limit*.
+  ]
+  #uncover("4-")[
+  - Another common choice leads to the two-sided *central interval*.
+  ]
+][
+#v(3cm)
+  #only(2)[#image("choice.png", width: 100%)]
+  #only(3)[#image("gauss_up.png", width: 130%)]
+  #only(4)[#image("gauss_central.png", width: 130%)]
+]
+
+== Example CIs
 #slide[
-#uncover("1,3")[#image("gauss_up.png")#pin(1)
+#uncover("1,2")[#image("gauss_up.png")#pin(1)
 #pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
                   pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt,1)[standard 90% upper limit]]
 ][
-#uncover("2,3")[#image("gauss_central.png")#pin(2)
+#only(1)[
+  #text(luma(200))[
+    #v(2cm)
+    Gaussian likelihood with known $sigma=1$
+    $ Pr(x | mu ) = 1/(sqrt(2pi)) dot e^(- (x-mu)^2\/2) $
+  ]
+]
+#only(2)[#image("gauss_central.png")#pin(2)
 #pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
                   pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt, 2)[standard 90% central CI]]]
 
+= Feldman & Cousins CI
 == Question: which one to use?
-#slide[#image("gauss_up.png")
-#uncover("2-")[#text(size:15pt)[One *cannot* pick the type of interval after-the-fact.]]
-][#image("gauss_central.png")
-#uncover("2-")[#text(size:15pt)[This is done before we perform the experiment.]]
-]
+#slide[
+#image("gauss_up.png")#pin(1)
+#pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
+                  pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt,1)[standard 90% upper limit]][
+#image("gauss_central.png")#pin(2)
+#pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
+                  pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt, 2)[standard 90% central CI]]
 
 == Problem: "flip-flop"
-#slide[
-  - It turns out that flip-flopping leads to invalid intervals
+#slide(composer:(1fr,2fr))[
+  #image("gauss_up.png", height: 45%) #image("gauss_central.png", height: 45%)][
+    #v(1cm)
+  - One *cannot* pick the type of interval after-the-fact.
+    The Choice is made before we perform the experiment.
+    Otherwise we would be "flip-flopping".
 
-  - Feldman & Cousins's approach removes the possibility of (or motivation to commit) flip-flopping.
+  #uncover("2-")[ - It turns out that flip-flopping leads to invalid intervals]
+  #uncover("3-")[ - Feldman & Cousins's approach removes the possibility of (or
+                    motivation to commit) flip-flopping.]
+
+  
 ]
 
 == Standard Poisson (90% Upper) CI
 #slide[#image("standard_poiss_upper_CI_b=3.png")][
+  #text(luma(200))[
+    #v(2cm)
+    Poisson likelihood with background
+    $ cal(L) equiv Pr( n | mu ) = ((mu+b)^n e^(- (mu+ b)))/ n! $
+  ]
 ]
 
 
@@ -324,7 +360,7 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
 
 
 
-= Acceptance Region Part 2
+= F&C CI construction
 == Maximum Likelihood
 
 #slide(composer: (6cm,auto))[#image("example_belt_initial_nmu.png")][
@@ -345,7 +381,7 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
 ]
 
 
-=== Derivation (skip me!)
+=== Derivation 
 - Likelihood is a Poisson in this case.
 
 $ cal(L) equiv Pr( n | mu ) = ((mu+b)^n e^( -(mu+ b)))/ n! $
@@ -451,38 +487,39 @@ $ eval(dv(cal(L),mu))_(mu = mu_"best") = 0 $
 
 == Bayes Theorem
 #slide[
-  - The problem is that the parameter $lambda$ is what we want to figure out.
-
+  - Goal: estimate some parameter $mu$
     #pause
-    - _e.g._ the flux of neutrinos at some energy $E=10^21$ eV.
+  - _e.g._ the flux of neutrinos at some energy $E=10^21$ eV.
+    #pause
+    - see $n$ neutrinos in some time window; want to estimate the flux.
   #pause
-  - What we can do is measure $n$ and _estimate_ $lambda$
-
-  #pause
+  #v(0.5em)
   - Bayes Theorem
 
-$ #pin(0)Pr(lambda | n)#pin(999) 
-= (#pin(1)Pr(n | lambda)#pin(2) dot #pin(3)Pr(lambda)#pin(5))/(#pin(4)Pr(n)) $
+$ #pin(0)Pr(mu | n)#pin(999) 
+= (#pin(1)Pr(n | mu)#pin(2) dot #pin(3)Pr(mu)#pin(5))/(#pin(4)Pr(n)) $
 
-#pinit-highlight(0,999, fill: rgb(0,180,255,60))
-#pinit-point-from(0, pin-dy: 19pt, pin-dx: 45pt,offset-dy: 66pt, body-dx: -46pt, body-dy:5pt)[_Posterior_]
-
-#pause
 #pinit-point-from(1, pin-dy: -24pt, pin-dx: 99pt, offset-dy: -54pt, 
-                  offset-dx: 205pt, body-dy: -12pt)[_Likelihood_ $(e^(-lambda) lambda^n)/n!$]
+                  offset-dx: 137pt, body-dy: -12pt)[Recall _Likelihood_ $(e^(-mu) mu^n)/n!$]
 #pinit-highlight(1,2)
+#pause
+#pinit-point-from(3, pin-dy: 40pt, pin-dx: 20pt, offset-dx: 122pt, offset-dy: 75pt, body-dx: -179pt, body-dy:5pt)[#text(17pt)[_evidence_: typically a normalization and ignored]]
 
 #pause
-#pinit-point-from(3, pin-dy: 40pt, pin-dx: 20pt, offset-dx: 122pt, offset-dy: 81pt, body-dx: 3pt, body-dy:-10pt)[_evidence_]
+#pinit-highlight(0,999, fill: rgb(0,180,255,60))
+#pinit-point-from(0, pin-dy: 19pt, pin-dx: 45pt,offset-dy: 108pt,
+                     body-dx: -269pt, body-dy:19pt)[
+    #text(size:24pt)[_Posterior_, encodes possible values of $mu_t$ as a
+    probability dist.\ The "truth" $mu_t$ is *not* fixed from the Bayesian perspective]]
 
-#v(2.5cm)
-- Evidence is typically just a normalization and ignored. Let's call it 1 :)
+
+
 
 ]
 
 #slide[
-$ #pin(0)Pr(lambda | n)#pin(999) = (#pin(1)Pr(n | lambda)#pin(2) dot
-  #pin(3)Pr(lambda)#pin(5))/(#pin(4)Pr(n)) $
+$ #pin(0)Pr(mu | n)#pin(999) = (#pin(1)Pr(n | mu)#pin(2) dot
+  #pin(3)Pr(mu)#pin(5))/(#pin(4)Pr(n)) $
 #pause
 #pinit-highlight(3,5, fill: rgb(0,180,166,60))
 #pinit-point-from(3, pin-dy: -3pt, pin-dx: 72pt, offset-dx: 122pt,
@@ -490,46 +527,46 @@ $ #pin(0)Pr(lambda | n)#pin(999) = (#pin(1)Pr(n | lambda)#pin(2) dot
 - If we specify a prior, we get the posterior.
 
 #pause
-- "uniform prior"  $Pr(lambda)=1$
+- "uniform prior"  $Pr(mu)=1$
   #pause
   // - So the posterior is simply the likelihood, _i.e._ the Poisson dist.
-  $==> #pin(0)Pr(lambda | n)#pin(999) = Pr(n | lambda)$
+  $==> #pin(0)Pr(mu | n)#pin(999) = Pr(n | mu)$
 
 
 #pause
 - Suppose we measure $n=0$ event, then the posterior is
-$ Pr(lambda | n=0) = Pr(n=0|lambda) = (e^(-lambda) dot lambda^n)/n! = e^(-lambda) $
+$ Pr(mu | n=0) = Pr(n=0|mu) = (e^(-mu) dot mu^n)/n! = e^(-mu) $
 ]
 
 == Summary: Bayesian Credible Interval
 #slide(composer:(146mm, auto))[
-  - Want an upper bound on $lambda$
+  - Want an upper bound on $mu$
   #pause 
-  - A choice: find a $lambda_"max"$ such that 
+  - A choice: find a $mu_"max"$ such that 
     #touying-equation(` 
-      &integral_0^lambda_"max" "Posterior" = 90% \
+      &integral_0^mu_"max" "Posterior" = 90% \
       pause
-      =>&integral_0^lambda_"max" e^(-lambda) = 0.9 \
-      => &lambda_"max" = ln(10) approx 2.3 
+      =>&integral_0^mu_"max" e^(-mu) = 0.9 \
+      => &mu_"max" = ln(10) approx 2.3 
     `)
 
   #pause
   #pinit-highlight(1,2)
 
   #pause
-  - so we "estemate with 90% confidence that $lambda<=2.3$" base on a non-detection.
+  - so we "estemate with 90% confidence that $mu<=2.3$" base on a non-detection.
 ][
  #image("poiss_example.png")
 ]
 
-#slide[
-- Let $mu$ denote the unknown parameter we wish to estimate.
-- Let $x_0$ denote the outcome of a single measurement.
-- Assume that we know how the measurement outcome depends on the parameter, $x=x(mu)$. 
-  - _e.g._ if the neutrino flux is very small, then oftentimes a measurement reports 
-    a non-detection.
-  - In other words, we know the _likelihood_, $P(x_0|mu)$.
-- From the Bayesian perspective, we can flip things around and say that
-  the parameter is a function of the measurement, $P(mu|x_0)$,
-  provided that we state our prior beliefs about the parameter, $P(mu)$.
-]
+// #slide[
+// - Let $mu$ denote the unknown parameter we wish to estimate.
+// - Let $x_0$ denote the outcome of a single measurement.
+// - Assume that we know how the measurement outcome depends on the parameter, $x=x(mu)$. 
+//   - _e.g._ if the neutrino flux is very small, then oftentimes a measurement reports 
+//     a non-detection.
+//   - In other words, we know the _likelihood_, $P(x_0|mu)$.
+// - From the Bayesian perspective, we can flip things around and say that
+//   the parameter is a function of the measurement, $P(mu|x_0)$,
+//   provided that we state our prior beliefs about the parameter, $P(mu)$.
+// ]
