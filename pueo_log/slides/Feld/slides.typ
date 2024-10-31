@@ -1,4 +1,6 @@
 #import "../preamble.typ": * 
+#show link: set text(blue)
+#show link: underline
 
 
 // Set the speaker notes configuration, you can show it by pympress
@@ -20,7 +22,7 @@
 
 #set text(21pt)
 == Outline                                                       
-#components.adaptive-columns(outline(title: none,depth: 2, indent: 1em))
+#components.adaptive-columns(outline(title: none,depth: 1, indent: 1em))
 
 #set text(25pt)
 = Parameter Estimataion
@@ -253,7 +255,76 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
                      body-dy:4pt )[] 
 ]]
 
-= Acceptance Region
+= Two Types of CI
+
+== Acceptance region?
+  - Recall acceptance region: 
+  $ Pr(n in #pin(1) [n_1, n_2] #pin(2) | mu_"fixed") = 90% $
+  #pinit-highlight(1,2)
+  #pause
+  - Consider Gaussian distribution with known $sigma=1$
+  $ P(n | mu ) = 1/(sqrt(2pi)) dot e^(- (x-mu)^2\/2) $
+  #show link: underline
+  #pause
+  - #link("https://phas.ubc.ca/~oser/p509/Lec_16.pdf#page=3")[Complete freedom]
+    in choosing how to construct acceptance regions.
+  #pause
+  - _A_ choice#footnote[Feldman & Cousins Section II.B] leads to something we call the 
+    *upper limit*.
+  #pause
+  - Another common choice leads to a *central interval*.
+
+== Example: Gaussian likelihood
+#slide[
+#uncover("1,3")[#image("gauss_up.png")#pin(1)
+#pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
+                  pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt,1)[standard 90% upper limit]]
+][
+#uncover("2,3")[#image("gauss_central.png")#pin(2)
+#pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
+                  pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt, 2)[standard 90% central CI]]]
+
+== Question: which one to use?
+#slide[#image("gauss_up.png")
+#uncover("2-")[#text(size:15pt)[One *cannot* pick the type of interval after-the-fact.]]
+][#image("gauss_central.png")
+#uncover("2-")[#text(size:15pt)[This is done before we perform the experiment.]]
+]
+
+== Problem: "flip-flop"
+#slide[
+  - It turns out that flip-flopping leads to invalid intervals
+
+  - Feldman & Cousins's approach removes the possibility of (or motivation to commit) flip-flopping.
+]
+
+== Standard Poisson (90% Upper) CI
+#slide[#image("standard_poiss_upper_CI_b=3.png")][
+]
+
+
+== Comparison: look at small n
+#slide[#image("standard_poiss_upper_CI_b=3.png")#pin(1)
+#pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
+                  pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt,1)[standard 90% upper CI]
+][#image("FC_poiss_CI_b=3.png")#pin(2)
+#pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
+                  pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt, 2)[Feldman & Cousins]]
+
+== Standard Poisson (90% central) CI
+#slide[#image("standard_poiss_central_CI_b=3.png")][]
+
+== Comparison: look at large n
+#slide[#image("standard_poiss_central_CI_b=3.png")#pin(1)
+#pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
+                  pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt,1)[standard 90% central CI]
+][#image("FC_poiss_CI_b=3.png")#pin(2)
+#pinit-point-from(pin-dx:100pt, offset-dx: 100pt, body-dx: -98pt,
+                  pin-dy:-5pt, offset-dy: 12pt, body-dy: 13pt, 2)[Feldman & Cousins]]
+
+
+
+= Acceptance Region Part 2
 == Maximum Likelihood
 
 #slide(composer: (6cm,auto))[#image("example_belt_initial_nmu.png")][
@@ -261,7 +332,7 @@ $ P( [mu_l, mu_u] in.rev mu_t ) = alpha% $
   $ Pr(n in #pin(1) [n_1, n_2] #pin(2) | mu_"fixed") = 90% $
   #pinit-highlight(1,2)
   #show link: underline
-  - #link("https://phas.ubc.ca/~oser/p509/Lec_16.pdf#page=3")[#text(blue)[Complete freedom]]
+  - #link("https://phas.ubc.ca/~oser/p509/Lec_16.pdf#page=3")[Complete freedom]
     in choosing how to construct the acceptance regions.
 
   - Consider likelihood: Poisson with background $b$:
