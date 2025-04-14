@@ -61,7 +61,7 @@
   #pause
   - NumPy's modulo (`%`) is related to floor division (`//`) through
   $
-    a &= underbrace(a % b, "\"remainder\"") + b dot underbrace(floor(a / b), "\"quotient\"")  \
+    a &= underbrace(a % b, "\"remainder\"") + b dot underbrace(floor(a / b), "quotient")  \
     #pause
     ==> a % b &= a - b dot floor(a/b)
   $
