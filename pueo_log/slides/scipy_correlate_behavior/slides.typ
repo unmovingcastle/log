@@ -283,7 +283,7 @@
   #image("img/two_signals_dc.png",height: 47%)
   #image("img/with_dc_ncc_vs_zncc.png", height: 47%)
 ][
-  - Let's qualitatively examine the result of NCC to see how the DC offset could polute our desired result
+  - Let's qualitatively examine the result of NCC to see how the DC offset could pollute our desired result
 
   - At $-192$ samples there's a *peak*
 
@@ -300,7 +300,7 @@
   #image("img/two_signals_dc.png",height: 47%)
   #image("img/with_dc_ncc_vs_zncc.png", height: 47%)
 ][
-  - Let's qualitatively examine the result of NCC to see how the DC offset could polute our desired result
+  - Let's qualitatively examine the result of NCC to see how the DC offset could pollute our desired result
 
   - On the other hand, at $62$ samples there's a *valley*
 
