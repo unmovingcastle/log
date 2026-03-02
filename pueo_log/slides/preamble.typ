@@ -6,4 +6,3 @@
 #import "@preview/touying:0.5.3": *
 #import themes.university: *
 
-
