@@ -154,14 +154,9 @@
 = ARA 5SA Notes: Effective Area @ara5sa
 == Total Number of Events $N$
 #slide[
-  \
-
   - $E$: Primary particle energy
-
   - $V$: volume over which particle interactions can ocur
-
   - $Omega$: particle arrrival direction (shorthand of ($theta, phi$), ie $dd(Omega) = dd(cos theta, phi)$)
-
   - Total number of events is then: 
 
 #uncover("2-")[
@@ -170,7 +165,6 @@
     P_"trig" (E, va(r), Omega) dd(E, V, Omega)
   $
 ]
-
 #uncover("3-")[
   - $T$: Exposure Time
 ]
@@ -181,6 +175,12 @@
 
 #uncover("5-")[
   - $P_"surv"$: Probability that the particle survives until point $va(r)$.
+]
+
+#uncover("6-")[
+  - Notation: 
+    - capital $P$ for probability, lower case $p$ for probability density.
+    - probability density synonymous to "differential probability."
 ]
 
 #only("6,7")[
@@ -203,8 +203,8 @@
     P_"trig" (E, va(r), Omega) dd(E, V, Omega)
   $
 
-  - $P_"surv" = $ Prob(no interaction until $va(r)$); this is a Poisson probability with mean $mu_"int"$.
-  - $mu_"int"$ is related to $lambda_"int"$, the *interaction length* 
+  - Survival probability is related to interaction rate $mu_"int"$,
+    which, in turn, is related to $lambda_"int"$, the *interaction length* 
     (average distance a particle travels through before interacting with the medium).
   - Naturally, $lambda_"int"$ should depend on energy. It also depends on the density of the medium,
     (hence, it's a function of position)
@@ -227,11 +227,17 @@
     P_"trig" (E, va(r), Omega) dd(E, V, Omega)
   $
 
- $P_"surv" = "Prob"("no interactions")$
+ - Now, the survival probability is $P_"surv" = "Prob"("no interactions until" va(r))$.
 
- The probability is a Poisson distribution with mean $mu_"int"$, so 
+- We know the average interaction rate is $mu_"int"$, the probability of $k$ interactions is then given
+  by the Poisson distribution
+  $
+    P_mu (k) = (mu^k e^(-mu_"int"))/k!
+  $
+
+- And the probability of none-interaction is
    #mk($
-     "Prob"("no interaction") = P_mu (k=0) = (mu^k e^(-mu_"int"))/k! = exp(-mu_"int")
+     P_mu (0) = (mu^0 e^(-mu_"int"))/0! = exp(-mu_"int")
    $)<eq:ProbNoInt>
 
  That is, 
@@ -285,14 +291,13 @@
     N = T integral phi(E, Omega) dot P_"surv" (E, va(r), Omega) dot underbrace(p_"int" (E, va(r))) dot 
     P_"trig" (E, va(r), Omega) dd(E, V, Omega)
   $
-  - Notation: 
-    - capital $P$ for probability, lower case $p$ for probability density.
-    - probability density synonymous to "differential probability."
-
   - If the _probability_ is $ P_"int" = dd(s)\/lambda_"int"$, then the corresponding probability _density_ must be
-    #ans($
+    #ans(
+      mk(
+      $
       p_"int" (E, va(r)) = 1/(lambda_"int" (E, va(r)))
-    $)
+      $)
+    )
     and we see that the probability density has units of inverse length.
   
   - To summarize, $p_"int"$ is the *conditional probability density that the particle interacts at
@@ -300,8 +305,86 @@
     $
       p_"int" = dv(P(I|S),s) = dv(P_"int",s) = dv(,s) (dd(s)/lambda_"int") = 1/lambda_"int"
     $
-
   
+]
+
+= Effective Stuff
+== Effective Area and Volume
+#slide[
+  $
+    N = T integral phi(E, Omega) dot P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot 
+    P_"trig" (E, va(r), Omega) dd(V, E, Omega)
+  $
+
+  - Let's regroup the integrand above a bit:
+  $
+    N = T integral phi(E, Omega) dot underbrace([
+      integral P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot P_"trig" (E, va(r), Omega) dd(V)
+    ], "depends on position")dd(E, Omega)
+  $
+
+  - The inner integral has to do with the medium (ie depends on $va(r)$) and 
+    has units of area.
+
+  - It is the definition of *effective area*, representing the effective cross-sectional area of the
+    detector to particles from a certain direction ($Omega$).
+
+  - Recall from @eq:ProbOneInt that $P_"int"$ and $p_"int"$ are related to $lambda_"int"$,
+    which is generally $va(r)$-dependent. However, if $lambda_"int"$ is constant over all space, then
+    $p_"int"$ can be moved out of the integral to define *effective volume*:
+  $
+    N = T integral phi(E, Omega) dot p_"int" (E)  dot underbrace([
+      integral P_"surv" (E, va(r), Omega) dot P_"trig" (E, va(r), Omega) dd(V)
+    ], "effective volume")dd(E, Omega)
+  $
+]
+
+#slide[
+  #set align(horizon)
+  - TODO: direction averaged effective area 
+
+  - TODO: thin target approx.
+]
+
+= Acceptance $!=$ Effective Area
+
+== Diffuse Flux: $phi = phi(E)$
+#slide[
+  $
+    N = T integral phi(E, Omega) dot P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot 
+    P_"trig" (E, va(r), Omega) dd(V, E, Omega)
+  $
+  - In the case where the flux is isotropic, $phi$ loses its dependence on direction,
+    and we can group things a little differently:
+    $
+      N = T integral phi(E) dot underbrace([
+        integral P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot P_"trig" (E, va(r), Omega) dd(V, Omega) 
+      ], "acceptance, a.k.a aperture") dd(E)
+    $
+  - Compare acceptance with effective area defined earlier:
+    $
+      A_"eff" = integral P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot P_"trig" (E, va(r), Omega) dd(V)
+    $
+  - Clearly, the acceptance (a function of energy) is related to effective area through
+    $
+      [A Omega]_"eff" (E) equiv integral A_"eff" (E, Omega) dd(Omega)
+    $
+]
+#slide[
+  \
+    $
+      [A Omega]_"eff" (E) equiv integral A_"eff" (E, Omega) dd(Omega) =
+      integral P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot P_"trig" (E, va(r), Omega) dd(V, Omega)
+    $
+  
+  - Note:
+
+    1. *Acceptance is NOT effecitve area*, although it is often simply referred to as such.
+
+    2. To compute $N$ from acceptance, an *isotropic flux must be assumed*; \
+       that is, $phi = phi(E)$ cannot depend on $Omega$
+
+    3. Therefore, acceptance $[A Omega]_"eff" (E)$ is useful for comparing *all-sky sensitivity*.
 ]
 
 #pagebreak()
