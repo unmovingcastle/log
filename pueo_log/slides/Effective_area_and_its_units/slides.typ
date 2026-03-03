@@ -32,6 +32,12 @@
 #set text(18pt)
 
 #title-slide()
+#slide[
+  #figure(image("img/pueo_white.png"), caption: [Current limits on cosmogenic neutrinos @pueo_white])
+]
+#slide[
+  #figure(image("img/pueo_white_out.png"))
+]
 = Living Large with Logarithms @beacom_slac
 == In a Linear World: dN/dE 
 #slide[
