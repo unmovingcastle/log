@@ -212,9 +212,9 @@
       lambda_"int" = lambda_"int" (E, va(r))
     $
     Had $lambda_"int"$ been constant over all positions, the average number of interactions would have been
-    $
+    #mk($
       mu_"int" (E) = "distance"/(lambda_"int" (E))
-    $
+    $)<eq:mu_cosnt>
   - But since $lambda_"int"$ is a function of position, $mu_"int"$ is an intergral
     $
       mu_"int" =  mu_"int" (E) = integral_vb(r_0)^vb(r) dd(s')/(lambda_"int" (E, vb(r')))
@@ -230,9 +230,9 @@
  $P_"surv" = "Prob"("no interactions")$
 
  The probability is a Poisson distribution with mean $mu_"int"$, so 
-   $
+   #mk($
      "Prob"("no interaction") = P_mu (k=0) = (mu^k e^(-mu_"int"))/k! = exp(-mu_"int")
-   $
+   $)<eq:ProbNoInt>
 
  That is, 
  #ans($
@@ -241,14 +241,67 @@
  $)
 ]
 
+== A Closer Look at $P_"surv" dot p_"int"$
+
+#slide[
+  $
+    N = T integral phi(E, Omega) dot underbrace(P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r))) dot 
+    P_"trig" (E, va(r), Omega) dd(E, V, Omega)
+  $
+
+  - What we really care about is "the probability that particle reaches $va(r)$ and then interacts there."
+
+  - Letting $I$ and $S$ denote "interaction" and "survival" respectively, we have
+    $
+      P(I inter S) = P(I|S) P(S) equiv P(I|S) dot P_"surv"
+    $
+  - What is $P(I|S)$? It's (provided that the particle has already reached some point $va(r)$)
+    the probability that the particle interacts within range $va(r)+dd(va(r))$,
+    $
+      P(I|S) = "Prob"(>=1 "interaction within distance" dd(s)) // = dd(s)/(lambda_"int" (va(r)))
+    $
+    For convenience lets denote this as *$P(I|S) = P_"int"$*.
+
+  #only("2")[
+  - Recall from @eq:ProbNoInt the probability of none-interaction $P_mu (k=0) = exp(-mu_"int")$,
+    then we have
+    $
+      P_"int" = 1 - P_mu (k=0) = 1 - e^(-mu_"int")
+    $
+  ]
+  #only("3")[
+  - Over a small distance $dd(s)$, $lambda_"int"$ is constant.
+    Hence $mu_"int" = dd(s)\/lambda_"int"$ (see @eq:mu_cosnt), and we have
+    #mk($
+      P_"int" = 1 - exp(-dd(s)/lambda_"int") 
+              = 1 - (1 - dd(s)/lambda_"int" + ...) approx dd(s)/lambda_"int"
+    $)<eq:ProbOneInt>
+  ]
+]
+
 == A Closer Look at $p_"int"$
 #slide[
   $
     N = T integral phi(E, Omega) dot P_"surv" (E, va(r), Omega) dot underbrace(p_"int" (E, va(r))) dot 
     P_"trig" (E, va(r), Omega) dd(E, V, Omega)
   $
-  - My notation: capital $P$ for probability, lower case $p$ for density.
-    What I call probability density, Marco refers to as "differential probability."
+  - Notation: 
+    - capital $P$ for probability, lower case $p$ for probability density.
+    - probability density synonymous to "differential probability."
+
+  - If the _probability_ is $ P_"int" = dd(s)\/lambda_"int"$, then the corresponding probability _density_ must be
+    #ans($
+      p_"int" (E, va(r)) = 1/(lambda_"int" (E, va(r)))
+    $)
+    and we see that the probability density has units of inverse length.
+  
+  - To summarize, $p_"int"$ is the *conditional probability density that the particle interacts at
+    point $va(r)$*, provided that it has survived thus far:
+    $
+      p_"int" = dv(P(I|S),s) = dv(P_"int",s) = dv(,s) (dd(s)/lambda_"int") = 1/lambda_"int"
+    $
+
+  
 ]
 
 #pagebreak()
