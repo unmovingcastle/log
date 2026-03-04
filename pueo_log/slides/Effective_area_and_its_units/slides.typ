@@ -212,15 +212,18 @@
   - Survival probability is related to interaction rate $mu_"int"$,
     which, in turn, is related to $lambda_"int"$, the *interaction length* 
     (average distance a particle travels through before interacting with the medium).
+  #pause
   - Naturally, $lambda_"int"$ should depend on energy. It also depends on the density of the medium,
     (hence, it's a function of position)
     $
       lambda_"int" = lambda_"int" (E, va(r))
     $
+    #pause
     Had $lambda_"int"$ been constant over all positions, the average number of interactions would have been
     #mk($
       mu_"int" (E) = "distance"/(lambda_"int" (E))
     $)<eq:mu_cosnt>
+  #pause
   - But since $lambda_"int"$ is a function of position, $mu_"int"$ is an intergral
     $
       mu_"int" =  mu_"int" (E) = integral_vb(r_0)^vb(r) dd(s')/(lambda_"int" (E, vb(r')))
@@ -233,24 +236,27 @@
     P_"trig" (E, va(r), Omega) dd(E, V, Omega)
   $
 
- - Now, the survival probability is $P_"surv" = "Prob"("no interactions until" va(r))$.
+  - Now, the survival probability is $P_"surv" = "Prob"("no interactions until" va(r))$.
 
-- We know the average interaction rate is $mu_"int"$, the probability of $k$ interactions is then given
-  by the Poisson distribution
+  #pause
+  - We know the average interaction rate is $mu_"int"$, the probability of $k$ interactions is then given
+    by the Poisson distribution
   $
     P_mu (k) = (mu^k e^(-mu_"int"))/k!
   $
 
-- And the probability of none-interaction is
-   #mk($
-     P_mu (0) = (mu^0 e^(-mu_"int"))/0! = exp(-mu_"int")
-   $)<eq:ProbNoInt>
+  #pause
+  - And the probability of none-interaction is
+  #mk($
+    P_mu (0) = (mu^0 e^(-mu_"int"))/0! = exp(-mu_"int")
+  $)<eq:ProbNoInt>
 
- That is, 
- #ans($
-     P_"surv" = exp(- integral_vb(r_0)^vb(r) dd(s')/(lambda_"int" (E, vb(r'))) )
+  #pause
+  That is, 
+  #ans($
+      P_"surv" = exp(- integral_vb(r_0)^vb(r) dd(s')/(lambda_"int" (E, vb(r'))) )
 
- $)
+  $)
 ]
 
 == A Closer Look at $P_"surv" dot p_"int"$
@@ -263,10 +269,12 @@
 
   - What we really care about is "the probability that particle reaches $va(r)$ and then interacts there."
 
+  #pause
   - Letting $I$ and $S$ denote "interaction" and "survival" respectively, we have
-    $
-      P(I inter S) = P(I|S) P(S) equiv P(I|S) dot P_"surv"
-    $
+  $
+    P(I inter S) = P(I|S) P(S) equiv P(I|S) dot P_"surv"
+  $
+  #pause
   - What is $P(I|S)$? It's (provided that the particle has already reached some point $va(r)$)
     the probability that the particle interacts within range $va(r)+dd(va(r))$,
     $
@@ -274,16 +282,16 @@
     $
     For convenience lets denote this as *$P(I|S) = P_"int"$*.
 
-  #only("2")[
+  #only("4")[
   - Recall from @eq:ProbNoInt the probability of none-interaction $P_mu (k=0) = exp(-mu_"int")$,
     then we have
     $
       P_"int" = 1 - P_mu (k=0) = 1 - e^(-mu_"int")
     $
+    Note also that, over a small distance $dd(s)$, $lambda_"int"$ is constant.
   ]
-  #only("3")[
-  - Over a small distance $dd(s)$, $lambda_"int"$ is constant.
-    Hence $mu_"int" = dd(s)\/lambda_"int"$ (see @eq:mu_cosnt), and we have
+  #only("5")[
+  - $lambda_"int" "constant" => mu_"int" = dd(s)\/lambda_"int"$ (see @eq:mu_cosnt), and we have
     #mk($
       P_"int" = 1 - exp(-dd(s)/lambda_"int") 
               = 1 - (1 - dd(s)/lambda_"int" + ...) approx dd(s)/lambda_"int"
@@ -306,6 +314,7 @@
     )
     and we see that the probability density has units of inverse length.
   
+  #pause
   - To summarize, $p_"int"$ is the *conditional probability density that the particle interacts at
     point $va(r)$*, provided that it has survived thus far:
     $
@@ -391,6 +400,27 @@
        that is, $phi = phi(E)$ cannot depend on $Omega$
 
     3. Therefore, acceptance $[A Omega]_"eff" (E)$ is useful for comparing *all-sky sensitivity*.
+]
+
+== Summary
+#slide[
+  Effecitve Area
+  $
+  A_"eff" (E, Omega) = integral P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot P_"trig" (E, va(r), Omega) dd(V, Omega)
+  $
+  Acceptance (derives from $A_"eff"$ , assuming isotropic flux)
+  $
+    [A Omega]_"eff" (E) equiv integral A_"eff" (E, Omega) dd(Omega) 
+  $
+  Effective Volume (derives from $A_"eff"$, assuming constant $lambda_"int"$)
+  $
+  V_"eff" (E, Omega) &= integral P_"surv" (E, va(r), Omega) dot P_"trig" (E, va(r), Omega) dd(V, Omega) \
+  ==>V_"eff" (E, Omega) &= (A_"eff" (E, Omega)) / p_"int"   = A_"eff" dot lambda_"int"
+  $
+  Lastly, volumetric acceptance (assuming both constant flux and $lambda_"int"$)
+  $
+    [V Omega]_"eff" (E) equiv integral V_"eff" (E, Omega) dd(Omega) = lambda_"int" dot  [A Omega]_"eff"
+  $
 ]
 
 #pagebreak()
