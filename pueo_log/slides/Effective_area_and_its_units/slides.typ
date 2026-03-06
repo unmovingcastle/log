@@ -444,7 +444,7 @@
   V_"eff" (E, Omega) &= integral P_"surv" (E, va(r), Omega) dot P_"trig" (E, va(r), Omega) dd(V, Omega) \
   ==>V_"eff" (E, Omega) &= (A_"eff" (E, Omega)) / p_"int"   = A_"eff" dot lambda_"int"
   $
-  Lastly, volumetric acceptance (assuming both constant flux and $lambda_"int"$)
+  Lastly, volumetric acceptance (assuming both isotropic flux and constant $lambda_"int"$)
   $
     [V Omega]_"eff" (E) equiv integral V_"eff" (E, Omega) dd(Omega) = lambda_"int" dot  [A Omega]_"eff"
   $
