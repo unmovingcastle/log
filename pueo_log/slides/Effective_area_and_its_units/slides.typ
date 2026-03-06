@@ -46,12 +46,12 @@
 
   #set align(horizon)
   Visual Area = Total Number of Particles
-  //#pause 
+  #pause 
   $ 
     N_"tot" = integral dd(E) dot dv(N,E)
   $
 
-  //#pause
+  #pause
   In other words, we can loosely interpret
   $
     dv(N,E) approx "Number of Particles"/ "linear bin"
@@ -69,13 +69,13 @@
     E_"tot" = integral dd(E) dot E dot dv(N,E)
   $
 
-  //#pause
+  #pause
   Or,
   $
     E  dot dv(N,E) approx "Amount of Energy"/ "linear bin"
   $
 
-  //#pause 
+  #pause 
   \
   That is to say, if we _weight_ "number of particles per bin" by the energy $E$, we get "energy per bin".
 ]
@@ -91,23 +91,23 @@
       X equiv ln E
     $
 
-  //#pause 
+  #pause 
 
   And we plot "number of particles per X bin" \
     (see @fig:log_dNdX)
 
-  //#pause 
+  #pause 
   How do we interpret the vertical axis, then?
 
   $
     because dv(N,X) &= dv(N, ln(E)) = dv(N,E) dot dv(E,ln(E)) \
 
 
-    //#pause 
+    #pause 
       &= dv(N,E) dot underbrace((dv(ln(E), E))^(-1), "lol") = dv(N,E) dot E  space qed
   $
 
-  //#pause 
+  #pause 
   So we note that, for a logarithmic x-axis,
     $
       E dv(N, E) approx "Number of particles"/"decade (bin)"
@@ -150,7 +150,7 @@
     E dv(N, E) ~ "Number of particles"/"decade (bin)"
   $
 
-  //#pause 
+  #pause 
   then, weighted by the energy,
   $ 
     E^2 dv(N,E) ~ "Amount of energy" / "decade"
@@ -330,7 +330,7 @@
     N = T integral phi(E, Omega) dot P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot 
     P_"trig" (E, va(r), Omega) dd(V, E, Omega)
   $
-
+  #pause
   - Let's regroup the integrand above a bit:
   $
     N = T integral phi(E, Omega) dot underbrace([
@@ -338,12 +338,15 @@
     ], "depends on position")dd(E, Omega)
   $
 
+  #pause
   - The inner integral has to do with the medium (ie depends on $va(r)$) and 
     has units of area.
 
+  #pause
   - It is the definition of *effective area*, representing the effective cross-sectional area of the
     detector to particles from a certain direction ($Omega$).
 
+  #pause
   - Recall from @eq:ProbOneInt that $P_"int"$ and $p_"int"$ are related to $lambda_"int"$,
     which is generally $va(r)$-dependent. However, if $lambda_"int"$ is constant over all space, then
     $p_"int"$ can be moved out of the integral to define *effective volume*:
@@ -356,9 +359,11 @@
 
 #slide[
   #set align(horizon)
-  - TODO: direction averaged effective area 
-
-  - TODO: thin target approx.
+  - Thus, assuming that $lambda_"int"$ is a constant,
+  $
+    A_"eff" (E, Omega) = p_"int" (E) dot  V_"eff" (E, Omega)
+  $
+  - Note that this equation does not require the thin target approximation as commonly believed.
 ]
 
 = Acceptance $!=$ Effective Area
@@ -369,6 +374,8 @@
     N = T integral phi(E, Omega) dot P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot 
     P_"trig" (E, va(r), Omega) dd(V, E, Omega)
   $
+
+  #pause
   - In the case where the flux is isotropic, $phi$ loses its dependence on direction,
     and we can group things a little differently:
     $
@@ -376,10 +383,12 @@
         integral P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot P_"trig" (E, va(r), Omega) dd(V, Omega) 
       ], "acceptance, a.k.a aperture") dd(E)
     $
+  #pause
   - Compare acceptance with effective area defined earlier:
     $
       A_"eff" = integral P_"surv" (E, va(r), Omega) dot p_"int" (E, va(r)) dot P_"trig" (E, va(r), Omega) dd(V)
     $
+  #pause
   - Clearly, the acceptance (a function of energy) is related to effective area through
     $
       [A Omega]_"eff" (E) equiv integral A_"eff" (E, Omega) dd(Omega)
@@ -394,11 +403,14 @@
   
   - Note:
 
+    #pause
     1. *Acceptance is NOT effecitve area*, although it is often simply referred to as such.
 
+    #pause
     2. To compute $N$ from acceptance, an *isotropic flux must be assumed*; \
        that is, $phi = phi(E)$ cannot depend on $Omega$
 
+    #pause
     3. Therefore, acceptance $[A Omega]_"eff" (E)$ is useful for comparing *all-sky sensitivity*.
 ]
 
