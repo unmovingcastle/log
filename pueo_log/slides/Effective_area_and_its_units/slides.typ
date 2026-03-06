@@ -159,6 +159,10 @@
   $
 ]
 
+#slide[
+  #figure(image("img/pueo_white.png"), caption: [Current limits on cosmogenic neutrinos @pueo_white])
+]
+
 = ARA 5SA Notes: Effective Area @ara5sa
 == Total Number of Events $N$
 #slide[
@@ -294,6 +298,9 @@
   ]
   #only("5")[
   - $lambda_"int" "constant" => mu_"int" = dd(s)\/lambda_"int"$ (see @eq:mu_cosnt), and we have
+  ]
+  #only("6")[
+  - $lambda_"int" "constant" => mu_"int" = dd(s)\/lambda_"int"$ (see @eq:mu_cosnt), and we have
     #mk($
       P_"int" = 1 - exp(-dd(s)/lambda_"int") 
               = 1 - (1 - dd(s)/lambda_"int" + ...) approx dd(s)/lambda_"int"
@@ -361,10 +368,16 @@
 
 #slide[
   #set align(horizon)
+  - Effective area is a function of neutrino energy and *neutrino direction*:
+  $
+    N = integral phi(E, Omega) dot A_"eff" (E, Omega) dd(E, Omega)
+  $
+  #pause
   - Thus, assuming that $lambda_"int"$ is a constant,
   $
     A_"eff" (E, Omega) = p_"int" (E) dot  V_"eff" (E, Omega)
   $
+  #pause
   - Note that this equation does not require the thin target approximation as commonly believed.
 ]
 
