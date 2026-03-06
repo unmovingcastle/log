@@ -41,12 +41,14 @@
 = Living Large with Logarithms @beacom_slac
 == In a Linear World: dN/dE 
 #slide[
-  #figure(image("img/linear_dnde.png"),caption: [analogue of @fig:log_dNdX])<fig:lin_dNdE>
-][
+  #figure(image("img/linear_dnde.png"),caption: [Visual Area = Total Number of Particles])<fig:lin_dNdE>
+][]
 
+#slide[
+  #figure(image("img/linear_dnde_bar.png"),caption: [Visual Area = Total Number of Particles])
+][
   #set align(horizon)
-  Visual Area = Total Number of Particles
-  #pause 
+  Total number of particles: 
   $ 
     N_"tot" = integral dd(E) dot dv(N,E)
   $
@@ -54,7 +56,7 @@
   #pause
   In other words, we can loosely interpret
   $
-    dv(N,E) approx "Number of Particles"/ "linear bin"
+    dv(N,E) ~ "Number of Particles" / "linear bin"
   $
 ]
 
@@ -72,7 +74,7 @@
   #pause
   Or,
   $
-    E  dot dv(N,E) approx "Amount of Energy"/ "linear bin"
+    E  dot dv(N,E) ~ "Amount of Energy"/ "linear bin"
   $
 
   #pause 
@@ -110,7 +112,7 @@
   #pause 
   So we note that, for a logarithmic x-axis,
     $
-      E dv(N, E) approx "Number of particles"/"decade (bin)"
+      E dv(N, E) ~ "Number of particles"/"decade (bin)"
     $
 ]
 
@@ -136,7 +138,7 @@
 
   So we note that, for a logarithmic x-axis,
     $
-      E dv(N, E) approx "Number of particles"/"decade (bin)"
+      E dv(N, E) ~ "Number of particles"/"decade (bin)"
     $
 ]
 
