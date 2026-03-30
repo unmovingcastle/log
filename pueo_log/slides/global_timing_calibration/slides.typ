@@ -36,7 +36,7 @@
 == Conversion
 #slide[
   #show table.cell.where(y: 0): strong
-  #set text(21pt)
+  #set text(19pt)
   #set table(
     stroke: (x, y) => if y >= 0 {
       (bottom: 0.5pt + black)
@@ -48,16 +48,24 @@
     align: left,
     columns: 4,
     table.header([libpueorawdata], [pueoEvent], [unit], [description]),
-    [`event_second`], [`triggerTime`], [second], [tagged by TURF (second counter in the turf when the event trigger)],
-    [`readout_time.utc_secs`], [`readoutTime`], [second], [tagged by flight computer at event reception (packet creation)],
-    [`readout_time.utc_secs`], [`readoutTime`], [second], [tagged by flight computer at event reception (packet creation)],
-    [`readout_time.utc_nsecs`], [`readoutTimeNs`],[nanosecond], [],
-    [`event_time`], [`trigTime`],[clock count], [when the TURF readout request is generated, \ circa event trigger time],
-    [`last_pps`], [`lastPPS`],[clock count], [TURF clock counter at the previous PPS of last GPS second],
-    [`llast_pps`], [`lastLastPPS`],[clock count], [],
+    [`full_waveforms_t.`\ `event_second`], [`RawHeader::triggerTime`], [second], [tagged by TURF's second counter during trigger],
+    [`full_waveforms_t.`\ `readout_time.utc_secs`], [`RawHeader::readoutTime`], [second], [by flight computer at event reception (packet creation)],
+    [`timemark_t.` \ `readout_time.utc_secs`], [`Timemark::` \ `readout_time::utc_secs`], [second], [*not the same as above!*],
+    [`full_waveforms_t.` \ `event_time`], [`RawHeader::trigTime`],[clock count], [tagged when the TURF readout request is generated ($approx$ trigger time)],
+    [`full_waveforms_t.`\ `last_pps`], [`RawHeader::lastPPS`],[clock count], [of the previous GPS second, \ tagged by TURF],
+    [`full_waveforms_t.`\ `llast_pps`], [`RawHeader::lastLastPPS`],[clock count], [],
   ),caption: [Timing Related Member Fields of Class `pueo::RawHeader`]
   )
 ]
+== Caution Against `readout_time`
+
+  1. one should probably not use `readout_time` at all. *todo: timemark readout vs rising plot here!*
+
+  2. `readout_time` of different packet types are not the same.
+
+     - e.g. A `full_waveforms_t` event can sometimes be time marked (happens every 100 events or so)
+     - In this case, there will be a `full_waveforms_t.readout_time` that comes with every event
+     - Separately, there will also be a `timemark_t.readout_time` corresponding to this event.
 
 == System Clock @patrick_docdb
 #slide[
