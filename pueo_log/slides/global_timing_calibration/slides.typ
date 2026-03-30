@@ -5,9 +5,9 @@
 #show: university-theme.with(
   aspect-ratio: "16-9",
   config-info(
-    title: [Cross-Correlation],
+    title: [Timing Calibration],
     subtitle: [],
-    date: [April 30, 2025],
+    date: [March 30, 2026],
   ),
   config-colors(primary: rgb("#DC143C"), secondary: rgb("#000000"), tertiary: rgb("#808080"))
 )
@@ -28,6 +28,81 @@
 #show link: set text(fill: blue)
 #show link: underline
 
-#set text(18pt)
+#set text(22pt)
 
 #title-slide()
+
+= Times in `pueo::RawHeader`
+== Conversion
+#slide[
+  #show table.cell.where(y: 0): strong
+  #set text(21pt)
+  #set table(
+    stroke: (x, y) => if y >= 0 {
+      (bottom: 0.5pt + black)
+    },
+  )
+  #set align(horizon)
+  #figure(
+  table(
+    align: left,
+    columns: 4,
+    table.header([libpueorawdata], [pueoEvent], [unit], [description]),
+    [`event_second`], [`triggerTime`], [second], [tagged by TURF],
+    [`readout_time.utc_secs`], [`readoutTime`], [second], [tagged by flight computer],
+    [`readout_time.utc_nsecs`], [`readoutTimeNs`],[nanosecond], [],
+    [`event_time`], [`trigTime`],[clock count], [tagged by TURF, \ circa event trigger time],
+    [`last_pps`], [`lastPPS`],[clock count], [of last GPS second],
+    [`llast_pps`], [`lastLastPPS`],[clock count], [],
+  ),caption: [Timing Related Member Fields of Class `pueo::RawHeader`]
+  )
+]
+
+== System Clock @patrick_docdb
+#slide[
+
+  - Unit: 32-bit (`uint32_t`) free running counter; counter resets at run start.
+
+    - e.g. `last_pps` and `event_time` (see `libepueorawdata/inc/pueo/rawdata.h`)
+
+    - free running basically means roll over occurs once count exceeds `UINT_32MAX`
+      (ie. around every 34 seconds, clock starts counting from 0 again)
+
+  - Nominal system clock frequency: *125MHz* 
+
+    - That is, 1 clock count = 8 ns
+
+    - Therefore, `last_pps` - `llast_pps` $approx$ 125E6 [clock counts]
+
+  - Obviously one can take the `last_pps` of a future second to construct a `this_pps` of the current second,
+    we will see this in the example `TimeTable`
+
+]
+
+== TimeTable and Nominal Clock Delta (125E6)
+#slide[
+  - `TimeTable` is an ordered map (a.k.a. dictionary in python) for easy lookup
+   
+    - Keys are `event_second` (for now, will use the corrected version in the future)
+
+    - Content might include `run_number` (TBD)
+
+
+    - *TODO: example table here!*
+]
+
+== Clock Delta Potential Errors
+#slide[
+  *TODO: example plot here!*
+]
+
+== event_time
+#slide[
+  - *todo: subsecond!*
+  - Tagged by TURF during event creation, *not tigger time*
+]
+
+
+#pagebreak()
+#bibliography("ref.bib", title: "References")
+#pagebreak()
