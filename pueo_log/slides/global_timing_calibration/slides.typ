@@ -32,7 +32,7 @@
 
 #title-slide()
 
-= Times in `pueo::RawHeader`
+= Time in `pueoEvent`
 == Conversion
 #slide[
   #show table.cell.where(y: 0): strong
@@ -49,28 +49,29 @@
     columns: 4,
     table.header([libpueorawdata], [pueoEvent], [unit], [description]),
     [`full_waveforms_t.`\ `event_second`], [`RawHeader::triggerTime`], [second], [tagged by TURF's second counter during trigger],
-    [`full_waveforms_t.`\ `readout_time.utc_secs`], [`RawHeader::readoutTime`], [second], [by flight computer at event reception (packet creation)],
-    [`timemark_t.` \ `readout_time.utc_secs`], [`Timemark::` \ `readout_time::utc_secs`], [second], [*not the same as above!*],
-    [`full_waveforms_t.` \ `event_time`], [`RawHeader::trigTime`],[clock count], [tagged when the TURF readout request is generated ($approx$ trigger time)],
-    [`full_waveforms_t.`\ `last_pps`], [`RawHeader::lastPPS`],[clock count], [of the previous GPS second, \ tagged by TURF],
-    [`full_waveforms_t.`\ `llast_pps`], [`RawHeader::lastLastPPS`],[clock count], [],
-  ),caption: [Timing Related Member Fields of Class `pueo::RawHeader`]
+    [#pause `full_waveforms_t.`\ `readout_time.utc_secs`], [`RawHeader::readoutTime`], [second], [by flight computer at event reception (packet creation)],
+    [#pause `timemark_t.` \ `readout_time.utc_secs`], [`Timemark::` \ `readout_time::utc_secs`], [second], [*not the same as above!*],
+    [#pause `full_waveforms_t.` \ `event_time`], [`RawHeader::trigTime`],[clock count], [tagged when the TURF readout request is generated ($approx$ trigger time)],
+    [#pause `full_waveforms_t.`\ `last_pps`], [`RawHeader::lastPPS`],[clock count], [of the previous GPS second, \ tagged by TURF],
+    [#pause `full_waveforms_t.`\ `llast_pps`], [`RawHeader::lastLastPPS`],[clock count], [],
+  ),caption: [Time Related Fields]
   )
 ]
 == Caution Against `readout_time`
 
   1. one should probably not use `readout_time` at all. *todo: timemark readout vs rising plot here!*
 
-  2. `readout_time` of different packet types are not the same.
+  2. `readout_time` of different packet types are not the same, even if they correspond to the same `event_number`
 
-     - e.g. A `full_waveforms_t` event can sometimes be time marked (happens every 100 events or so)
-     - In this case, there will be a `full_waveforms_t.readout_time` that comes with every event
+     - e.g. A `full_waveforms_t` packet can sometimes be have a corresponding `timemark_t` packet (happens every 100 events or so)
+     - In this case, there will be a `full_waveforms_t.readout_time` that comes with every event as usual.
      - Separately, there will also be a `timemark_t.readout_time` corresponding to this event.
+     - These two readouts will not have the same value
 
 == System Clock @patrick_docdb
 #slide[
 
-  - Unit: 32-bit (`uint32_t`) free running counter; counter resets at $approx$ run start.
+  - 32-bit free running counter, resets at run start (give or take).
 
     - e.g. `last_pps` and `event_time` (see `libepueorawdata/inc/pueo/rawdata.h`)
 
@@ -83,21 +84,31 @@
 
     - Therefore, `last_pps` - `llast_pps` $approx$ 125E6 [clock counts]
 
-  - Obviously one can take the `last_pps` of a future second to construct a `this_pps` of the current second,
+  - Obviously one can take the `last_pps` of a future second to construct a `this_pps` for the current second,
+    assuming that said future exists.
+
     we will see this in the example `TimeTable`
 
 ]
 
-== TimeTable and Nominal Clock Delta (125E6)
+== TimeTable and Nominal PPS Delta (125E6)
 #slide[
-  - `TimeTable` is an ordered map (a.k.a. dictionary in python) for easy lookup
+  - `TimeTable` is a `C++` ordered map (`python` dictionary) for easy lookup \ (maybe not cheap though?)
    
-    - Keys are `event_second` (for now, will use the corrected version in the future)
+  - Map keys are `event_second`, for now
+    - will use the corrected version in the future
+    - or maybe some other unique ID, e.g. `run number` + `event number`
 
-    - Content might include `run_number` (TBD)
+  - Important Map content:
+    - corrected `event_second`
+    - `run_number` (TBD)
+    - `last_pps`, `this_pps`, `next_pps`
+    - `delta` $:=$ `next_pps` - `this_pps` (Nominally, 125E6)
+    - corrected `this_pps`
 
 
-    - *TODO: example table here!*
+
+  - *TODO: example table here!*
 ]
 
 == Clock Delta Potential Errors
