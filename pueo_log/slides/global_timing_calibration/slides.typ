@@ -48,11 +48,12 @@
     align: left,
     columns: 4,
     table.header([libpueorawdata], [pueoEvent], [unit], [description]),
-    [`event_second`], [`triggerTime`], [second], [tagged by TURF],
-    [`readout_time.utc_secs`], [`readoutTime`], [second], [tagged by flight computer],
+    [`event_second`], [`triggerTime`], [second], [tagged by TURF (second counter in the turf when the event trigger)],
+    [`readout_time.utc_secs`], [`readoutTime`], [second], [tagged by flight computer at event reception (packet creation)],
+    [`readout_time.utc_secs`], [`readoutTime`], [second], [tagged by flight computer at event reception (packet creation)],
     [`readout_time.utc_nsecs`], [`readoutTimeNs`],[nanosecond], [],
-    [`event_time`], [`trigTime`],[clock count], [tagged by TURF, \ circa event trigger time],
-    [`last_pps`], [`lastPPS`],[clock count], [of last GPS second],
+    [`event_time`], [`trigTime`],[clock count], [when the TURF readout request is generated, \ circa event trigger time],
+    [`last_pps`], [`lastPPS`],[clock count], [TURF clock counter at the previous PPS of last GPS second],
     [`llast_pps`], [`lastLastPPS`],[clock count], [],
   ),caption: [Timing Related Member Fields of Class `pueo::RawHeader`]
   )
@@ -61,7 +62,7 @@
 == System Clock @patrick_docdb
 #slide[
 
-  - Unit: 32-bit (`uint32_t`) free running counter; counter resets at run start.
+  - Unit: 32-bit (`uint32_t`) free running counter; counter resets at $approx$ run start.
 
     - e.g. `last_pps` and `event_time` (see `libepueorawdata/inc/pueo/rawdata.h`)
 
