@@ -28,7 +28,7 @@
 #show link: set text(fill: blue)
 #show link: underline
 
-#set text(22pt)
+#set text(20pt)
 
 #title-slide()
 
@@ -36,24 +36,26 @@
 
 == System Clock @patrick_docdb
 #slide[
-  #only("1,3")[
-  \ 
-    - 32-bit free running counter, resets at run start (give or take).
-
+  - 32-bit free running counter, resets at run start.
     - e.g. `full_waveforms_t.last_pps` and `full_waveforms_t.event_time` 
 
-    - free running basically means roll over occurs once count exceeds `UINT_32MAX`
-      (ie. around every 34 seconds, clock starts counting from 0 again)
+  #only("2")[#figure(image("img/valid_lpps.png", height: 70%))]
+
+  #only("3-7")[
+  - free running basically means roll over occurs once count exceeds `UINT_32MAX`\
+    (ie. around every 34 seconds, clock starts counting from 0 again)
   ]
 
-  #only(2)[#figure(image("img/run840.png"))]
+  #only("4")[#figure(image("img/rollover.png", height: 50%))]
 
-  #only(3)[
-  - Nominal system clock frequency: *125MHz* 
+  #only("5-7")[
+    - Nominal system clock frequency: *125MHz*.
+      - Therefore, `this_pps` - `last_pps` $approx$ 125E6 [clock counts]
+  ]
+  #only(6)[#figure(image("img/delta_is_125E6.png", height: 53%))]
 
+  #only("7")[
     - That is, 1 clock count = 8 ns
-
-    - Therefore, `this_pps` - `last_pps` $approx$ 125E6 [clock counts]
   ]
 
 ]
@@ -97,7 +99,7 @@
     columns: 4,
     table.header([libpueorawdata], [pueoEvent], [unit], [description]),
     [`full_waveforms_t.` \ `event_time`], [`RawHeader::trigTime`],[clock count], [tagged when the TURF readout request is generated ($approx$ trigger time)],
-    [#pause `full_waveforms_t.`\ `last_pps`], [`RawHeader::lastPPS`],[clock count], [of the previous GPS second, \ tagged by TURF],
+    [#pause `full_waveforms_t.`\ `last_pps`], [`RawHeader::lastPPS`],[clock count], [most recent GPS second's clock count, tagged by TURF],
     [#pause `full_waveforms_t.`\ `llast_pps`], [`RawHeader::lastLastPPS`],[clock count], [],
     [#pause`full_waveforms_t.`\ `event_second`], [`RawHeader::triggerTime`], [second], [tagged by TURF's second counter during trigger],
     [#pause `full_waveforms_t.`\ `readout_time.utc_secs`], [`RawHeader::readoutTime`], [second], [by flight computer at event reception (packet creation)],
