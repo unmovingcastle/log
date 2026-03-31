@@ -33,6 +33,34 @@
 #title-slide()
 
 = Time in `pueoEvent`
+
+== System Clock @patrick_docdb
+#slide[
+
+  - 32-bit free running counter, resets at run start (give or take).
+
+    - e.g. `last_pps` and `event_time` (see `libepueorawdata/inc/pueo/rawdata.h`)
+
+    - free running basically means roll over occurs once count exceeds `UINT_32MAX`
+      (ie. around every 34 seconds, clock starts counting from 0 again)
+
+  - Nominal system clock frequency: *125MHz* 
+
+    - That is, 1 clock count = 8 ns
+
+    - Therefore, `last_pps` - `llast_pps` $approx$ 125E6 [clock counts]
+
+  - Obviously one can take the `last_pps` of a future second to construct a `this_pps` for the current second,
+    assuming that said future exists.
+
+    we will see this in the example `TimeTable`
+
+]
+
+== `event_time`, `last_pps` and `this_pps`
+
+#figure(image("img/pps_timeline.png"))
+
 == Conversion
 #slide[
   #show table.cell.where(y: 0): strong
@@ -68,28 +96,6 @@
      - Separately, there will also be a `timemark_t.readout_time` corresponding to this event.
      - These two readouts will not have the same value
 
-== System Clock @patrick_docdb
-#slide[
-
-  - 32-bit free running counter, resets at run start (give or take).
-
-    - e.g. `last_pps` and `event_time` (see `libepueorawdata/inc/pueo/rawdata.h`)
-
-    - free running basically means roll over occurs once count exceeds `UINT_32MAX`
-      (ie. around every 34 seconds, clock starts counting from 0 again)
-
-  - Nominal system clock frequency: *125MHz* 
-
-    - That is, 1 clock count = 8 ns
-
-    - Therefore, `last_pps` - `llast_pps` $approx$ 125E6 [clock counts]
-
-  - Obviously one can take the `last_pps` of a future second to construct a `this_pps` for the current second,
-    assuming that said future exists.
-
-    we will see this in the example `TimeTable`
-
-]
 
 = `this_pps` Correction
 == TimeTable: `pps` Delta
