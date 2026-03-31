@@ -32,34 +32,54 @@
 
 #title-slide()
 
-= Time in `pueoEvent`
+= Time Related Variables
 
 == System Clock @patrick_docdb
 #slide[
+  #only("1,3")[
+  \ 
+    - 32-bit free running counter, resets at run start (give or take).
 
-  - 32-bit free running counter, resets at run start (give or take).
-
-    - e.g. `last_pps` and `event_time` (see `libepueorawdata/inc/pueo/rawdata.h`)
+    - e.g. `full_waveforms_t.last_pps` and `full_waveforms_t.event_time` 
 
     - free running basically means roll over occurs once count exceeds `UINT_32MAX`
       (ie. around every 34 seconds, clock starts counting from 0 again)
+  ]
 
+  #only(2)[#figure(image("img/run840.png"))]
+
+  #only(3)[
   - Nominal system clock frequency: *125MHz* 
 
     - That is, 1 clock count = 8 ns
 
-    - Therefore, `last_pps` - `llast_pps` $approx$ 125E6 [clock counts]
-
-  - Obviously one can take the `last_pps` of a future second to construct a `this_pps` for the current second,
-    assuming that said future exists.
-
-    we will see this in the example `TimeTable`
+    - Therefore, `this_pps` - `last_pps` $approx$ 125E6 [clock counts]
+  ]
 
 ]
 
-== `event_time`, `last_pps` and `this_pps`
+== `last_pps`, `event_time` and `event_second`
 
-#figure(image("img/pps_timeline.png"))
+#slide[
+#alternatives[
+  \
+  - `last_pps` is valid in this case, since we are past the first second
+  #figure(image("img/valid_lpps.png"))
+][
+  \
+  - `last_pps` is invalid (garbage value) in this case, since we are in the first second
+  #figure(image("img/invalid_lpps.png"))
+]
+]
+
+== Slack Q&A Dump
+#slide[
+  \
+  - Why is the `last_pps` in the first second garbage? 
+
+    - "The counter doesn't reset at the second,
+       it resets at a sync request. So at run start last_pps occurred some unknown time before a reset to 0" -- Patrick
+]
 
 == Conversion
 #slide[
@@ -76,12 +96,12 @@
     align: left,
     columns: 4,
     table.header([libpueorawdata], [pueoEvent], [unit], [description]),
-    [`full_waveforms_t.`\ `event_second`], [`RawHeader::triggerTime`], [second], [tagged by TURF's second counter during trigger],
-    [#pause `full_waveforms_t.`\ `readout_time.utc_secs`], [`RawHeader::readoutTime`], [second], [by flight computer at event reception (packet creation)],
-    [#pause `timemark_t.` \ `readout_time.utc_secs`], [`Timemark::` \ `readout_time::utc_secs`], [second], [*not the same as above!*],
-    [#pause `full_waveforms_t.` \ `event_time`], [`RawHeader::trigTime`],[clock count], [tagged when the TURF readout request is generated ($approx$ trigger time)],
+    [`full_waveforms_t.` \ `event_time`], [`RawHeader::trigTime`],[clock count], [tagged when the TURF readout request is generated ($approx$ trigger time)],
     [#pause `full_waveforms_t.`\ `last_pps`], [`RawHeader::lastPPS`],[clock count], [of the previous GPS second, \ tagged by TURF],
     [#pause `full_waveforms_t.`\ `llast_pps`], [`RawHeader::lastLastPPS`],[clock count], [],
+    [#pause`full_waveforms_t.`\ `event_second`], [`RawHeader::triggerTime`], [second], [tagged by TURF's second counter during trigger],
+    [#pause `full_waveforms_t.`\ `readout_time.utc_secs`], [`RawHeader::readoutTime`], [second], [by flight computer at event reception (packet creation)],
+    [#pause `timemark_t.` \ `readout_time.utc_secs`], [`Timemark::` \ `readout_time::utc_secs`], [second], [*not the same as above!*],
   ),caption: [Time Related Fields]
   )
 ]
