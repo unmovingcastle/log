@@ -39,7 +39,10 @@
   - 32-bit free running counter, resets at run start.
     - e.g. `full_waveforms_t.last_pps` and `full_waveforms_t.event_time` 
 
-  #only("2")[#figure(image("img/valid_lpps.png", height: 70%))]
+  #only("2")[
+    - note that `event_time` is not quite exactly trigger time -- there's a small delay
+    #figure(image("img/valid_lpps.png", height: 70%))
+  ]
 
   #only("3-7")[
   - free running basically means roll over occurs once count exceeds `UINT_32MAX`\
@@ -50,9 +53,11 @@
 
   #only("5-7")[
     - Nominal system clock frequency: *125MHz*.
-      - Therefore, `this_pps` - `last_pps` $approx$ 125E6 [clock counts]
   ]
-  #only(6)[#figure(image("img/delta_is_125E6.png", height: 53%))]
+  #only(6)[
+  - Therefore, `this_pps` - `last_pps` $approx$ 125E6 [clock counts]
+  #figure(image("img/delta_is_125E6.png", height: 50%))
+  ]
 
   #only("7")[
     - That is, 1 clock count = 8 ns
@@ -74,14 +79,6 @@
 ]
 ]
 
-== Slack Q&A Dump
-#slide[
-  \
-  - Why is the `last_pps` in the first second garbage? 
-
-    - "The counter doesn't reset at the second,
-       it resets at a sync request. So at run start last_pps occurred some unknown time before a reset to 0" -- Patrick
-]
 
 == Conversion
 #slide[
@@ -232,6 +229,15 @@
   - Tagged by TURF during event creation, *not tigger time*
 ]
 
+= Slack Q&A Dump
+== Why is the `last_pps` in the first second garbage? 
+#slide[
+  #set align(horizon)
+  #figure(image("img/invalid_lpps.png",width: 70%))
+  #set quote(block: true)
+  #quote(attribution: [Patrick])[The counter doesn't reset at the second,
+  it resets at a sync request. So at run start last_pps occurred some unknown time before a reset to 0]
+]
 
 #pagebreak()
 #bibliography("ref.bib", title: "References")
