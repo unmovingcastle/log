@@ -83,7 +83,7 @@
 == Conversion
 #slide[
   #show table.cell.where(y: 0): strong
-  #set text(19pt)
+  #set text(18pt)
   #set table(
     stroke: (x, y) => if y >= 0 {
       (bottom: 0.5pt + black)
@@ -103,7 +103,7 @@
       [#pause `uint32_t`\ `last_pps`],
       [`uint32_t` \ `last_pps`],
       [clock count],
-      [most recent GPS second's clock count, tagged by TURF],
+      [most recent GPS second's clock count, tagged by TURF, can glitch],
       
       // [#pause `uint32_t`\ `llast_pps`],
       // [`uint32_t` \ `llastPPS`],
@@ -111,9 +111,9 @@
       // ["last last pps" ie. one second prior],
       
       [#pause`uint32_t`\ `event_second`],
-      [`uint32_t`\ `event_second`],
-      [second],
-      [tagged by TURF's second counter during trigger],
+      [`int32_t`\ `event_second`],
+      [sec since \ Unix epoch],
+      [tagged by TURF's second counter during trigger, can glitch],
 
       [#pause`pueo_time_t`\ `readout_time`],
       [`TTimeStamp`\ `readout_time`],
@@ -135,15 +135,15 @@
       #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d4206c69a7c6027197a0519f5240d66652d8b")[949d420]],
   )
 ]
-== Caution Against `readout_time`
+== Some Words on `readout_time`
 
-  1. one should probably not use `readout_time` at all. *todo: timemark readout vs rising plot here!*
+  1. one should probably not use `readout_time`, at least not the original one.\ *todo: timemark readout vs rising plot here!*
 
   2. `readout_time` of different packet types are not the same, even if they correspond to the same `event_number`
 
-     - e.g. A `full_waveforms_t` packet can sometimes be have a corresponding `timemark_t` packet (happens every 100 events or so)
-     - In this case, there will be a `full_waveforms_t.readout_time` that comes with every event as usual.
-     - Separately, there will also be a `timemark_t.readout_time` corresponding to this event.
+     - e.g. A `full_waveforms_t` packet can sometimes have a corresponding `timemark_t` packet (happens every 100 events or so)
+     - In this case, there is a `full_waveforms_t.readout_time` that comes with every `full_waveforms_t` packet, as usual.
+     - Separately, there is a `timemark_t.readout_time` corresponding to this set of waveforms.
      - These two readouts will not have the same value
 
 
