@@ -91,17 +91,48 @@
   )
   #set align(horizon)
   #figure(
-  table(
-    align: left,
-    columns: 4,
-    table.header([libpueorawdata], [pueoEvent], [unit], [description]),
-    [`full_waveforms_t.` \ `event_time`], [`RawHeader::trigTime`],[clock count], [tagged when the TURF readout request is generated ($approx$ trigger time)],
-    [#pause `full_waveforms_t.`\ `last_pps`], [`RawHeader::lastPPS`],[clock count], [most recent GPS second's clock count, tagged by TURF],
-    [#pause `full_waveforms_t.`\ `llast_pps`], [`RawHeader::lastLastPPS`],[clock count], [],
-    [#pause`full_waveforms_t.`\ `event_second`], [`RawHeader::triggerTime`], [second], [tagged by TURF's second counter during trigger],
-    [#pause `full_waveforms_t.`\ `readout_time.utc_secs`], [`RawHeader::readoutTime`], [second], [by flight computer at event reception (packet creation)],
-    [#pause `timemark_t.` \ `readout_time.utc_secs`], [`Timemark::` \ `readout_time::utc_secs`], [second], [*not the same as above!*],
-  ),caption: [Time Related Fields]
+    table(
+      align: left,
+      columns: 4,
+      table.header([libpueorawdata \ full_waveforms_t], [pueoEvent \ RawHeader], [unit], [description]),
+      [`uint32_t` \ `event_time`],
+      [`uint32_t` \ `event_time`],
+      [clock count],
+      [tagged when the TURF readout request is generated ($approx$ trigger time)],
+      
+      [#pause `uint32_t`\ `last_pps`],
+      [`uint32_t` \ `last_pps`],
+      [clock count],
+      [most recent GPS second's clock count, tagged by TURF],
+      
+      // [#pause `uint32_t`\ `llast_pps`],
+      // [`uint32_t` \ `llastPPS`],
+      // [clock count],
+      // ["last last pps" ie. one second prior],
+      
+      [#pause`uint32_t`\ `event_second`],
+      [`uint32_t`\ `event_second`],
+      [second],
+      [tagged by TURF's second counter during trigger],
+
+      [#pause`pueo_time_t`\ `readout_time`],
+      [`TTimeStamp`\ `readout_time`],
+      [(sec, ns)],
+      [by flight computer at event reception (packet creation)],
+      
+      [#pause ],
+      [`TTimeStamp`\ `correted_readout_time`],
+      [(sec, ns)],
+      [correction via post-processing (TBD)],
+
+      [#pause ],
+      [`TTimeStamp`\ `correted_trigger_time`],
+      [(sec, ns)],
+      [from corrected `event_second`, corrected `last_pps`, and `event_time`],
+      
+    ),
+    caption: [Time Related Fields as of `pueoEvent` commit
+      #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d4206c69a7c6027197a0519f5240d66652d8b")[949d420]],
   )
 ]
 == Caution Against `readout_time`
