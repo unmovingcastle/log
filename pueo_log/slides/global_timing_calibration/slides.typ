@@ -137,17 +137,21 @@
 ]
 == Some Words on `readout_time`
 
-  1. one should probably not use `readout_time`, at least not the original one.\ *todo: timemark readout vs rising plot here!*
+  1. One should probably not use `readout_time` (of any packet type), at least not before we correct them.
+
+  #alternatives[#figure(image("img/christmas_drift.png", height: 80%))][
 
   2. `readout_time` of different packet types are not the same, even if they correspond to the same `event_number`
 
      - e.g. A `full_waveforms_t` packet can sometimes have a corresponding `timemark_t` packet (happens every 100 events or so)
+
      - In this case, there is a `full_waveforms_t.readout_time` that comes with every `full_waveforms_t` packet, as usual.
      - Separately, there is a `timemark_t.readout_time` corresponding to this set of waveforms.
      - These two readouts will not have the same value
+  ]
 
 
-= `this_pps` Correction
+= `pps` Correction
 == TimeTable: `pps` Delta
 #slide[
   - `TimeTable` is a `C++` ordered map (`python` dictionary) for easy lookup \ (maybe not cheap though?)
