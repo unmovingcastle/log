@@ -38,6 +38,13 @@
 #set text(20pt)
 #set heading(numbering: "1.")
 
+#set text(21pt)
+== Outline                                                       
+#components.adaptive-columns(outline(title: none,depth: 1, indent: 1em))
+#slide[
+#text(size:16pt)[
+#components.adaptive-columns(outline(title: none,depth: 2, indent: 3em))]]
+
 #title-slide()
 
 = Time Related Variables
@@ -334,7 +341,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 ]
 
 = Slack Q&A Dump
-== Why is the `last_pps` in the first second garbage? <first_garbage>
+== Why is the `last_pps` of the first second garbage? <first_garbage>
 #slide[
   #set align(horizon)
   #figure(image("img/invalid_lpps.png",width: 70%))
@@ -363,6 +370,15 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
   #quote(attribution: [Patrick])[`event_second` is set at the start of the run to the last GPS time the TURF received,
   and after that, it just counts every PPS. It's not timestamped. It's just a single point. If the second at the beginning
   isn't set correctly, the whole run will be wrong.]
+
+  #quote(attribution: [Cosmin])[
+  Becaues it [`timemark_t`] comes directly from the GPS.
+  The `event_second` is attempted to be synced from the GPS to the TURF on TURF startup,
+    but over serial and the way it's done it can be a second off easily,
+    whereas the `timemark` is directly reproted from the GPS,
+    and then the `event_second` is just incremented on every PPS
+    but it could be off by a second (or if the GPS doesn't initialize fast enough, it could be set to 0)
+  ]
 
 == Why isn't `delta` constant? <delta_curve>
   #set align(horizon)
