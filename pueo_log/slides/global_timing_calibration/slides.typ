@@ -52,19 +52,19 @@
     #figure(image("img/valid_lpps.png", height: 69%), caption: [by the way, @eq:subsec shows how to compute "subseconds"])<fig:valid_lpps>
   ]
 
-  #only("3-7")[
+  #only("3-4")[
   - free running basically means roll over occurs once count exceeds `UINT_32MAX`\
     (ie. around every 34 seconds, clock starts counting from 0 again)
   ]
 
   #only("4")[#figure(image("img/rollover.png", height: 50%))]
 
-  #only("5-7")[
+  #only("5-")[
     - Nominal system clock frequency "delta" $Delta$ $approx$ *125MHz*.
+    - That is, with rollovers taken care of, `next_pps` - `this_pps` $approx$ 125E6 [clock counts] 
   ]
-  #only(6)[
-  - That is, `next_pps` - `this_pps` $approx$ 125E6 [clock counts], with wraparounds taken care of
-  #figure(image("img/delta_is_125E6.png", height: 50%))
+  #only("6-")[
+  #figure(image("img/delta_is_125E6.png", height: 50%), caption: [ Missing seconds when the TURF buffer is full, see @turffull])
   ]
 
   #only("7")[
@@ -92,9 +92,10 @@
 ]
 #slide[
 
-  - Even if `last_pps` doesn't glitch, it'd still be nice to smooth out the quantization error by taking a moving average, more on that later
+  - Even if `last_pps` doesn't glitch, it'd still be nice to smooth out the quantization error 
+    by taking a moving average, more on that later
 
-  - Note that the clock rate $Delta$ is not exactly 125E6, nor is it a constant throughout the run, see @delta_curve.
+  - Note that the clock rate $Delta$ is not exactly 125E6, nor is it flat (see @delta_curve)
   #figure(image("img/run_1392_delta_trend.png",width: 100%), caption: [Run 1392, 6000 seconds.])
 ]
 
@@ -281,7 +282,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 
   2. Usually, `next_pps` can be derived from the `this_pps` of the next second.
     - However, this is not true if we are at the final second of any run.
-    - Also, sometimes we just miss a second or two (or a minute or two) in the middle of the run when the TURF buffer is full *todo: check this*
+    - Also, sometimes we just miss a second or two (or a minute or two) in the middle of the run when the TURF buffer is full, see @turffull.
   3. Additionally, even if the next second exists, it's not guaranteed to be "valid"
     - A GPS *todo: check this* signal could have arrived late, so when the clock latches the count, the value is already too large.
     - This is identifiable: for the glitchy seconds,  `next_pps` - `this_pps` - 125E6 would deviate significantly from the `avg_relative_delta`
@@ -368,6 +369,12 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
   #quote(attribution: [Patrick])[
 The clock itself could move slightly (about 3 Hz/deg C or so max) but this would be with the TURF's temperature, not the DAQ ...
 As the temperature increases, the clock frequency is dropping ever so slightly.]
+
+== Why are there missing `event_second`s in the middle of the run? <turffull>
+  #set align(horizon)
+  #quote(attribution: [Cosmin])[
+    Missing seconds should only happen if we fill up the TURF buffer
+  ]
 
 #pagebreak()
 #bibliography("ref.bib", title: "References")
