@@ -12,6 +12,13 @@
   config-colors(primary: rgb("#DC143C"), secondary: rgb("#000000"), tertiary: rgb("#808080"))
 )
 
+//no numbering math block
+#let mk(math_block)= math.equation(block: true,
+                                   numbering: "(1)",
+                                   supplement: [Eq.],
+                                   [#math_block] 
+) 
+
 #show raw.where(block: false): box.with(
   fill: luma(240),
   inset: (x: 3pt, y: 0pt),
@@ -78,6 +85,10 @@
   #figure(image("img/invalid_lpps.png"))
 ]
 ]
+#slide[
+  `last_pps` could also simply glitch if it's a bad mood, fortunately these only happened in preamp runs (`run_number`< 782).
+  #figure(image("img/preamp_run_770_large_delta.png",height: 83%))
+]
 
 
 == Conversion
@@ -98,7 +109,7 @@
       [`uint32_t` \ `event_time`],
       [`uint32_t` \ `event_time`],
       [clock count],
-      [tagged when the TURF readout request is generated ($approx$ trigger time)],
+      [tagged when the TURF readout request is generated ($approx$ trigger time), doesn't glitch],
       
       [#pause `uint32_t`\ `last_pps`],
       [`uint32_t` \ `last_pps`],
@@ -135,20 +146,21 @@
       #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d4206c69a7c6027197a0519f5240d66652d8b")[949d420]],
   )
 ]
-== Some Words on `readout_time`
+== Some Words on `readout_time` 
+#slide[
 
   1. One should probably not use `readout_time` (of any packet type), at least not before we correct them.
 
   #alternatives[#figure(image("img/christmas_drift.png", height: 80%))][
-
-  2. `readout_time` of different packet types are not the same, even if they correspond to the same `event_number`
+  2. `readout_time` of different packet types are not the same, even if they correspond to the same `event_number` 
 
      - e.g. A `full_waveforms_t` packet can sometimes have a corresponding `timemark_t` packet (happens every 100 events or so)
 
      - In this case, there is a `full_waveforms_t.readout_time` that comes with every `full_waveforms_t` packet, as usual.
      - Separately, there is a `timemark_t.readout_time` corresponding to this set of waveforms.
-     - These two readouts will not have the same value
+     - These two readouts will not have the same value  
   ]
+] 
 
 
 = `pps` Correction
