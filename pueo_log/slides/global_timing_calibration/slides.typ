@@ -59,10 +59,10 @@
   #only("4")[#figure(image("img/rollover.png", height: 50%))]
 
   #only("5-7")[
-    - Nominal system clock frequency: *125MHz*.
+    - Nominal system clock frequency "delta" $Delta$ $approx$ *125MHz*.
   ]
   #only(6)[
-  - Therefore, `this_pps` - `last_pps` $approx$ 125E6 [clock counts]
+  - That is, `this_pps` - `last_pps` $approx$ 125E6 [clock counts]
   #figure(image("img/delta_is_125E6.png", height: 50%))
   ]
 
@@ -88,6 +88,13 @@
 #slide[
   `last_pps` could also simply glitch if it's a bad mood, fortunately these only happened in preamp runs (`run_number`< 782).
   #figure(image("img/preamp_run_770_large_delta.png",height: 83%))
+]
+#slide[
+
+  - Even if `last_pps` doesn't glitch, it'd still be nice to smooth out the quantization error by taking a moving average, more on that later
+
+  - Note that the clock rate $Delta$ is not exactly 125E6, nor is it a constant throughout the run.
+  #figure(image("img/run_1392_delta_trend.png",width: 100%), caption: [Run 1392, 6000 seconds])
 ]
 
 
@@ -129,7 +136,7 @@
       [#pause`pueo_time_t`\ `readout_time`],
       [`TTimeStamp`\ `readout_time`],
       [(sec, ns)],
-      [by flight computer at event reception (packet creation)],
+      [by flight computer at event reception (packet creation), can be a few secs off],
       
       [#pause ],
       [`TTimeStamp`\ `correted_readout_time`],
