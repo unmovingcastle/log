@@ -162,6 +162,67 @@
   ]
 ] 
 
+= `event_second` correction
+== `corrected_trigger_time`
+#slide[
+
+\ 
+
+As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d4206c69a7c6027197a0519f5240d66652d8b")[949d420] of `pueoEvent`:
+
+- `corrected_trigger_time` will store the corrected `event_second` and corrected subsecond once timing calibration is complete.
+
+  - This is a `TTimeStamp` that stores (second, nanosecond)
+
+- `event_second` is an `int32_t` which has enough bits for time before year 2038.
+
+- The nanosecond portion (aka subsecond)
+  #mk($
+  ("event time" - "last pps" ) / ("average clock rate" approx 125"E"6)
+  $)<eq:subsec>
+  needs `last_pps` to have been corrected.
+]
+
+== `event_second` Correction: Demo
+#slide[
+  #figure(image("img/run_1080_demo.png"))
+]
+
+== `event_second` Correction Procedure. Tl;DR
+#slide[
+#only("1-8")[
+  - Recall that about every 101 events (once every second), an accurate timestamp *T* (`timemark_t`) is sent along with a `full_waveforms_t` packet *F*.]
+#only("2-8")[
+  - We trust these timestamps more than `event_second` because \<reasons\> *TODO:*
+  - All `timemark_t` are converted to class `pueo::Timemark` and stored in one long ROOT file spanning the entire flight.
+  ]
+#uncover("3-")[
+  - In particular, we will be using *T*'s rise time `pueo::Timemark.rising.GetSec()` to correct for the potentially glitchy `event_second` of a *F*]
+#uncover("4-")[
+1. Pick an event (ie some `full_waveform_t` entry *F'*). Use its `readout_time` to establish a crude search range *R* of about one minute.]
+   #only(4)[- Using `readout_time` here is okay even if it is a few seconds off.]
+#uncover("5-")[
+2. Pick (any) one `timemark_t` entry within *R*, call this particular timestamp *T*.]
+#uncover("6-")[
+3. Our job is to search through the `full_waveforms_t` entries to find *F*.]
+#only("7-8")[- *F* is not necessarily the same as *F'*, but that's okay, we only use *F'* to establish some range.]
+#uncover("8-")[
+4. Since these timestamps don't have `event_numbers` in them, we need to use the subsecond as the unique identifier.]
+#only("9-11")[- From *T*'s `rising.GetNanoSec()` we can get the a subsecond $s_"gps"$]
+#only("10-11")[
+  - From @eq:subsec and the corrected `last_pps` we can compute the subsecond $s_"derived"$ for every single `full_waveform_t` entry in 
+    the search range]
+#only("11")[
+  - We can match $s_"gps"$ against all computed $s_"derived"$ within the one-minute search range.
+  - For a timestamped event, $s_"gps" - s_"derived" lt.approx 100 "[pps]"$.
+  - That is, if *T* and *F* "came from the same trigger instance", their subsecond should be similar
+]
+#only("12")[5. Once we find a match, we can simply swap out the old value of `event_second` with `Timemark.rising.GetSec()`
+               and we are done with this one second.
+6. And then we can correct the `event_second` of the entire run since `event_second` is (mostly) contiguous!
+]
+]
+
 
 = `pps` Correction
 == TimeTable: `pps` Delta
