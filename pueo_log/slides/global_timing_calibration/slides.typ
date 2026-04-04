@@ -94,8 +94,8 @@
 
   - Even if `last_pps` doesn't glitch, it'd still be nice to smooth out the quantization error by taking a moving average, more on that later
 
-  - Note that the clock rate $Delta$ is not exactly 125E6, nor is it a constant throughout the run.
-  #figure(image("img/run_1392_delta_trend.png",width: 100%), caption: [Run 1392, 6000 seconds])
+  - Note that the clock rate $Delta$ is not exactly 125E6, nor is it a constant throughout the run, see @delta_curve.
+  #figure(image("img/run_1392_delta_trend.png",width: 100%), caption: [Run 1392, 6000 seconds.])
 ]
 
 
@@ -341,6 +341,33 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
   #quote(attribution: [Patrick])[The counter doesn't reset at the second,
   it resets at a sync request. So at run start last_pps occurred some unknown time before a reset to 0]
 ]
+
+== What are these variables?
+  #set align(horizon)
+  #set quote(block: true)
+  #quote(attribution: [Cosmin])[`event_second` is the time the TURF thinks it is, but it could be off by a second or so ... or even be stuck in 1970...
+  `readout_time` is just the CPU time when it was read out. In extreme cases (a 4kHz burst) it could
+  be over 10 seconds after the trigger time...]
+  #quote(attribution: [Patrick])[ `event_second`, `last_pps`, `llast_pps` - those all come from the GPS [on TURF] and ... can glitch.]
+  #quote(attribution: [Patrick])[There are also a subset of events which are directly timestamped by the GPS directly. Those [timestamps] aren't 
+  stored with the event, the flight software stores them separately [as `timemarks_t`]]
+
+== Okay so if `event_second` comes from GPS and it can glitch, how come we can trust other GPS variables such as `Attitude::realTime`?
+#set align(horizon)
+
+  Because these are different GPS units. We have four: ABX-Two, Boreas, CPT7, and one on TURF.
+
+== And why is `event_second` which comes from the GPS less reliable than `timemark_t`'s rise time?
+  #set align(horizon)
+  #quote(attribution: [Patrick])[`event_second` is set at the start of the run to the last GPS time the TURF received,
+  and after that, it just counts every PPS. It's not timestamped. It's just a single point. If the second at the beginning
+  isn't set correctly, the whole run will be wrong.]
+
+== Why isn't `delta` constant? <delta_curve>
+  #set align(horizon)
+  #quote(attribution: [Patrick])[
+The clock itself could move slightly (about 3 Hz/deg C or so max) but this would be with the TURF's temperature, not the DAQ ...
+As the temperature increases, the clock frequency is dropping ever so slightly.]
 
 #pagebreak()
 #bibliography("ref.bib", title: "References")
