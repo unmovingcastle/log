@@ -36,6 +36,7 @@
 #show link: underline
 
 #set text(20pt)
+#set heading(numbering: "1.")
 
 #title-slide()
 
@@ -81,7 +82,7 @@
   #figure(image("img/valid_lpps.png"))
 ][
   \
-  - `last_pps` is invalid (garbage value) in this case, since we are in the first second
+  - `last_pps` of the first `event_second` is garbage valued, because \<reason\> (see @first_garbage)
   #figure(image("img/invalid_lpps.png"))
 ]
 ]
@@ -200,7 +201,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 #only("1-8")[
   - Recall that about every 101 events (once every second), an accurate timestamp *T* (`timemark_t`) is sent along with a `full_waveforms_t` packet *F*.]
 #only("2-8")[
-  - We trust these timestamps more than `event_second` because \<reasons\> *TODO:*
+  - We trust these timestamps more than `event_second` because \<reasons\>, *todo: slack*
   - All `timemark_t` are converted to class `pueo::Timemark` and stored in one long ROOT file spanning the entire flight.
   ]
 #uncover("3-")[
@@ -275,7 +276,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
   
   0. `avg_relative_delta` $:=$ `next_pps` $-$ `this_pps` $- 125"E"6$ (with roll over taken care of)
 
-  1. The first second in the run does not have a valid `this_pps` (value is garbage)
+  1. The first second in the run does not have a valid `this_pps` (value is garbage), see @first_garbage.
 
   2. Usually, `next_pps` can be derived from the `this_pps` of the next second.
     - However, this is not true if we are at the final second of any run.
@@ -330,19 +331,8 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 )
 ]
 
-== Clock Delta Potential Errors
-#slide[
-  *TODO: example plot here!*
-]
-
-== event_time
-#slide[
-  - *todo: subsecond!*
-  - Tagged by TURF during event creation, *not tigger time*
-]
-
 = Slack Q&A Dump
-== Why is the `last_pps` in the first second garbage? 
+== Why is the `last_pps` in the first second garbage? <first_garbage>
 #slide[
   #set align(horizon)
   #figure(image("img/invalid_lpps.png",width: 70%))
