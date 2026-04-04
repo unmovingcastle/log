@@ -35,8 +35,6 @@
 #show link: set text(fill: blue)
 #show link: underline
 
-#set text(20pt)
-#set heading(numbering: "1.")
 
 #set text(21pt)
 == Outline                                                       
@@ -45,6 +43,8 @@
 #text(size:16pt)[
 #components.adaptive-columns(outline(title: none,depth: 2, indent: 3em))]]
 
+#set text(20pt)
+#set heading(numbering: "1.")
 #title-slide()
 
 = Time Related Variables
@@ -223,7 +223,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 #uncover("6-")[
 3. Our job is to search through the `full_waveforms_t` entries to find *F*.]
 #only("7-8")[- *F* is not necessarily the same as *F'*, but that's okay, we only use *F'* to establish some range.]
-#uncover("8-")[
+#only("8-")[
 4. Since these timestamps don't have `event_numbers` in them, we need to use the subsecond as the unique identifier.]
 #only("9-11")[- From *T*'s `rising.GetNanoSec()` we can get the a subsecond $s_"gps"$]
 #only("10-11")[
