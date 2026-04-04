@@ -63,7 +63,7 @@
     - Nominal system clock frequency "delta" $Delta$ $approx$ *125MHz*.
   ]
   #only(6)[
-  - That is, `this_pps` - `last_pps` $approx$ 125E6 [clock counts]
+  - That is, `next_pps` - `this_pps` $approx$ 125E6 [clock counts], with wraparounds taken care of
   #figure(image("img/delta_is_125E6.png", height: 50%))
   ]
 
@@ -157,9 +157,10 @@
 == Some Words on `readout_time` 
 #slide[
 
-  1. One should probably not use `readout_time` (of any packet type), at least not before we correct them.
+  1. Prefer to not use `readout_time` (of any packet type), at least not before we correct them.
 
-  #alternatives[#figure(image("img/christmas_drift.png", height: 80%))][
+  #alternatives[#figure(image("img/christmas_drift.png", height: 71%), caption: [note that even when it's not drifting, `readout_time` is still only accurate
+  to a few seconds])][
   2. `readout_time` of different packet types are not the same, even if they correspond to the same `event_number` 
 
      - e.g. A `full_waveforms_t` packet can sometimes have a corresponding `timemark_t` packet (happens every 100 events or so)
