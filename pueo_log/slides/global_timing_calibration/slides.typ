@@ -48,7 +48,7 @@
 
   #only("2")[
     - note that `event_time` is not quite exactly trigger time -- there's a small delay
-    #figure(image("img/valid_lpps.png", height: 70%))
+    #figure(image("img/valid_lpps.png", height: 69%), caption: [by the way, @eq:subsec shows how to compute "subseconds"])<fig:valid_lpps>
   ]
 
   #only("3-7")[
@@ -176,7 +176,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 
 - `event_second` is an `int32_t` which has enough bits for time before year 2038.
 
-- The nanosecond portion (aka subsecond)
+- The nanosecond portion (aka subsecond, see @fig:valid_lpps)
   #mk($
   ("event time" - "last pps" ) / ("average clock rate" approx 125"E"6)
   $)<eq:subsec>
