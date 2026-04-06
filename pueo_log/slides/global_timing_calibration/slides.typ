@@ -392,6 +392,105 @@ As the temperature increases, the clock frequency is dropping ever so slightly.]
     Missing seconds should only happen if we fill up the TURF buffer
   ]
 
+= GitHub PR Dump
+
+== List of Runs with `delta` jumps
+#slide[
+
+  - pueoEvent Pull Request 10: https://github.com/PUEOCollaboration/pueoEvent/pull/10
+
+  - Runs with large `relative_delta` ($>100$) are all pre-amp runs
+    - `770` (a couple around 300), 
+    
+    - `771` (a couple around 250), 
+    - `762` (252), 
+    - `763` (167),
+    - `764` (particularly bad, has one at 1485 and many others at a few hundred, overflowing the histogram), 
+    - `781`(around 100-200), 
+    - `768` (344), 
+    - `769` (around 300-400)
+]
+== List of Runs that are Too Short
+#slide[
+  \
+  - Runs that will cause the post-processor to error out because they are too short
+
+  - That is, we cannot possibly compute `delta` if the run is $<=2$ seconds
+    - first second has garbage `this_pps`
+
+    - final second has no `next_pps`
+][
+  \
+  - list of short runs: 
+    - `1365`
+    - `1286`
+    - `1180`(two seconds)
+    - `1315`
+    - `1138`
+    - `1108`
+    - `1029`
+    - `1020`
+    - `1222`
+    - `1345`
+    - `1122`
+    - `889` (20 seconds, can be processed)
+]
+
+== List of Runs with Non-contiguous `event_second`
+#slide[
+
+  - Handling of missing seconds
+
+    - Missing rows in the time table will be inserted but marked as invalid
+    - The second before the missing second is also invalid
+    - Invalid rows' `delta` are simply copied from their valid neighbors
+
+  - List of runs with missing seconds
+    - `1281` (2 missing)
+
+    - `1332` (1 missing)
+    - `1393` (1 missing)
+    - `1282` (*consecutive seconds missing*)
+    - `840` (*missing minutes*)
+    - `1230` (12 missing)
+    - `1311` (4 missing)
+]
+
+== List of Runs with wrong `event_second`
+#slide[
+  - `1103` 
+  - `770 `  (preamp)
+  - `1159`  
+  - `776 `  (preamp)
+  - `1134` 
+  - `771 `  (preamp)
+  - `1102` 
+  - `1023` 
+  - `1048` 
+  - `762 `  (preamp)
+  - `765 `  (preamp)
+  - `755 `  (preamp)
+  - `764 `  (preamp)
+  - `763 `  (preamp)
+  - `774 `  (preamp)
+  ][
+  - `773 `  (preamp)
+  - `772 `  (preamp)
+  - `775 `  (preamp)
+  - `1080` 
+  - `865 ` 
+  - `759 `  (preamp)
+  - `766 `  (preamp)
+  - `761 `  (preamp)
+  - `768 `  (preamp)
+  - `757 `  (preamp)
+  - `769 `  (preamp)
+  - `756 `  (preamp)
+  - `760 `  (preamp)
+  - `758 `  (preamp)
+  - `767 `  (preamp)
+  ]
+
 #pagebreak()
 #bibliography("ref.bib", title: "References")
 #pagebreak()
