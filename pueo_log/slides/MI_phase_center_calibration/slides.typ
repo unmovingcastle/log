@@ -91,7 +91,7 @@
   ]
 ]
 
-= Step 1. "guess" the time delay
+= Step 1. "guess" the time delay $Delta T_"guess"$
 == Signal Delay: Some Trig
 #slide(composer:(auto, 130mm))[
  #uncover("1-")[#figure(image("img/trig.png", height: 80%),caption: [Figure stolen from @that_nice_trig_plot])]
@@ -116,8 +116,7 @@
 
 ]
 
-
-= Step 2: "measured" the time delay
+= Step 2: "measured" the time delay $Delta T_"measured"$
 == ZNCC 
 #slide[
   - Measure the pairwise time delay $Delta T_"measured"$ via the zero-centered normalized cross correlation (ZNCC) between two waveforms
@@ -220,6 +219,64 @@
 ][
   #image("../scipy_correlate_behavior/img/original_two_signals.png")
   - In the above figure, we see that when the two vectors line up, their dot product would natually be maximal.
+]
+
+= Step 3. Minimize $Delta T_"measured" - Delta T_"guess"$
+== Outline of the Procedure
+#slide[
+  \ 
+  A few things to note:
+
+  - Before anything, obtin $Delta T_"measured" $
+
+  - Work in cylindrical coordinates, for each antenna there is
+
+    - cylindrical radius $rho$
+    
+    - height $z$
+
+    - azimuth $phi$
+
+][
+  \
+  \
+  - The job of the minimizer is to:
+
+    1. change $rho$ for every single antenna
+
+    2. compute $Delta T_"guess"$
+
+    3. compare againt $Delta T_"measured"$
+
+    4. rinse and repeat until an optimal $rho$ for all antennas is found.
+
+    5. repeat the steps above for $z$ and for $phi$ (and probably other parameters, such as cable delay)
+]
+
+== MI Calibration Result
+#slide[
+  #figure(image("img/example_phase_center_fit_result.png"))
+][
+
+  #set align(horizon)
+  - Example plot that's part of the documentation
+
+  - made a while ago using the old antenna mapping (June 2025 geometry in `pueo-data`)
+
+]
+#slide[
+  #figure(image("img/calib_example_zoom.png",height: 50%))
+
+  - Blue dots: initial guess 
+
+    - From `pueo-data/geometry/jun25/qrh.dat`
+
+    - These are the antenna "face centers"
+
+  - Orange: minimzation result
+
+  - Note the expected $approx$ 30 cm difference: phase center is radially inward of face center.
+
 ]
 
 #pagebreak()
