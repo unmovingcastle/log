@@ -190,7 +190,7 @@
   
 ] 
 
-= `event_second` correction
+= `event_second` correction <evtsec_corr>
 == `corrected_trigger_time`
 #slide[
 
@@ -223,7 +223,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 #only("1-8")[
   - Recall that about every 101 events (once every second), an accurate timestamp *T* (`timemark_t`) is sent along with a `full_waveforms_t` packet *F*.]
 #only("2-8")[
-  - We trust these timestamps more than `event_second` because \<reasons\>, *todo: slack*
+  - We trust these timestamps more than `event_second` because \<reasons\>, see @more_reliable.
   - All `timemark_t` are converted to class `pueo::Timemark` and stored in one long ROOT file spanning the entire flight.
   ]
 #uncover("3-")[
@@ -247,15 +247,21 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
   - For a timestamped event, $s_"gps" - s_"derived" lt.approx 100 "[pps]"$.
   - That is, if *T* and *F* "came from the same trigger instance", their subsecond should be similar
 ]
-#only("12")[5. Once we find a match, we can simply swap out the old value of `event_second` with `Timemark.rising.GetSec()`
+#only("12-")[5. Once we find a match, we can simply swap out the old value of `event_second` with `Timemark.rising.GetSec()`
                and we are done with this one second.
-6. And then we can correct the `event_second` of the entire run since `event_second` is (mostly) contiguous!
+]
+#only("13")[
+6. Searching for a match *T* and *F* is somewhat expensive and not guaranteed to work for every
+   `event_second`. Fortunately it only has to suceed once --
+    once we establish a correct `event_second`,
+    we simply extrapolate from that point in time by adding/subtracting 1,\
+    since `event_second` is mostly contiguous.
 ]
 ]
 
 
 = `pps` Correction
-== TimeTable: `pps` Delta
+== TimeTable Overview
 #slide[
   - `TimeTable` is a `C++` ordered map (`python` dictionary) for easy lookup \ (maybe not cheap though?)
    
@@ -265,13 +271,15 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
     - or maybe some other unique ID, e.g. `run number` + `event number`
 
   - Relevant map content:
-    - `this_pps`, `next_pps`, `relative_delta` $:=$ `next_pps` - `this_pps` - 125E6
+    - `this_pps`: clock tick of the current `event_second` (aka `last_pps` in @fig:valid_lpps,
+       sorry)
+    - `next_pps`, `relative_delta` $:=$ `next_pps` - `this_pps` - 125E6
     - `avg_relative_delta` is a moving average (window of a few seconds)
 
     - `corrected_this_pps` is a correction based on `avg_relative_delta`
 
-    - `corrected_event_second` is a correction that involves the `timemark_t` packets, more on this later.
-
+    - `corrected_event_second` is a correction that involves the `timemark_t` packets, discussed
+      earlier in @evtsec_corr.
 ]
 
 == TimeTable Schema Simplified
@@ -360,7 +368,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
   #figure(image("img/invalid_lpps.png",width: 70%))
   #set quote(block: true)
   #quote(attribution: [Patrick])[The counter doesn't reset at the second,
-  it resets at a sync request. So at run start last_pps occurred some unknown time before a reset to 0]
+  it resets at a sync request. So at run start `last_pps` occurred some unknown time before a reset to 0]
 ]
 
 == What are these variables?
@@ -378,7 +386,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 
   Because these are different GPS units. We have four: ABX-Two, Boreas, CPT7, and one on TURF.
 
-== And why is `event_second` which comes from the GPS less reliable than `timemark_t`'s rise time?
+== And why is `event_second` which comes from the GPS less reliable than `timemark_t`'s rise time?<more_reliable>
   #set align(horizon)
   #quote(attribution: [Patrick])[`event_second` is set at the start of the run to the last GPS time the TURF received,
   and after that, it just counts every PPS. It's not timestamped. It's just a single point. If the second at the beginning
@@ -469,7 +477,7 @@ As the temperature increases, the clock frequency is dropping ever so slightly.]
     - `1311` (4 missing)
 ]
 
-== List of Runs with wrong `event_second`
+== List of Runs with Clearly Wrong `event_second`
 #slide[
   - `1103` 
   - `770 `  (preamp)
