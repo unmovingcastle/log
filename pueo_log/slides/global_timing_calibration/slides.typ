@@ -43,7 +43,7 @@
 #text(size:16pt)[
 #components.adaptive-columns(outline(title: none,depth: 2, indent: 3em))]]
 
-#set text(20pt)
+#set text(19pt)
 #set heading(numbering: "1.")
 #title-slide()
 
@@ -148,12 +148,12 @@
       [by flight computer at event reception (packet creation), can be a few secs off],
       
       [#pause ],
-      [`TTimeStamp`\ `correted_readout_time`],
+      [`TTimeStamp`\ `corrected_readout_time`],
       [(sec, ns)],
       [correction via post-processing (TBD)],
 
       [#pause ],
-      [`TTimeStamp`\ `correted_trigger_time`],
+      [`TTimeStamp`\ `corrected_trigger_time`],
       [(sec, ns)],
       [from corrected `event_second`, corrected `last_pps`, and `event_time`],
       
@@ -167,16 +167,27 @@
 
   1. Prefer to not use `readout_time` (of any packet type), at least not before we correct them.
 
-  #alternatives[#figure(image("img/christmas_drift.png", height: 71%), caption: [note that even when it's not drifting, `readout_time` is still only accurate
-  to a few seconds])][
+  #only("2")[
+    #figure(image("img/christmas_drift.png", height: 71%), caption: [note that even when it's not drifting, `readout_time` is still only accurate
+  to a few seconds])
+  ]
+  #only("3-")[
   2. `readout_time` of different packet types are not the same, even if they correspond to the same `event_number` 
+  ]
 
+  #only("4-")[
      - e.g. A `full_waveforms_t` packet can sometimes have a corresponding `timemark_t` packet (happens every 100 events or so)
+  ]
 
+  #only("5-")[
      - In this case, there is a `full_waveforms_t.readout_time` that comes with every `full_waveforms_t` packet, as usual.
+  ]
+  #only("6-")[
      - Separately, there is a `timemark_t.readout_time` corresponding to this set of waveforms.
+
      - These two readouts will not have the same value  
   ]
+  
 ] 
 
 = `event_second` correction
@@ -191,8 +202,10 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 
   - This is a `TTimeStamp` that stores (second, nanosecond)
 
-- `event_second` is an `int32_t` which has enough bits for time before year 2038.
+#pause 
+-  `event_second` is an `int32_t` which has enough bits for time before year 2038.
 
+#pause 
 - The nanosecond portion (aka subsecond, see @fig:valid_lpps)
   #mk($
   ("event time" - "last pps" ) / ("average clock rate" approx 125"E"6)
