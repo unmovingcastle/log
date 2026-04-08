@@ -252,7 +252,7 @@ As of commit #link("https://github.com/PUEOCollaboration/pueoEvent/commit/949d42
 ]
 #only("13")[
 6. Searching for a match *T* and *F* is somewhat expensive and not guaranteed to work for every
-   `event_second`. Fortunately it only has to suceed once --
+   `event_second`. Fortunately it only has to work once --
     once we establish a correct `event_second`,
     we simply extrapolate from that point in time by adding/subtracting 1,\
     since `event_second` is mostly contiguous.
