@@ -6,7 +6,7 @@
   aspect-ratio: "16-9",
   config-info(
     title: [Main Instrument Antenna Phase Center Calibration @ludwig_thesis],
-    subtitle: [],
+    subtitle: [Do we need machine learning?],
     author: [Anna Kofman, Yu-Chieh Ku, Jason Yao],
     date: [March 30, 2026],
   ),
@@ -85,7 +85,7 @@
 #slide[
   1. Create an adjacency-like matrix to decide which $phi$-sectors are "neighbors"
   #alternatives[#figure(image("img/size_1_adj_mat.png", height: 90%))][#figure(image("img/size_2_adj_mat.png", height: 90%))][
-    #figure(image("img/size_2_adj_mat.png", height: 90%))]
+    #figure(image("img/size_3_adj_mat.png", height: 90%))]
 ]
 #slide[
   2. Replace each block with a 4-by-4 block, since each #phisec has four MI antennas
@@ -263,7 +263,8 @@
   ]
 ]
 
-== MI Calibration Result
+= MI Calibration Result
+== Simulated Calibration Result
 #slide[
   #figure(image("img/example_phase_center_fit_result.png"))
 ][
@@ -274,6 +275,7 @@
   - made a while ago using the old antenna mapping (June 2025 geometry in `pueo-data`)
 
 ]
+== Simulated Calibration Result: Ring 2
 #slide[
   #figure(image("img/calib_example_zoom.png",height: 50%))
 
@@ -287,6 +289,21 @@
 
   - Note the expected $approx$ 30 cm difference: phase center is radially inward of face center.
 
+]
+== Comparison Against Photogrammetry
+#slide(composer: (19cm, auto))[
+  #figure(image("img/ring1_photogram.png",height: 44%))
+  #figure(image("img/ring1_calib.png",height: 50%))
+][
+  - top: Photogrammetry 
+  - bottom: simulated data phase center calibration result
+]
+#slide(composer: (19cm, auto))[
+  #figure(image("img/ring2_photogram.png",height: 44%))
+  #figure(image("img/ring2_calib.png",height: 50%))
+][
+  - top: Photogrammetry 
+  - bottom: simulated data phase center calibration result
 ]
 
 #pagebreak()
