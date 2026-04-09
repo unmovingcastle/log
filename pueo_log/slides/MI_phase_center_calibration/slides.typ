@@ -57,12 +57,15 @@
   - Documentation of `pueoAnalysisTools/SharedUtils` is available at  \
     https://pueo.space/pueoAnalysisTools/
 
+  #pause 
   - Note that the documentation may be a little broken currently,
     but before we merge the LF calibration feature branch we will make sure the doc is complete.
 
+  #pause 
   - `SharedUtils` was a merger between `WillUtils` and `RachelUtils` and then at some point there's a complete rewrite
-   using `Polars` (kind of like `Pandas` but for cool kids) so as to organize data via `DataFrame`.
+   using `Polars` (kind of like `Pandas` but for cool kids) so as to present data via `DataFrame`.
 
+  #pause 
   - `SharedUtils` mainly does two things.
 
     1. RF direction reconstruction 
@@ -70,6 +73,7 @@
     2. Phase center calibration, more-or-less following what was outlined in Andrew Ludwig's thesis @ludwig_thesis -
        the focus of this presentation.
 
+  #pause 
   - For now, these are for simulation only, until `SharedUtils`'s antenna mapping is updated to use the flight configuration.
 
 
@@ -110,13 +114,16 @@
     second antenna
 
   #pause
-  - Evidently we can compute the #text(fill:red)[extra distance] by taking a *dot product* if we know the phase
+  - Evidently we can compute the #text(fill:red)[extra distance] by taking a *three-vector dot product* if we know the phase
     center exactly.
     Let's call this time delay $Delta T_"guess"$
 
+  #pause
+  - Guessing the phase center is the job of the minimzer.
+
 ]
 
-= Step 2: "measured" the time delay $Delta T_"measured"$
+= Step 2: "measured" time delay $Delta T_"measured"$
 == ZNCC 
 #slide[
   - Measure the pairwise time delay $Delta T_"measured"$ via the zero-centered normalized cross correlation (ZNCC) between two waveforms
@@ -227,8 +234,9 @@
   \ 
   A few things to note:
 
-  - Before anything, obtin $Delta T_"measured" $
+  - Before anything, obtain $Delta T_"measured" $
 
+  #uncover("2-")[
   - Work in cylindrical coordinates, for each antenna there is
 
     - cylindrical radius $rho$
@@ -236,10 +244,11 @@
     - height $z$
 
     - azimuth $phi$
-
+  ]
 ][
   \
   \
+  #uncover("3-")[
   - The job of the minimizer is to:
 
     1. change $rho$ for every single antenna
@@ -251,6 +260,7 @@
     4. rinse and repeat until an optimal $rho$ for all antennas is found.
 
     5. repeat the steps above for $z$ and for $phi$ (and probably other parameters, such as cable delay)
+  ]
 ]
 
 == MI Calibration Result
