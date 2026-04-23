@@ -65,6 +65,23 @@
 
      - Also included: correction procedures, related Slack Q&A, and some lists of "bad runs"
 ]
+= `pueo::RawHeader` Post-Processing
+#slide[
+
+  - For runs that can be post-processed, `pueoEvent/macros/trigger_time_correction.C` is used to expand the original header.
+
+    - For these runs, `pueo::RawHeader.corrected_trigger_time` is populated.
+    - This is of type `TTimeStamp`. To get the second, do `corrected_trigger_time.GetSec()`
+    - *To get the subsecond, call `corrected_trigger_time.GetNanoSec()`*
+
+  - For runs that cannot be post-processed, the macro is basically a no-opt and only copies the original header to make a new header. 
+    - For these runs, `corrected_trigger_time` is simply *initialized to zero* (year 1970).
+
+  - Some simple sanity checks have been carried out to make sure that the copying works. \
+    That is, fields that are supposed to be the same stay the same...
+
+]
+
 
 = Time Table
 == File Tree
@@ -236,18 +253,4 @@
 ] 
 #slide[
  #figure(image("img/that_trend_again.png"), caption: [nice])<nice>
-]
-
-= `pueo::RawHeader` Post-Processing
-#slide[
-
-  #set align(horizon)
-
-  - For runs that can be post-processed, `pueoEvent/macros/trigger_time_correction.C` is used to expand the original header.
-  - For runs that cannot be post-processed, the macro is basically a no-opt and only copies the original header to make a new header. 
-
-  - Some simple sanity checks have been carried out to make sure that the copying works. \
-    That is, fields that are supposed to be the same stay the same...
-
-
 ]
