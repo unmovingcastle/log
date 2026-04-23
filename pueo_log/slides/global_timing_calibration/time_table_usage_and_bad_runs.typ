@@ -69,8 +69,7 @@
 = Time Table
 == File Tree
 #slide[
-  - One you untar the tarball, you should see a folder `time_tables/` which simply mimics the structure of `$PUEO_ROOT_DATA`
-
+  - Once you untar the tarball `time_tables.tar.gz`, you should see a folder `time_tables/` which simply mimics the structure of `$PUEO_ROOT_DATA`
   - There is also an `error_log/` folder:
     ```
     error_log/
@@ -82,10 +81,7 @@
     ├── 1002.out
     ```
 
-  - TODO: macro hyprlink
-  - TODO: Tarball link
-
-  - TODO: Tarball path on OSC
+  - Time tables made by `pueoEvent/macros/make_time_tables.C`
 ][
     ```
     time_tables/
@@ -247,9 +243,7 @@
 
   #set align(horizon)
 
-  - TODO: path on OSC
-
-  - For runs that can be post-processed, *todo: macro-hyprlink* is used to expand the original header.
+  - For runs that can be post-processed, `pueoEvent/macros/trigger_time_correction.C` is used to expand the original header.
   - For runs that cannot be post-processed, the macro is basically a no-opt and only copies the original header to make a new header. 
 
   - Some simple sanity checks have been carried out to make sure that the copying works. \
